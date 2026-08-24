@@ -12,6 +12,21 @@ const EN = {
   "nav.doctor": "The Dentist",
   "nav.contact": "Contact",
   "cta.book": "Book an appointment",
+  "cta.callnow": "Call to book",
+  "skip": "Skip to content",
+  "lb.of": "of",
+  "map.directions": "Get directions",
+  "map.aria": "Directions to the clinic, opens in Google Maps",
+  "e404.title": "Page not found | Papantoniou Dental Centre",
+  "e404.eyebrow": "Error 404",
+  "e404.h": "Page not found",
+  "e404.p": "The page you asked for does not exist or has moved. Return to the homepage, or give us a call.",
+  "e404.btn": "Back to homepage",
+  "ty.title": "Thank you | Papantoniou Dental Centre",
+  "ty.eyebrow": "Thank you",
+  "ty.h": "Your message has been sent",
+  "ty.p": "Thank you for getting in touch. We will reply as soon as possible. For anything urgent, please call us on 22910 37444.",
+  "ty.btn": "Back to homepage",
   "logo.top": "Dental Centre",
   "logo.name": "Papantoniou",
   "logo.first": "Panagiotis",
@@ -233,6 +248,67 @@ const EN = {
   });
 
   /* ---------- reveal on scroll ---------- */
+
+  /* ---------- gallery lightbox ---------- */
+  var lb = document.getElementById("lb");
+  if (lb) {
+    var items = [].slice.call(document.querySelectorAll(".gal a"));
+    var img = document.getElementById("lbImg"),
+        cap = document.getElementById("lbCap"),
+        cnt = document.getElementById("lbCount"),
+        idx = 0, lastFocus = null;
+
+    function show(i) {
+      idx = (i + items.length) % items.length;
+      var a = items[idx], thumb = a.querySelector("img");
+      img.src = a.getAttribute("href");
+      img.alt = thumb ? thumb.alt : "";
+      cap.textContent = thumb ? thumb.alt : "";
+      cnt.textContent = (idx + 1) + " " + (EN["lb.of"] && document.documentElement.lang === "en" ? "of" : "/") + " " + items.length;
+    }
+    function open(i, trigger) {
+      lastFocus = trigger || null;
+      show(i);
+      lb.classList.add("open");
+      requestAnimationFrame(function () { lb.classList.add("show"); });
+      document.body.style.overflow = "hidden";
+      document.getElementById("lbX").focus();
+    }
+    function close() {
+      lb.classList.remove("show");
+      setTimeout(function () { lb.classList.remove("open"); img.removeAttribute("src"); }, 260);
+      document.body.style.overflow = "";
+      if (lastFocus) lastFocus.focus();
+    }
+
+    items.forEach(function (a, i) {
+      a.setAttribute("role", "button");
+      a.removeAttribute("target");
+      a.addEventListener("click", function (e) { e.preventDefault(); open(i, a); });
+    });
+    document.getElementById("lbX").addEventListener("click", close);
+    document.getElementById("lbP").addEventListener("click", function () { show(idx - 1); });
+    document.getElementById("lbN").addEventListener("click", function () { show(idx + 1); });
+    lb.addEventListener("click", function (e) { if (e.target === lb) close(); });
+    document.addEventListener("keydown", function (e) {
+      if (!lb.classList.contains("open")) return;
+      if (e.key === "Escape") close();
+      if (e.key === "ArrowLeft") show(idx - 1);
+      if (e.key === "ArrowRight") show(idx + 1);
+    });
+    /* swipe on touch */
+    var x0 = null;
+    lb.addEventListener("touchstart", function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+    lb.addEventListener("touchend", function (e) {
+      if (x0 === null) return;
+      var dx = e.changedTouches[0].clientX - x0;
+      if (Math.abs(dx) > 50) show(idx + (dx < 0 ? 1 : -1));
+      x0 = null;
+    }, { passive: true });
+  }
+
+
+
   var els = document.querySelectorAll(".rv");
   if ("IntersectionObserver" in window) {
     var io = new IntersectionObserver(function (entries) {
