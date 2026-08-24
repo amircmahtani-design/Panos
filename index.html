@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Οδοντιατρείο Παπαντωνίου Παναγιώτης | Ανάβυσσος</title>
+<meta name="description" content="Οδοντιατρείο Παπαντωνίου Παναγιώτης στην Ανάβυσσο. Γενική και αισθητική οδοντιατρική, εμφυτεύματα, ορθοδοντική. Κλείστε ραντεβού.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath d='M24 7c-4 0-6.4 2.1-8.9 2.1-3.5 0-5.9 2.8-5.9 7.2 0 6 2 12.3 3.7 17 1.1 2.9 2 5.3 3.8 5.3 2.4 0 2.7-5.9 3.6-10.2.5-2.4 1.2-4 3.7-4s3.2 1.6 3.7 4c.9 4.3 1.2 10.2 3.6 10.2 1.8 0 2.7-2.4 3.8-5.3 1.7-4.7 3.7-11 3.7-17 0-4.4-2.4-7.2-5.9-7.2C30.4 9.1 28 7 24 7Z' fill='none' stroke='%2316A3A0' stroke-width='2.2'/%3E%3C/svg%3E">
+<style>
+:root{
+  --teal:#16A3A0;
+  --teal-dark:#0E8B88;
+  --teal-deep:#0A6E6C;
+  --teal-pale:#E4F3F4;
+  --ink:#16303B;
+  --ink-soft:#5C7480;
+  --line:#DCE9ED;
+  --bg:#F2F9FB;
+  --white:#fff;
+  --shadow-card:0 18px 50px rgba(22,48,59,.08);
+  --shadow-soft:0 6px 24px rgba(22,48,59,.06);
+  --maxw:1400px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}
+}
+body{
+  margin:0;font-family:'Inter',system-ui,sans-serif;color:var(--ink-soft);
+  background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden;font-size:15px;
+}
+h1,h2,h3,.serif{font-family:'Cormorant Garamond',Georgia,serif;color:var(--ink);margin:0;font-weight:500}
+p{margin:0}
+a{color:inherit;text-decoration:none}
+ul{margin:0;padding:0;list-style:none}
+img{max-width:100%;display:block}
+button{font-family:inherit;cursor:pointer}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:3px}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 46px}
+
+.eyebrow{
+  display:flex;align-items:center;gap:12px;font-size:11.5px;font-weight:600;
+  letter-spacing:.17em;text-transform:uppercase;color:var(--teal);margin-bottom:22px;
+}
+.eyebrow::before{content:"";width:26px;height:1.5px;background:var(--teal);flex:none}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  font-size:12px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;
+  padding:17px 32px;border-radius:999px;border:1.4px solid transparent;white-space:nowrap;
+  transition:background .25s,color .25s,border-color .25s,transform .25s,box-shadow .25s;
+}
+.btn svg{flex:none}
+.btn-solid{background:var(--teal);color:#fff;box-shadow:0 10px 26px rgba(22,163,160,.3)}
+.btn-solid:hover{background:var(--teal-dark);transform:translateY(-2px)}
+.btn-outline{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn-outline:hover{border-color:var(--teal);color:var(--teal-deep);transform:translateY(-2px)}
+.btn-sm{padding:14px 26px}
+
+/* ---------- header ---------- */
+header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:box-shadow .3s}
+header.scrolled{box-shadow:0 4px 24px rgba(22,48,59,.07)}
+.navbar{display:flex;align-items:center;justify-content:space-between;gap:30px;padding:20px 46px;max-width:var(--maxw);margin:0 auto}
+.logo{display:flex;align-items:center;gap:13px}
+.logo svg{flex:none}
+.logo .l1{font-size:9.5px;font-weight:600;letter-spacing:.19em;color:var(--teal);text-transform:uppercase;line-height:1.5}
+.logo .l2{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;letter-spacing:.06em;color:var(--ink);line-height:1.05;text-transform:uppercase}
+.logo .l3{font-size:9.5px;font-weight:500;letter-spacing:.22em;color:var(--teal);text-transform:uppercase;line-height:1.7}
+
+.menu{display:flex;align-items:center;gap:38px}
+.menu a{font-size:12px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--ink);padding-bottom:7px;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+.menu a:hover{color:var(--teal)}
+.menu a.active{color:var(--teal);border-color:var(--teal)}
+
+.burger{display:none;background:none;border:none;padding:8px}
+.burger span,.burger::before,.burger::after{content:'';display:block;width:24px;height:2px;background:var(--ink);border-radius:2px;transition:.25s}
+.burger span{margin:6px 0}
+.burger.open::before{transform:translateY(8px) rotate(45deg)}
+.burger.open::after{transform:translateY(-8px) rotate(-45deg)}
+.burger.open span{opacity:0}
+
+.drawer{position:fixed;inset:0;z-index:59;background:var(--white);padding:110px 34px 40px;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .35s cubic-bezier(.6,0,.2,1)}
+.drawer.open{transform:none}
+.drawer a{font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--ink);padding:15px 0;border-bottom:1px solid var(--line)}
+.drawer .btn{margin-top:28px}
+
+/* ---------- hero ---------- */
+.hero{position:relative;background:linear-gradient(160deg,#fff 0%,#fff 38%,#EAF5F8 100%);padding-top:60px}
+.hero-inner{position:relative;max-width:var(--maxw);margin:0 auto;padding:0 46px;display:grid;grid-template-columns:minmax(0,46%) minmax(0,54%);gap:0;align-items:center}
+.hero-copy{padding:20px 60px 110px 0;position:relative;z-index:2}
+.hero-copy h1{font-size:clamp(40px,3.9vw,58px);line-height:1.08;letter-spacing:-.005em}
+.rule{width:66px;height:2px;background:var(--teal);margin:30px 0 26px;border:0}
+.hero-copy p{font-size:16px;line-height:1.75;max-width:430px}
+.hero-btns{display:flex;gap:16px;margin-top:38px;flex-wrap:wrap}
+
+.hero-media{position:relative;height:598px}
+.hero-photo{
+  position:absolute;top:0;bottom:0;left:0;right:calc(-1 * max(46px, (100vw - 1400px)/2 + 46px));
+  border-radius:34% 0 0 12% / 46% 0 0 11%;
+  overflow:hidden;box-shadow:-30px 30px 70px rgba(22,48,59,.1);
+  background:linear-gradient(150deg,#CDE6EE,#8AB2B8 55%,#5C8A94);
+}
+.hero-photo img.ph{width:100%;height:100%;object-fit:cover;display:block;color:transparent;font-size:0}
+.hero-photo.noimg{background:linear-gradient(150deg,#CDE6EE,#8AB2B8 55%,#5C8A94)}
+.hero-photo.noimg img.ph{display:none}
+.hero-photo .swap{
+  position:absolute;left:50%;bottom:14px;transform:translateX(-50%);
+  font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.85);
+  background:rgba(10,110,108,.5);padding:6px 14px;border-radius:99px;font-weight:600;white-space:nowrap;
+}
+.dock{position:absolute;right:24px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:14px;z-index:5}
+.dock a{width:52px;height:52px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--teal);box-shadow:0 8px 22px rgba(22,48,59,.14);transition:.25s}
+.dock a:hover{background:var(--teal);color:#fff;transform:translateY(-3px)}
+
+/* ---------- trust bar ---------- */
+.trustwrap{position:relative;z-index:6;max-width:var(--maxw);margin:-62px auto 0;padding:0 46px}
+.trust{background:#fff;border-radius:22px;box-shadow:var(--shadow-card);display:grid;grid-template-columns:repeat(4,1fr);padding:34px 10px}
+.tcell{display:flex;gap:16px;padding:6px 34px;border-right:1px solid var(--line)}
+.tcell:last-child{border-right:none}
+.tcell .ic{color:var(--teal);flex:none;margin-top:2px}
+.tcell h3{font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--ink);margin-bottom:9px}
+.tcell p{font-size:13px;line-height:1.6;color:var(--ink-soft)}
+.tcell .star{color:#F0B429}
+
+/* ---------- sections ---------- */
+section{position:relative}
+.sec-pad{padding:130px 0}
+.bg-pale{background:var(--bg)}
+
+/* services : heading left, cards right */
+.services-inner{display:grid;grid-template-columns:minmax(0,33%) minmax(0,67%);gap:48px;align-items:center}
+.services-inner h2{font-size:clamp(32px,3.1vw,44px);line-height:1.15}
+.cards4{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.card{background:#fff;border-radius:16px;padding:36px 16px 32px;text-align:center;box-shadow:var(--shadow-soft);transition:transform .3s,box-shadow .3s}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow-card)}
+.card .ic{color:var(--teal);margin:0 auto 22px;display:flex;justify-content:center}
+.card h3{font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--ink);margin-bottom:12px;line-height:1.45;min-height:2.9em;display:flex;align-items:center;justify-content:center}
+.card p{font-size:12.5px;line-height:1.7;color:var(--ink-soft)}
+
+/* clinic */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.split h2{font-size:clamp(32px,3.2vw,46px);line-height:1.14}
+.split p.lead{font-size:15.5px;line-height:1.85;margin-top:22px}
+.ticks{margin-top:32px;display:flex;flex-direction:column;gap:16px}
+.ticks li{display:flex;gap:14px;font-size:14.5px;color:var(--ink);align-items:flex-start}
+.ticks svg{color:var(--teal);flex:none;margin-top:3px}
+.frame{border-radius:20px;overflow:hidden;box-shadow:var(--shadow-card);background:#E9F3F5;aspect-ratio:4/3}
+.frame img.ph{width:100%;height:100%;object-fit:cover;display:block;color:transparent;font-size:0}
+
+/* doctor */
+.doctor{background:#0F3038;color:rgba(255,255,255,.78)}
+.doctor h2{color:#fff}
+.doctor .eyebrow{color:#7FD4D0}
+.doctor .eyebrow::before{background:#7FD4D0}
+.docframe{aspect-ratio:1/1.12;border-radius:20px;background:linear-gradient(160deg,#12474A,#0A6E6C 60%,#16A3A0 130%);display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 30px 70px rgba(0,0,0,.3)}
+.docframe .mono{font-family:'Cormorant Garamond',serif;font-size:110px;color:rgba(255,255,255,.95);font-weight:500}
+.docframe .ring{position:absolute;inset:20px;border:1px dashed rgba(255,255,255,.3);border-radius:14px}
+.docframe .swap{position:absolute;bottom:18px;left:0;right:0;text-align:center;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.6);font-weight:600}
+.dname{font-family:'Cormorant Garamond',serif;font-size:30px;color:#fff;margin-top:26px}
+.drole{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#F0B429;font-weight:600;margin:8px 0 24px}
+.doctor p.bio{font-size:15px;line-height:1.9;margin-bottom:16px;color:rgba(255,255,255,.76)}
+.chips{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.chip{display:flex;align-items:center;gap:9px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:12px 18px;font-size:12.5px;font-weight:500;color:#fff}
+.chip svg{color:#F0B429;flex:none}
+
+/* reviews */
+.head-center{max-width:620px;margin:0 auto 60px;text-align:center}
+.head-center .eyebrow{justify-content:center}
+.head-center h2{font-size:clamp(32px,3.2vw,46px);line-height:1.15}
+.rev3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.rev{background:#fff;border-radius:16px;padding:34px 30px;box-shadow:var(--shadow-soft)}
+.rev .stars{display:flex;gap:3px;color:#F0B429;margin-bottom:18px}
+.rev q{font-family:'Cormorant Garamond',serif;font-size:19px;line-height:1.6;color:var(--ink);display:block;margin-bottom:20px;quotes:"«" "»"}
+.rev .who{font-size:12px;font-weight:600;color:var(--ink)}
+.rev .src{font-size:11px;color:#9BB0B8;margin-top:2px}
+
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:190px;gap:16px}
+.gal a{position:relative;overflow:hidden;border-radius:16px;background:#E4EFF1;box-shadow:var(--shadow-soft);display:block}
+.gal a:nth-child(1){grid-column:span 2;grid-row:span 2}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;color:transparent;font-size:0}
+.gal a:hover img{transform:scale(1.05)}
+@media (max-width:900px){.gal{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}.gal a:nth-child(1){grid-column:span 2;grid-row:span 1}}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.cbox{background:#fff;border-radius:20px;box-shadow:var(--shadow-card);padding:44px}
+.crow{display:flex;gap:18px;padding:20px 0;border-bottom:1px solid var(--line)}
+.crow:last-of-type{border-bottom:none}
+.crow .ic{color:var(--teal);flex:none;margin-top:3px}
+.crow h4{font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;color:#9BB0B8;font-weight:600;margin-bottom:6px}
+.crow p,.crow a{font-size:15px;color:var(--ink);font-weight:500;line-height:1.6}
+.crow a:hover{color:var(--teal)}
+.socials{display:flex;gap:12px;margin-top:26px}
+.socials a{width:44px;height:44px;border-radius:50%;border:1.4px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--ink);transition:.25s}
+.socials a:hover{background:var(--teal);border-color:var(--teal);color:#fff}
+.formwrap{margin-top:30px;border-top:1px solid var(--line);padding-top:28px}
+.formwrap h4{font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--ink);margin-bottom:18px;font-weight:600}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+input,textarea{width:100%;font-family:'Inter',sans-serif;font-size:14px;padding:14px 16px;border:1.4px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink)}
+input:focus,textarea:focus{outline:none;border-color:var(--teal);background:#fff}
+textarea{min-height:110px;resize:vertical;margin-bottom:16px}
+.map{border-radius:20px;overflow:hidden;box-shadow:var(--shadow-card);min-height:520px}
+.map iframe{width:100%;height:100%;min-height:520px;border:0;display:block}
+
+/* footer */
+footer{background:#0F3038;color:rgba(255,255,255,.65);padding:70px 0 28px}
+.fgrid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:44px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.12)}
+.fbrand{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.fbrand span{font-family:'Cormorant Garamond',serif;font-size:20px;color:#fff;letter-spacing:.04em}
+footer .tag{font-size:13.5px;line-height:1.8;max-width:290px}
+footer h5{color:#fff;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;margin-bottom:18px}
+footer li{margin-bottom:11px;font-size:13.5px}
+footer li a:hover{color:#7FD4D0}
+.fbot{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;padding-top:26px;font-size:12px}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.rv.on{opacity:1;transform:none}
+
+/* ---------- responsive ---------- */
+@media (max-width:1100px){
+  .wrap,.navbar,.hero-inner,.trustwrap{padding-left:32px;padding-right:32px}
+  .menu{gap:24px}
+  .menu a{font-size:11px}
+  .cards4{grid-template-columns:repeat(2,1fr)}
+  .services-inner{grid-template-columns:1fr;gap:40px}
+}
+@media (max-width:900px){
+  .menu,.header-btn{display:none}
+  .burger{display:block}
+  .hero{padding-top:0}
+  .hero-inner{grid-template-columns:1fr;min-height:0;gap:0}
+  .hero-media{order:-1;height:auto;min-height:0;margin:0 -32px}
+  .hero-photo{position:relative;inset:auto;right:auto;height:330px;border-radius:0 0 44% 44% / 0 0 14% 14%;box-shadow:none}
+  .hero-photo .swap{bottom:auto;top:12px}
+  .hero-copy{padding:44px 0 96px}
+  .hero-copy p{max-width:none}
+  .dock{right:16px;top:auto;bottom:-26px;transform:none;flex-direction:row}
+  .dock a{width:46px;height:46px}
+  .split{grid-template-columns:1fr;gap:44px}
+  .frame,.docframe{max-width:420px;margin:0 auto;width:100%}
+  .contact-grid{grid-template-columns:1fr}
+  .rev3{grid-template-columns:1fr;max-width:520px;margin:0 auto}
+  .fgrid{grid-template-columns:1fr 1fr}
+  .trust{grid-template-columns:1fr 1fr;padding:14px 6px}
+  .tcell{padding:20px 24px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .tcell:nth-child(2n){border-right:none}
+  .tcell:nth-child(n+3){border-bottom:none}
+  .sec-pad{padding:88px 0}
+}
+@media (max-width:600px){
+  .wrap,.navbar,.hero-inner,.trustwrap{padding-left:20px;padding-right:20px}
+  .hero-media{margin:0 -20px}
+  .hero-photo{height:260px}
+  .hero-btns{flex-direction:column}
+  .hero-btns .btn{width:100%}
+  .trust{grid-template-columns:1fr;padding:8px 4px}
+  .tcell{border-right:none!important;border-bottom:1px solid var(--line)!important;padding:20px 22px}
+  .tcell:last-child{border-bottom:none!important}
+  .cards4{grid-template-columns:1fr}
+  .fgrid{grid-template-columns:1fr;gap:32px}
+  .cbox{padding:30px 24px}
+  .frow{grid-template-columns:1fr}
+  .sec-pad{padding:70px 0}
+  .trustwrap{margin-top:-40px}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="navbar">
+    <a href="#home" class="logo">
+      <svg width="46" height="46" viewBox="0 0 48 48" fill="none">
+        <path d="M24 7c-4 0-6.4 2.1-8.9 2.1-3.5 0-5.9 2.8-5.9 7.2 0 6 2 12.3 3.7 17 1.1 2.9 2 5.3 3.8 5.3 2.4 0 2.7-5.9 3.6-10.2.5-2.4 1.2-4 3.7-4s3.2 1.6 3.7 4c.9 4.3 1.2 10.2 3.6 10.2 1.8 0 2.7-2.4 3.8-5.3 1.7-4.7 3.7-11 3.7-17 0-4.4-2.4-7.2-5.9-7.2C30.4 9.1 28 7 24 7Z" stroke="#16A3A0" stroke-width="2.1" stroke-linejoin="round"/>
+        <circle cx="18.5" cy="18" r="2.4" fill="#16A3A0"/>
+      </svg>
+      <span>
+        <span class="l1">Οδοντιατρειο</span><br>
+        <span class="l2">Παπαντωνίου</span><br>
+        <span class="l3">Παναγιώτης</span>
+      </span>
+    </a>
+
+    <nav class="menu" aria-label="Κύριο μενού">
+      <a href="#home" class="active">Αρχική</a>
+      <a href="#clinic">Το ιατρείο</a>
+      <a href="#services">Υπηρεσίες</a>
+      <a href="#doctor">Ο ιατρός</a>
+      <a href="#contact">Επικοινωνία</a>
+    </nav>
+
+    <a href="tel:+302291037444" class="btn btn-solid btn-sm header-btn">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="3" stroke="currentColor" stroke-width="1.7"/><path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+      Κλείστε ραντεβού
+    </a>
+
+    <button class="burger" id="burger" aria-label="Μενού" aria-expanded="false"><span></span></button>
+  </div>
+</header>
+
+<div class="drawer" id="drawer">
+  <a href="#home">Αρχική</a>
+  <a href="#clinic">Το ιατρείο</a>
+  <a href="#services">Υπηρεσίες</a>
+  <a href="#doctor">Ο ιατρός</a>
+  <a href="#contact">Επικοινωνία</a>
+  <a href="tel:+302291037444" class="btn btn-solid">Κλείστε ραντεβού</a>
+</div>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-copy rv">
+      <span class="eyebrow">Σύγχρονη οδοντιατρική φροντίδα</span>
+      <h1>Το χαμόγελό σας,<br>στα καλύτερα χέρια.</h1>
+      <hr class="rule">
+      <p>Συνδυάζουμε εμπειρία, τεχνολογία και ανθρώπινη προσέγγιση για ένα υγιές και φυσικό αποτέλεσμα που διαρκεί.</p>
+      <div class="hero-btns">
+        <a href="tel:+302291037444" class="btn btn-solid">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="3" stroke="currentColor" stroke-width="1.7"/><path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          Κλείστε ραντεβού
+        </a>
+        <a href="#clinic" class="btn btn-outline">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9.2" stroke="currentColor" stroke-width="1.5"/><path d="M10 8.6 15.4 12 10 15.4V8.6Z" fill="currentColor"/></svg>
+          Γνωρίστε το ιατρείο
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-media">
+      <div class="hero-photo">
+        <img class="ph" src="https://lh5.googleusercontent.com/p/AF1QipNMYJeW7d_mn7YtRcTnSOUkId0oJEjadIX2krrM=w1200-h900-k-no"
+             alt="Το οδοντιατρείο Παπαντωνίου στην Ανάβυσσο" loading="eager" decoding="async">
+      </div>
+
+      <div class="dock">
+        <a href="tel:+302291037444" aria-label="Τηλέφωνο">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#contact" aria-label="Τοποθεσία">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.6 7-11.6A7 7 0 0 0 5 9.4C5 14.4 12 21 12 21Z" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="9.4" r="2.4" stroke="currentColor" stroke-width="1.7"/></svg>
+        </a>
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none"><rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="3.6" stroke="currentColor" stroke-width="1.7"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="trustwrap rv">
+    <div class="trust">
+      <div class="tcell">
+        <span class="ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M12 3l7.5 3.2v5.4c0 4.7-3.1 8.4-7.5 9.6-4.4-1.2-7.5-4.9-7.5-9.6V6.2L12 3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M12 9v4.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="16.2" r=".9" fill="currentColor"/></svg></span>
+        <div><h3>Εμπειρία &amp; εμπιστοσύνη</h3><p>Πάνω από 4.6 <span class="star">★</span><br>σε 53 αξιολογήσεις Google</p></div>
+      </div>
+      <div class="tcell">
+        <span class="ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.5"/><path d="M4.6 20.4c1.1-3.9 3.9-6 7.4-6s6.3 2.1 7.4 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        <div><h3>Προσωπική φροντίδα</h3><p>Χρόνος για εσάς και τις<br>ανάγκες σας</p></div>
+      </div>
+      <div class="tcell">
+        <span class="ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M12 4.2c-2.4 0-3.9 1.3-5.4 1.3-2.1 0-3.5 1.7-3.5 4.3 0 3.6 1.2 7.4 2.2 10.2.7 1.8 1.2 3.2 2.3 3.2 1.4 0 1.6-3.5 2.1-6.1.3-1.4.7-2.4 2.3-2.4s1.9 1 2.2 2.4c.5 2.6.7 6.1 2.1 6.1 1.1 0 1.6-1.4 2.3-3.2 1-2.8 2.2-6.6 2.2-10.2 0-2.6-1.4-4.3-3.5-4.3-1.5 0-3-1.3-5.3-1.3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span>
+        <div><h3>Σύγχρονη τεχνολογία</h3><p>Εξοπλισμός τελευταίας<br>τεχνολογίας</p></div>
+      </div>
+      <div class="tcell">
+        <span class="ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M12 21.5s7.2-6.9 7.2-12A7.2 7.2 0 0 0 4.8 9.5c0 5.1 7.2 12 7.2 12Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="12" cy="9.4" r="2.5" stroke="currentColor" stroke-width="1.5"/></svg></span>
+        <div><h3>Ανάβυσσος</h3><p>Περικλέους, Ανάβυσσος<br>190 13</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section id="services" class="sec-pad">
+  <div class="wrap services-inner">
+    <div class="rv">
+      <span class="eyebrow">Υπηρεσίες</span>
+      <h2>Ολοκληρωμένες λύσεις<br>για κάθε χαμόγελο</h2>
+    </div>
+    <div class="cards4">
+      <div class="card rv">
+        <span class="ic"><svg width="42" height="42" viewBox="0 0 40 40" fill="none"><path d="M20 8c-3.4 0-5.5 1.8-7.6 1.8-3 0-4.9 2.4-4.9 6.1 0 5.1 1.7 10.4 3.1 14.4 1 2.5 1.7 4.5 3.2 4.5 2 0 2.2-5 3-8.6.4-2 1-3.4 3.2-3.4s2.7 1.4 3.1 3.4c.8 3.6 1 8.6 3 8.6 1.5 0 2.2-2 3.2-4.5 1.4-4 3.1-9.3 3.1-14.4 0-3.7-1.9-6.1-4.9-6.1C25.5 9.8 23.4 8 20 8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="27" cy="16" r="5.4" stroke="currentColor" stroke-width="1.6" fill="#fff"/><path d="M30.8 19.8 34 23" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+        <h3>Γενική οδοντιατρική</h3>
+        <p>Πρόληψη, διάγνωση και θεραπεία για υγιή δόντια και ούλα.</p>
+      </div>
+      <div class="card rv">
+        <span class="ic"><svg width="42" height="42" viewBox="0 0 40 40" fill="none"><path d="M20 8c-3.4 0-5.5 1.8-7.6 1.8-3 0-4.9 2.4-4.9 6.1 0 5.1 1.7 10.4 3.1 14.4 1 2.5 1.7 4.5 3.2 4.5 2 0 2.2-5 3-8.6.4-2 1-3.4 3.2-3.4s2.7 1.4 3.1 3.4c.8 3.6 1 8.6 3 8.6 1.5 0 2.2-2 3.2-4.5 1.4-4 3.1-9.3 3.1-14.4 0-3.7-1.9-6.1-4.9-6.1C25.5 9.8 23.4 8 20 8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M14.6 15.4 16.4 17.2 20 13.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h3>Αισθητική οδοντιατρική</h3>
+        <p>Λεύκανση, όψεις πορσελάνης και αισθητικές αποκαταστάσεις.</p>
+      </div>
+      <div class="card rv">
+        <span class="ic"><svg width="42" height="42" viewBox="0 0 40 40" fill="none"><path d="M13.2 12.6c0-4 3-6.9 6.8-6.9s6.8 2.9 6.8 6.9c0 2.6-1.3 4.4-3 5.4H16.2c-1.7-1-3-2.8-3-5.4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M20 18v16.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M15.6 21.4h8.8M16.2 25.4h7.6M16.8 29.4h6.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+        <h3>Εμφυτεύματα</h3>
+        <p>Σταθερές και φυσικές λύσεις που διαρκούν στον χρόνο.</p>
+      </div>
+      <div class="card rv">
+        <span class="ic"><svg width="42" height="42" viewBox="0 0 40 40" fill="none"><path d="M7 14q13-7 26 0" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" fill="none"/><path d="M6 22q14 8 28 0" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" fill="none"/><rect x="9" y="15.6" width="5.4" height="5.4" rx="1.3" stroke="currentColor" stroke-width="1.5" fill="#fff"/><rect x="17.3" y="16.9" width="5.4" height="5.4" rx="1.3" stroke="currentColor" stroke-width="1.5" fill="#fff"/><rect x="25.6" y="15.6" width="5.4" height="5.4" rx="1.3" stroke="currentColor" stroke-width="1.5" fill="#fff"/><path d="M20 28v5M14 31h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+        <h3>Ορθοδοντική</h3>
+        <p>Σύγχρονες μέθοδοι για ένα όμορφο και σωστό χαμόγελο.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CLINIC ================= -->
+<section id="clinic" class="sec-pad bg-pale">
+  <div class="wrap split">
+    <div class="frame rv">
+      <img class="ph" src="https://lh5.googleusercontent.com/p/AF1QipOqsdbK-IiRgrVqx74fj1I3Fausz_Q4e0F-CXnX=w1000-h750-k-no"
+           alt="Χώρος του οδοντιατρείου" loading="lazy" decoding="async">
+    </div>
+    <div class="rv">
+      <span class="eyebrow">Το ιατρείο</span>
+      <h2>Ένας χώρος φτιαγμένος<br>για να νιώθετε άνετα.</h2>
+      <p class="lead">Κάθε λεπτομέρεια στο οδοντιατρείο μας — από την υποδοχή έως την οδοντιατρική έδρα — έχει σχεδιαστεί γύρω από εσάς. Σύγχρονος εξοπλισμός, αυστηρά πρωτόκολλα υγιεινής και μια ήρεμη ατμόσφαιρα συνθέτουν μια εμπειρία φροντίδας χωρίς άγχος, για μικρούς και μεγάλους.</p>
+      <ul class="ticks">
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Σύγχρονος διαγνωστικός και θεραπευτικός εξοπλισμός</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Αυστηρά πρωτόκολλα αποστείρωσης και υγιεινής</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Φιλική, ήρεμη ατμόσφαιρα για όλη την οικογένεια</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DOCTOR ================= -->
+<section id="doctor" class="sec-pad doctor">
+  <div class="wrap split">
+    <div class="docframe rv">
+      <span class="mono">Π.Π</span>
+      <span class="ring"></span>
+      <span class="swap">Φωτογραφία ιατρού — προς αντικατάσταση</span>
+    </div>
+    <div class="rv">
+      <span class="eyebrow">Ο ιατρός</span>
+      <h2>Γνωρίστε τον<br>Δρ. Παπαντωνίου</h2>
+      <p class="dname">Δρ. Παναγιώτης Παπαντωνίου</p>
+      <p class="drole">Χειρουργός οδοντίατρος</p>
+      <p class="bio">Με σταθερή παρουσία στην Ανάβυσσο, ο Δρ. Παπαντωνίου έχει χτίσει τη φήμη του πάνω στην εμπιστοσύνη και την προσοχή στη λεπτομέρεια. Πιστεύει πως η καλή οδοντιατρική φροντίδα ξεκινά από την ειλικρινή επικοινωνία με τον ασθενή.</p>
+      <p class="bio">Κάθε θεραπεία σχεδιάζεται στα μέτρα του ανθρώπου απέναντί του, με σύγχρονες, τεκμηριωμένες μεθόδους και χωρίς βιασύνη — γιατί ένα χαμόγελο αξίζει τον χρόνο του.</p>
+      <div class="chips">
+        <span class="chip"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 7 1-5 5 1.2 7L12 18l-6.3 3.3 1.2-7-5-5 7-1L12 2Z"/></svg>4.6 ★ σε 53 αξιολογήσεις</span>
+        <span class="chip"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.6 7-11.6A7 7 0 0 0 5 9.4C5 14.4 12 21 12 21Z" stroke="currentColor" stroke-width="1.7"/></svg>Ανάβυσσος, Αττική</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REVIEWS ================= -->
+<section class="sec-pad">
+  <div class="wrap">
+    <div class="head-center rv">
+      <span class="eyebrow">Τι λένε οι ασθενείς μας</span>
+      <h2>Η εμπιστοσύνη σας, η<br>μεγαλύτερη επιβράβευσή μας</h2>
+    </div>
+    <div class="rev3">
+      <div class="rev rv">
+        <div class="stars">★★★★★</div>
+        <q>Είναι ο καλύτερος οδοντίατρος και άνθρωπος που έχω γνωρίσει.</q>
+        <div class="who">P. Z.</div><div class="src">Google Reviews</div>
+      </div>
+      <div class="rev rv">
+        <div class="stars">★★★★★</div>
+        <q>Άριστος στη διάγνωση και κοντά στον ασθενή μετά την επέμβαση.</q>
+        <div class="who">Γ. Ψ.</div><div class="src">Google Reviews</div>
+      </div>
+      <div class="rev rv">
+        <div class="stars">★★★★★</div>
+        <q>Εξαιρετικός γιατρός, μα ακόμα εξαιρετικότερος άνθρωπος.</q>
+        <div class="who">M. L.</div><div class="src">Google Reviews</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section id="gallery" class="sec-pad bg-pale">
+  <div class="wrap">
+    <div class="head-center rv">
+      <span class="eyebrow">Ο χώρος μας</span>
+      <h2>Μια ματιά στο ιατρείο</h2>
+    </div>
+    <div class="gal rv">
+        <a href="https://lh5.googleusercontent.com/p/AF1QipPfr2Gpwh_w5PtlFAW7ii9kt0kgpQi1ovyPG6xR=w1600-h1200-k-no" target="_blank" rel="noopener">
+          <img class="ph" src="https://lh5.googleusercontent.com/p/AF1QipPfr2Gpwh_w5PtlFAW7ii9kt0kgpQi1ovyPG6xR=w800-h600-k-no" alt="Το οδοντιατρείο Παπαντωνίου — εξωτερική όψη" loading="lazy" decoding="async">
+        </a>
+        <a href="https://lh5.googleusercontent.com/p/AF1QipPFE31MFOBRjaSlahHSDpc7eD1z2IywRzp4s_ot=w1600-h1200-k-no" target="_blank" rel="noopener">
+          <img class="ph" src="https://lh5.googleusercontent.com/p/AF1QipPFE31MFOBRjaSlahHSDpc7eD1z2IywRzp4s_ot=w800-h600-k-no" alt="Οδοντιατρείο Παπαντωνίου — χώρος υποδοχής" loading="lazy" decoding="async">
+        </a>
+        <a href="https://lh5.googleusercontent.com/p/AF1QipNlb0CGYm-Nz4r0Pyt1-2L_fytsTPSemoeBrccx=w1600-h1200-k-no" target="_blank" rel="noopener">
+          <img class="ph" src="https://lh5.googleusercontent.com/p/AF1QipNlb0CGYm-Nz4r0Pyt1-2L_fytsTPSemoeBrccx=w800-h600-k-no" alt="Οδοντιατρείο Παπαντωνίου — ο χώρος" loading="lazy" decoding="async">
+        </a>
+        <a href="https://lh5.googleusercontent.com/p/AF1QipM9qMUSAlw5WVDeFkTb_DnUipPoISKbAj0LU4R3=w1600-h1200-k-no" target="_blank" rel="noopener">
+          <img class="ph" src="https://lh5.googleusercontent.com/p/AF1QipM9qMUSAlw5WVDeFkTb_DnUipPoISKbAj0LU4R3=w800-h600-k-no" alt="Οδοντιατρείο Παπαντωνίου — εξοπλισμός" loading="lazy" decoding="async">
+        </a>
+        <a href="https://lh5.googleusercontent.com/p/AF1QipPRb6K2AMgW5zvLJu8zmpQjLdNgDocAbKXhBKT-=w1600-h1200-k-no" target="_blank" rel="noopener">
+          <img class="ph" src="https://lh5.googleusercontent.com/p/AF1QipPRb6K2AMgW5zvLJu8zmpQjLdNgDocAbKXhBKT-=w800-h600-k-no" alt="Οδοντιατρείο Παπαντωνίου — λεπτομέρεια χώρου" loading="lazy" decoding="async">
+        </a>
+</div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="sec-pad">
+  <div class="wrap">
+    <div class="head-center rv">
+      <span class="eyebrow">Επικοινωνία</span>
+      <h2>Κλείστε το ραντεβού σας σήμερα</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="cbox rv">
+        <div class="crow">
+          <span class="ic"><svg width="21" height="21" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.6 7-11.6A7 7 0 0 0 5 9.4C5 14.4 12 21 12 21Z" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="9.4" r="2.4" stroke="currentColor" stroke-width="1.7"/></svg></span>
+          <div><h4>Διεύθυνση</h4><p>Περικλέους, Ανάβυσσος 190 13</p></div>
+        </div>
+        <div class="crow">
+          <span class="ic"><svg width="21" height="21" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span>
+          <div><h4>Τηλέφωνο</h4><a href="tel:+302291037444">22910 37444</a></div>
+        </div>
+        <div class="crow">
+          <span class="ic"><svg width="21" height="21" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M12 7v5.4l3.4 2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+          <div><h4>Ωράριο</h4><p>Δευτέρα – Σάββατο: 08:30 – 13:30<br>Κυριακή: κλειστά</p></div>
+        </div>
+        <div class="socials">
+          <a href="tel:+302291037444" aria-label="Τηλέφωνο"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8Z" stroke="currentColor" stroke-width="1.7"/></svg></a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="3.6" stroke="currentColor" stroke-width="1.7"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"/></svg></a>
+          <a href="https://www.google.com/maps/search/?api=1&query=37.7375018,23.9472415" target="_blank" rel="noopener" aria-label="Χάρτης"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.6 7-11.6A7 7 0 0 0 5 9.4C5 14.4 12 21 12 21Z" stroke="currentColor" stroke-width="1.7"/></svg></a>
+        </div>
+        <div class="formwrap">
+          <h4>Στείλτε μας μήνυμα</h4>
+          <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="contact">
+            <p style="display:none"><label>Αγνοήστε: <input name="bot-field"></label></p>
+            <div class="frow">
+              <input type="text" name="name" placeholder="Ονοματεπώνυμο" required>
+              <input type="tel" name="phone" placeholder="Τηλέφωνο" required>
+            </div>
+            <textarea name="message" placeholder="Το μήνυμά σας..." required></textarea>
+            <button type="submit" class="btn btn-solid" style="width:100%">Αποστολή μηνύματος</button>
+          </form>
+        </div>
+      </div>
+      <div class="map rv">
+        <iframe src="https://www.google.com/maps?q=37.7375018,23.9472415&hl=el&z=17&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Χάρτης"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <div class="fbrand">
+          <svg width="34" height="34" viewBox="0 0 48 48" fill="none"><path d="M24 7c-4 0-6.4 2.1-8.9 2.1-3.5 0-5.9 2.8-5.9 7.2 0 6 2 12.3 3.7 17 1.1 2.9 2 5.3 3.8 5.3 2.4 0 2.7-5.9 3.6-10.2.5-2.4 1.2-4 3.7-4s3.2 1.6 3.7 4c.9 4.3 1.2 10.2 3.6 10.2 1.8 0 2.7-2.4 3.8-5.3 1.7-4.7 3.7-11 3.7-17 0-4.4-2.4-7.2-5.9-7.2C30.4 9.1 28 7 24 7Z" stroke="#7FD4D0" stroke-width="2.1"/></svg>
+          <span>Παπαντωνίου Παναγιώτης</span>
+        </div>
+        <p class="tag">Οδοντιατρείο στην Ανάβυσσο, αφιερωμένο στην προσωπική φροντίδα και τη σύγχρονη οδοντιατρική.</p>
+      </div>
+      <div><h5>Πλοήγηση</h5><ul>
+        <li><a href="#home">Αρχική</a></li><li><a href="#clinic">Το ιατρείο</a></li>
+        <li><a href="#services">Υπηρεσίες</a></li><li><a href="#doctor">Ο ιατρός</a></li><li><a href="#gallery">Ο χώρος μας</a></li></ul></div>
+      <div><h5>Υπηρεσίες</h5><ul>
+        <li><a href="#services">Γενική οδοντιατρική</a></li><li><a href="#services">Αισθητική οδοντιατρική</a></li>
+        <li><a href="#services">Εμφυτεύματα</a></li><li><a href="#services">Ορθοδοντική</a></li></ul></div>
+      <div><h5>Επικοινωνία</h5><ul>
+        <li>Περικλέους, Ανάβυσσος 190 13</li>
+        <li><a href="tel:+302291037444">22910 37444</a></li>
+        <li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li></ul></div>
+    </div>
+    <div class="fbot">
+      <span>© 2026 Οδοντιατρείο Παπαντωνίου Παναγιώτης</span>
+      <span>Ανάβυσσος, Αττική</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const hdr=document.getElementById('hdr');
+addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>8),{passive:true});
+
+const burger=document.getElementById('burger'),drawer=document.getElementById('drawer');
+const close=()=>{burger.classList.remove('open');drawer.classList.remove('open');burger.setAttribute('aria-expanded','false');document.body.style.overflow=''};
+burger.addEventListener('click',()=>{
+  const o=drawer.classList.toggle('open');
+  burger.classList.toggle('open',o);
+  burger.setAttribute('aria-expanded',o);
+  document.body.style.overflow=o?'hidden':'';
+});
+drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',close));
+
+const secs=['home','clinic','services','doctor','contact'].map(i=>document.getElementById(i));
+const links=document.querySelectorAll('.menu a');
+const sync=()=>{let cur='home';secs.forEach(s=>{if(s&&scrollY+150>=s.offsetTop)cur=s.id});
+  links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+cur))};
+addEventListener('scroll',sync,{passive:true});sync();
+
+document.querySelectorAll('img.ph').forEach(img=>{
+  img.addEventListener('error',()=>{
+    const hero=img.closest('.hero-photo');
+    if(hero){hero.classList.add('noimg');return;}
+    const cell=img.closest('a'); if(cell) cell.remove(); else img.remove();
+  });
+});
+
+const els=document.querySelectorAll('.rv');
+if('IntersectionObserver'in window){
+  const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.1});
+  els.forEach(e=>io.observe(e));
+}else els.forEach(e=>e.classList.add('on'));
+</script>
+</body>
+</html>
