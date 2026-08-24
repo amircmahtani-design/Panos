@@ -13,6 +13,11 @@ const EN = {
   "nav.contact": "Contact",
   "cta.book": "Book an appointment",
   "logo.top": "Dental Practice",
+  "logo.name": "Papantoniou",
+  "logo.first": "Panagiotis",
+  "ft.brand": "Papantoniou Panagiotis",
+  "dr.mono": "P.P",
+  "rev.2.who": "G. Ps.",
   "cta.call": "Call us",
 
   /* --- home --- */
