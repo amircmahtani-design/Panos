@@ -12,7 +12,7 @@
   --maxw:1400px;
 }
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:hidden}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}
@@ -122,7 +122,8 @@ header.scrolled{box-shadow:0 4px 24px rgba(22,48,59,.07)}
 /* ---------- page banner (sub pages) ---------- */
 .banner{background:linear-gradient(160deg,#fff,#EAF5F8);padding:64px 0 72px;border-bottom:1px solid var(--line)}
 .banner .eyebrow{justify-content:center}
-.banner-in{max-width:760px;margin:0 auto;text-align:center;padding:0 24px}
+.banner-in{max-width:var(--maxw);margin:0 auto;text-align:left;padding:0 46px}
+.banner-in p{max-width:620px}
 .banner h1{font-size:clamp(34px,4vw,54px);line-height:1.1}
 .banner p{margin-top:18px;font-size:16px;line-height:1.75}
 .crumb{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#9BB0B8;margin-bottom:18px}
@@ -142,10 +143,9 @@ header.scrolled{box-shadow:0 4px 24px rgba(22,48,59,.07)}
 section{position:relative}
 .sec-pad{padding:120px 0}
 .bg-pale{background:var(--bg)}
-.head-center{max-width:640px;margin:0 auto 58px;text-align:center}
-.head-center .eyebrow{justify-content:center}
-.head-center h2{font-size:clamp(30px,3.2vw,44px);line-height:1.15}
-.head-center p{margin-top:16px;font-size:15.5px;line-height:1.8}
+.head{max-width:660px;margin:0 0 58px;text-align:left}
+.head h2{font-size:clamp(30px,3.2vw,44px);line-height:1.15}
+.head p{margin-top:16px;font-size:15.5px;line-height:1.8}
 
 /* services */
 .services-inner{display:grid;grid-template-columns:minmax(0,33%) minmax(0,67%);gap:48px;align-items:center}
@@ -255,16 +255,16 @@ footer li a:hover{color:#7FD4D0}
 
 /* ---------- responsive ---------- */
 @media (max-width:1150px){
-  .wrap,.navbar,.hero-inner,.trustwrap{padding-left:32px;padding-right:32px}
-  .menu{gap:22px}
-  .menu a{font-size:11px;letter-spacing:.08em}
+  .wrap,.navbar,.hero-inner,.trustwrap,.banner-in{padding-left:32px;padding-right:32px}
+  .menu,.hgroup .btn,.hgroup .lang{display:none}
+  .burger{display:block}
+  .callbar{display:flex}
+  body{padding-bottom:44px}
   .cards4{grid-template-columns:repeat(2,1fr)}
   .services-inner{grid-template-columns:1fr;gap:40px}
   .cards3{grid-template-columns:1fr 1fr}
 }
 @media (max-width:960px){
-  .menu,.hgroup .btn,.hgroup .lang{display:none}
-  .burger{display:block}
   .hero{padding-top:0}
   .hero-inner{grid-template-columns:1fr}
   /* let the photo keep a sane aspect ratio instead of a fixed height, so it isn't half-cropped */
@@ -290,7 +290,7 @@ footer li a:hover{color:#7FD4D0}
   .gal a:nth-child(8){grid-column:span 2}
 }
 @media (max-width:620px){
-  .wrap,.navbar,.hero-inner,.trustwrap{padding-left:20px;padding-right:20px}
+  .wrap,.navbar,.hero-inner,.trustwrap,.banner-in{padding-left:20px;padding-right:20px}
   .navbar{padding-top:14px;padding-bottom:14px}
   .logo .l2{font-size:21px}
   .hero-media{margin:0 -20px}
@@ -375,3 +375,5 @@ footer li a:hover{color:#7FD4D0}
 .map-link:hover .map-pill{background:var(--teal);color:#fff;transform:translateY(-2px)}
 .map-link:hover .map-pill svg{color:#fff}
 .map-link:focus-visible{outline:3px solid var(--teal);outline-offset:-3px}
+
+.h1-page{font-size:clamp(30px,3.2vw,44px);line-height:1.15}
