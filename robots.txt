@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /studio/
 
 Sitemap: https://papantonioudental.gr/sitemap.xml

@@ -1,201 +1,235 @@
 /* ============================================================
-   Οδοντιατρείο Παπαντωνίου — shared behaviour
-   Greek is the source language (written directly in the HTML).
-   English is applied on top via the dictionary below when ?lang=en
+   Οδοντιατρικό Κέντρο Παπαντωνίου — shared behaviour
+
+   Every editable string, the opening hours, the team members and
+   the image choices live in content.json.
+   Edit them at /studio/ and export a new content.json.
+
+   If content.json is missing or fails to load, the Greek written
+   directly into the HTML still shows, so the site never breaks.
    ============================================================ */
 
-const EN = {
-  /* --- navigation / chrome --- */
-  "nav.home": "Home",
-  "nav.clinic": "The Practice",
-  "nav.services": "Services",
-  "nav.doctor": "The Dentist",
-  "nav.contact": "Contact",
-  "cta.book": "Book an appointment",
-  "cta.callnow": "Call to book",
-  "skip": "Skip to content",
-  "lb.of": "of",
-  "map.directions": "Get directions",
-  "map.aria": "Directions to the clinic, opens in Google Maps",
-  "e404.title": "Page not found | Papantoniou Dental Centre",
-  "e404.eyebrow": "Error 404",
-  "e404.h": "Page not found",
-  "e404.p": "The page you asked for does not exist or has moved. Return to the homepage, or give us a call.",
-  "e404.btn": "Back to homepage",
-  "ty.title": "Thank you | Papantoniou Dental Centre",
-  "ty.eyebrow": "Thank you",
-  "ty.h": "Your message has been sent",
-  "ty.p": "Thank you for getting in touch. We will reply as soon as possible. For anything urgent, please call us on 22910 37444.",
-  "ty.btn": "Back to homepage",
-  "logo.top": "Dental Centre",
-  "logo.name": "Papantoniou",
-  "logo.first": "Panagiotis",
-  "ft.brand": "Papantoniou Dental Centre",
-  "dr.mono": "P.P",
-  "rev.2.who": "G. Ps.",
-  "cta.call": "Call us",
-
-  /* --- home --- */
-  "home.title": "Papantoniou Dental Centre | Anavyssos",
-  "home.eyebrow": "Modern dental care",
-  "home.h1a": "Your smile,",
-  "home.h1b": "in the best hands",
-  "home.lede": "We combine experience, technology and a human approach for a healthy, natural result that lasts.",
-  "home.discover": "Discover the practice",
-
-  "trust.1.h": "Experience & trust",
-  "trust.1.p1": "Over 4.6",
-  "trust.1.p2": "across 46 Google reviews",
-  "trust.2.h": "Personal care",
-  "trust.2.p": "Time for you and your needs",
-  "trust.3.h": "Modern technology",
-  "trust.3.p": "Latest-generation equipment",
-  "trust.4.h": "Anavyssos",
-  "trust.4.p": "Perikleous, Anavyssos 190 13",
-
-  "home.services.eyebrow": "Services",
-  "home.services.h2a": "Complete solutions",
-  "home.services.h2b": "for every smile",
-  "home.services.more": "All services",
-
-  "home.about.eyebrow": "The practice",
-  "home.about.h2a": "A space built",
-  "home.about.h2b": "for you to feel at ease",
-  "home.about.p": "Every detail in our practice — from reception to the dental chair — is designed around you. Modern equipment, strict hygiene protocols and a calm atmosphere make for stress-free care, for children and adults alike.",
-  "home.about.more": "More about the practice",
-
-  "cta.h2": "Book your appointment today",
-  "cta.p": "Call us or send a message — we would be glad to welcome you to our practice in Anavyssos.",
-  "cta.contact": "Contact details",
-
-  /* --- services --- */
-  "srv.title": "Services | Papantoniou Dental Centre",
-  "srv.h1": "Complete solutions for every smile",
-  "srv.lede": "From prevention through to the most complex restorations, we cover every dental need under one roof.",
-  "tr.sec.e": "Our treatments",
-  "tr.sec.h": "What we cover",
-  "srv.1.h": "Cosmetic dentistry",
-  "srv.1.p": "Whitening, veneers and aesthetic restorations, with a natural result.",
-  "srv.2.h": "Implantology",
-  "srv.2.p": "Stable replacement of missing teeth, designed to last.",
-  "srv.3.h": "Paediatric dentistry",
-  "srv.3.p": "Gentle, friendly care so children feel at ease from the first visit.",
-  "srv.4.h": "Panoramic radiography",
-  "srv.4.p": "Digital panoramic imaging for accurate diagnosis, on site at the clinic.",
-
-  /* --- clinic --- */
-  "cl.title": "The Practice | Papantoniou Dental Centre",
-  "cl.h1": "A space built for you to feel at ease",
-  "cl.lede": "Modern equipment, strict hygiene protocols and a calm atmosphere — in the heart of Anavyssos.",
-  "cl.s1.eyebrow": "Our approach",
-  "cl.s1.h2a": "Care without",
-  "cl.s1.h2b": "the anxiety",
-  "cl.s1.p": "Every detail in our practice — from reception to the dental chair — is designed around you. We take the time to explain each step before anything happens, so you always know exactly what to expect.",
-  "cl.t1": "Modern diagnostic and treatment equipment",
-  "cl.t2": "Strict sterilisation and hygiene protocols",
-  "cl.t3": "A friendly, calm atmosphere for the whole family",
-  "cl.t4": "Clear explanation and costing before treatment begins",
-  "cl.gal.eyebrow": "Our space",
-  "cl.gal.h2": "A look inside the practice",
-  "cl.gal.p": "Photographs from our practice on Perikleous street in Anavyssos.",
-
-  /* --- doctor --- */
-  "dr.title": "The Dentist | Papantoniou Dental Centre",
-  "dr.h1": "Meet Dr. Papantoniou",
-  "dr.lede": "Experience, precision and a genuine interest in the person in the chair.",
-  "dr.eyebrow": "The dentist",
-  "dr.h2": "Experience and attention to detail",
-  "dr.name": "Dr. Panagiotis Papantoniou",
-  "dr.role": "Dental surgeon",
-  "dr.bio1": "A long-standing presence in Anavyssos, Dr. Papantoniou has built his reputation on trust and attention to detail. He believes good dental care starts with honest communication with the patient.",
-  "dr.bio2": "Every treatment is tailored to the person in front of him, using modern, evidence-based methods and without rushing — because a smile deserves the time it takes.",
-  "dr.chip1": "4.6 ★ across 46 reviews",
-  "dr.chip2": "Anavyssos, Attica",
-  "dr.photo": "Photograph of the dentist — to be added",
-  "rev.eyebrow": "What our patients say",
-  "rev.h2a": "Your trust is our",
-  "rev.h2b": "greatest reward",
-  "rev.1": "He is the best dentist and the best person I have met.",
-  "rev.2": "Excellent at diagnosis, and there for the patient after the procedure.",
-  "rev.3": "An excellent dentist, and an even more excellent human being.",
-  "rev.src": "Google Reviews",
-
-  /* --- contact --- */
-  "ct.title": "Contact | Papantoniou Dental Centre",
-  "ct.h1": "Book your appointment",
-  "ct.lede": "Call us or send a message — we would be glad to welcome you to our practice in Anavyssos.",
-  "ct.sec.e": "Details",
-  "ct.sec.h": "Where to find us",
-  "ct.address": "Address",
-  "ct.phone": "Phone",
-  "ct.hours": "Opening hours",
-  "ct.hours.mon": "Monday",
-  "ct.hours.tue": "Tuesday",
-  "ct.hours.wed": "Wednesday",
-  "ct.hours.thu": "Thursday",
-  "ct.hours.fri": "Friday",
-  "ct.hours.sat": "Saturday",
-  "ct.hours.sun": "Sunday",
-  "ct.closed": "Closed",
-  "ct.form.h": "Send us a message",
-  "ct.form.name": "Full name",
-  "ct.form.phone": "Phone",
-  "ct.form.msg": "Your message...",
-  "ct.form.send": "Send message",
-  "ct.map": "Map",
-
-  /* --- footer --- */
-  "ft.tag": "A dental practice in Anavyssos, dedicated to personal care and modern dentistry.",
-  "ft.nav": "Navigation",
-  "ft.services": "Services",
-  "ft.contact": "Contact",
-  "ft.rights": "© 2026 Papantoniou Dental Centre",
-  "ft.place": "Anavyssos, Attica"
-};
+window.SITE = { content: null, lang: "el" };
 
 (function () {
   "use strict";
 
-  /* ---------- language ---------- */
   var params = new URLSearchParams(window.location.search);
   var lang = params.get("lang") === "en" ? "en" : "el";
+  window.SITE.lang = lang;
+  if (lang === "en") document.documentElement.lang = "en";
 
-  function applyEnglish() {
-    document.documentElement.lang = "en";
-
-    document.querySelectorAll("[data-i18n]").forEach(function (el) {
-      var v = EN[el.getAttribute("data-i18n")];
-      if (v != null) el.textContent = v;
-    });
-    document.querySelectorAll("[data-i18n-placeholder]").forEach(function (el) {
-      var v = EN[el.getAttribute("data-i18n-placeholder")];
-      if (v != null) el.setAttribute("placeholder", v);
-    });
-    document.querySelectorAll("[data-i18n-aria]").forEach(function (el) {
-      var v = EN[el.getAttribute("data-i18n-aria")];
-      if (v != null) el.setAttribute("aria-label", v);
-    });
-    document.querySelectorAll("[data-i18n-alt]").forEach(function (el) {
-      var v = EN[el.getAttribute("data-i18n-alt")];
-      if (v != null) el.setAttribute("alt", v);
-    });
-    var t = document.body.getAttribute("data-title-key");
-    if (t && EN[t]) document.title = EN[t];
+  function pick(entry) {
+    if (!entry) return null;
+    var v = entry[lang];
+    if (v === undefined || v === null || v === "") v = entry.el;
+    return v;
   }
 
-  /* keep ?lang=en across internal navigation */
+  function esc(s) {
+    return String(s).replace(/[&<>"]/g, function (m) {
+      return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[m];
+    });
+  }
+
+  /* ---------------- content ---------------- */
+
+  function applyStrings(c) {
+    var S = c.strings || {};
+    document.querySelectorAll("[data-i18n]").forEach(function (el) {
+      var v = pick(S[el.getAttribute("data-i18n")]);
+      if (v == null || v === "") return;
+      if (v.indexOf("<br>") > -1) el.innerHTML = v; else el.textContent = v;
+    });
+    [["data-i18n-placeholder", "placeholder"],
+     ["data-i18n-aria", "aria-label"],
+     ["data-i18n-alt", "alt"]].forEach(function (p) {
+      document.querySelectorAll("[" + p[0] + "]").forEach(function (el) {
+        var v = pick(S[el.getAttribute(p[0])]);
+        if (v != null && v !== "") el.setAttribute(p[1], v);
+      });
+    });
+    var k = document.body.getAttribute("data-title-key");
+    if (k && S[k]) { var tv = pick(S[k]); if (tv) document.title = tv; }
+  }
+
+  function applyContact(c) {
+    var ct = c.contact || {};
+    if (ct.phoneTel) {
+      document.querySelectorAll('a[href^="tel:"]').forEach(function (a) {
+        a.setAttribute("href", "tel:" + ct.phoneTel);
+      });
+    }
+    var set = function (sel, fn) { document.querySelectorAll(sel).forEach(fn); };
+    set("[data-c=phone]", function (e) { if (ct.phoneDisplay) e.textContent = ct.phoneDisplay; });
+    set("[data-c=address]", function (e) {
+      var v = lang === "en" ? (ct.addressEn || ct.addressEl) : ct.addressEl;
+      if (v) e.textContent = v;
+    });
+    set("[data-c=instagram]", function (e) { if (ct.instagram) e.href = ct.instagram; });
+    set("[data-c=reviews]", function (e) { if (ct.reviewsUrl) e.href = ct.reviewsUrl; });
+    set("[data-c=directions]", function (e) { if (ct.mapsDirections) e.href = ct.mapsDirections; });
+    set("[data-c=rating]", function (e) { if (ct.rating) e.textContent = ct.rating; });
+    set("[data-c=reviewCount]", function (e) { if (ct.reviewCount) e.textContent = ct.reviewCount; });
+    var mf = document.querySelector(".map iframe");
+    if (mf && ct.mapsEmbed) mf.setAttribute("src", ct.mapsEmbed);
+  }
+
+  function applyHours(c) {
+    var box = document.querySelector("[data-c=hours]");
+    if (!box || !c.hours || !c.hours.length) return;
+    var closedLabel = pick((c.strings || {})["d.closed"]) || "Κλειστά";
+    box.innerHTML = c.hours.map(function (h) {
+      var day = (h.day && (h.day[lang] || h.day.el)) || "";
+      var val = h.closed
+        ? '<span class="shut">' + esc(closedLabel) + "</span>"
+        : "<span>" + esc(h.value || "") + "</span>";
+      return '<li><span class="day">' + esc(day) + "</span>" + val + "</li>";
+    }).join("");
+  }
+
+  function applyImages(c) {
+    if (!c.images) return;
+    document.querySelectorAll("[data-img]").forEach(function (el) {
+      var rec = c.images[el.getAttribute("data-img")];
+      if (!rec || !rec.src) return;
+      if (el.tagName === "IMG") {
+        el.setAttribute("src", rec.src);
+        if (rec.src.indexOf("data:") === 0) {
+          el.removeAttribute("width"); el.removeAttribute("height");
+        }
+      } else {
+        el.setAttribute("href", rec.src);
+      }
+    });
+  }
+
+  function applyBrand(c) {
+    if (!c.brand || !c.brand.useCustomLogo || !c.brand.logo) return;
+    document.querySelectorAll(".logo > svg, footer .fbrand > svg").forEach(function (svg) {
+      var w = svg.getAttribute("width") || 44;
+      var img = document.createElement("img");
+      img.src = c.brand.logo;
+      img.alt = "";
+      img.setAttribute("aria-hidden", "true");
+      img.style.cssText = "width:" + w + "px;height:auto;flex:none";
+      svg.replaceWith(img);
+    });
+  }
+
+  function applyTeam(c) {
+    var grid = document.querySelector("[data-c=team]");
+    if (!grid || !c.team || !c.team.length) return;
+    grid.innerHTML = c.team.map(function (m) {
+      var name = (m.name && (m.name[lang] || m.name.el)) || "";
+      var role = (m.role && (m.role[lang] || m.role.el)) || "";
+      var bio = (m.bio && (m.bio[lang] || m.bio.el)) || "";
+      var photo = m.photo
+        ? '<img src="' + m.photo + '" alt="' + esc(name) + '" loading="lazy">'
+        : '<span class="member-ph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" width="36" height="36">' +
+          '<circle cx="12" cy="8.4" r="4.2" stroke="currentColor" stroke-width="1.3"/>' +
+          '<path d="M4.8 20.4c1.1-4 3.9-6.2 7.2-6.2s6.1 2.2 7.2 6.2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span>';
+      return '<article class="member">' +
+             '<div class="member-photo">' + photo + "</div>" +
+             '<h3 class="member-name">' + esc(name) + "</h3>" +
+             '<p class="member-role">' + esc(role) + "</p>" +
+             '<p class="member-bio">' + esc(bio) + "</p></article>";
+    }).join("");
+  }
+
+
+  var ICONS = {
+    aes:'<svg width="34" height="34" viewBox="0 0 40 40" fill="none"><path d="M20 9c-3.2 0-5.2 1.7-7.2 1.7-2.8 0-4.6 2.3-4.6 5.8 0 4.8 1.6 9.8 2.9 13.6.9 2.3 1.6 4.2 3 4.2 1.9 0 2.1-4.7 2.8-8.1.4-1.9 1-3.2 3.1-3.2s2.6 1.3 3 3.2c.7 3.4.9 8.1 2.8 8.1 1.4 0 2.1-1.9 3-4.2 1.3-3.8 2.9-8.8 2.9-13.6 0-3.5-1.8-5.8-4.6-5.8C25.2 10.7 23.2 9 20 9Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="m14.6 16.2 1.7 1.7 3.4-3.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    imp:'<svg width="34" height="34" viewBox="0 0 40 40" fill="none"><path d="M13.6 13.2c0-3.7 2.8-6.4 6.4-6.4s6.4 2.7 6.4 6.4c0 2.5-1.2 4.2-2.8 5.1H16.4c-1.6-.9-2.8-2.6-2.8-5.1Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M20 18.3v15.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M16 21.4h8M16.5 25.2h7M17 29h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>',
+    kid:'<svg width="34" height="34" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="14.5" r="7.5" stroke="currentColor" stroke-width="1.5"/><path d="M16.6 13h.02M23.4 13h.02" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><path d="M16.6 16.8q3.4 3 6.8 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M8 34c1.7-5.6 6.2-8.6 12-8.6S30.3 28.4 32 34" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>',
+    xray:'<svg width="34" height="34" viewBox="0 0 40 40" fill="none"><path d="M6 20a14 14 0 0 1 28 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M11 22v5.5a3 3 0 0 0 3 3h2.4a3 3 0 0 0 3-2.7l.6-5.8M29 22v5.5a3 3 0 0 1-3 3h-2.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><rect x="14" y="14" width="12" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/></svg>'
+  };
+
+  function paras(txt){
+    return String(txt||"").split(/\n\s*\n/).map(function(p){
+      return "<p>" + esc(p.trim()).replace(/\n/g,"<br>") + "</p>";
+    }).join("");
+  }
+
+  function applyTreatments(c){
+    var box = document.querySelector("[data-c=treatments]");
+    if (!box || !c.treatments) return;
+    var S = c.strings || {};
+    var more = pick(S["tr.detail.open"]) || "Περισσότερα";
+    var less = pick(S["tr.detail.close"]) || "Λιγότερα";
+    box.innerHTML = c.treatments.map(function (t, i) {
+      var title = (t.title && (t.title[lang] || t.title.el)) || "";
+      var short = (t.short && (t.short[lang] || t.short.el)) || "";
+      var det   = (t.detail && (t.detail[lang] || t.detail.el)) || "";
+      return '<div class="tr-item">' +
+        '<button class="tr-head" aria-expanded="false" aria-controls="trd' + i + '">' +
+          '<span class="tr-ic">' + (ICONS[t.icon] || "") + "</span>" +
+          '<span class="tr-txt"><span class="tr-title">' + esc(title) + "</span>" +
+          '<span class="tr-short">' + esc(short) + "</span></span>" +
+          '<span class="tr-more"><span class="lbl" data-more="' + esc(more) + '" data-less="' + esc(less) + '">' + esc(more) + "</span>" +
+          '<svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>' +
+        "</button>" +
+        '<div class="tr-detail" id="trd' + i + '" hidden>' + paras(det) + "</div></div>";
+    }).join("");
+    box.querySelectorAll(".tr-head").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var open = b.getAttribute("aria-expanded") === "true";
+        b.setAttribute("aria-expanded", String(!open));
+        b.parentNode.querySelector(".tr-detail").hidden = open;
+        var l = b.querySelector(".lbl");
+        l.textContent = open ? l.dataset.more : l.dataset.less;
+      });
+    });
+  }
+
+  function applyFaq(c){
+    var box = document.querySelector("[data-c=faq]");
+    if (!box || !c.faq) return;
+    box.innerHTML = c.faq.map(function (f, i) {
+      var q = (f.q && (f.q[lang] || f.q.el)) || "";
+      var an = (f.a && (f.a[lang] || f.a.el)) || "";
+      return '<div class="faq-item">' +
+        '<button class="faq-q" aria-expanded="false" aria-controls="fa' + i + '">' +
+          "<span>" + esc(q) + "</span>" +
+          '<svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>' +
+        "</button>" +
+        '<div class="faq-a" id="fa' + i + '" hidden>' + paras(an) + "</div></div>";
+    }).join("");
+    box.querySelectorAll(".faq-q").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var open = b.getAttribute("aria-expanded") === "true";
+        b.setAttribute("aria-expanded", String(!open));
+        b.parentNode.querySelector(".faq-a").hidden = open;
+      });
+    });
+  }
+
+  function applyContent(c) {
+    window.SITE.content = c;
+    if (!c) return;
+    try { applyStrings(c); } catch (e) {}
+    try { applyContact(c); } catch (e) {}
+    try { applyHours(c); } catch (e) {}
+    try { applyImages(c); } catch (e) {}
+    try { applyBrand(c); } catch (e) {}
+    try { applyTeam(c); } catch (e) {}
+    try { applyTreatments(c); } catch (e) {}
+    try { applyFaq(c); } catch (e) {}
+  }
+
+  /* ---------------- language plumbing ---------------- */
+
   function carryLang() {
     if (lang !== "en") return;
     document.querySelectorAll("a[href]").forEach(function (a) {
-      var href = a.getAttribute("href");
-      if (!href) return;
-      if (/^(https?:|tel:|mailto:|#)/i.test(href)) return;
+      var h = a.getAttribute("href");
+      if (!h || /^(https?:|tel:|mailto:|#|data:)/i.test(h)) return;
       if (a.hasAttribute("data-lang-link")) return;
-      a.setAttribute("href", href.indexOf("?") > -1 ? href + "&lang=en" : href + "?lang=en");
+      if (/\.(jpg|jpeg|png|webp|svg|pdf|json)$/i.test(h)) return;
+      a.setAttribute("href", h.indexOf("?") > -1 ? h + "&lang=en" : h + "?lang=en");
     });
   }
 
-  /* language switch links point at the current page */
   function wireLangLinks() {
     var page = window.location.pathname.split("/").pop() || "index.html";
     document.querySelectorAll("[data-lang-link]").forEach(function (a) {
@@ -205,57 +239,48 @@ const EN = {
     });
   }
 
-  if (lang === "en") applyEnglish();
-  carryLang();
-  wireLangLinks();
+  /* ---------------- interface ---------------- */
 
-  /* ---------- header shadow ---------- */
-  var hdr = document.getElementById("hdr");
-  if (hdr) {
-    window.addEventListener("scroll", function () {
-      hdr.classList.toggle("scrolled", window.scrollY > 8);
-    }, { passive: true });
+  function initChrome() {
+    var hdr = document.getElementById("hdr");
+    if (hdr) {
+      window.addEventListener("scroll", function () {
+        hdr.classList.toggle("scrolled", window.scrollY > 8);
+      }, { passive: true });
+    }
+
+    var burger = document.getElementById("burger");
+    var drawer = document.getElementById("drawer");
+    if (burger && drawer) {
+      var close = function () {
+        burger.classList.remove("open");
+        drawer.classList.remove("open");
+        burger.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+      };
+      burger.addEventListener("click", function () {
+        var open = drawer.classList.toggle("open");
+        burger.classList.toggle("open", open);
+        burger.setAttribute("aria-expanded", String(open));
+        document.body.style.overflow = open ? "hidden" : "";
+      });
+      drawer.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", close); });
+      document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
+    }
+
+    document.querySelectorAll("img.ph").forEach(function (img) {
+      img.addEventListener("error", function () {
+        var cell = img.closest(".gal a");
+        if (cell) cell.remove(); else img.style.display = "none";
+      });
+    });
   }
 
-  /* ---------- mobile drawer ---------- */
-  var burger = document.getElementById("burger");
-  var drawer = document.getElementById("drawer");
-  if (burger && drawer) {
-    var close = function () {
-      burger.classList.remove("open");
-      drawer.classList.remove("open");
-      burger.setAttribute("aria-expanded", "false");
-      document.body.style.overflow = "";
-    };
-    burger.addEventListener("click", function () {
-      var open = drawer.classList.toggle("open");
-      burger.classList.toggle("open", open);
-      burger.setAttribute("aria-expanded", String(open));
-      document.body.style.overflow = open ? "hidden" : "";
-    });
-    drawer.querySelectorAll("a").forEach(function (a) {
-      a.addEventListener("click", close);
-    });
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") close();
-    });
-  }
-
-  /* ---------- drop photos that fail to load ---------- */
-  document.querySelectorAll("img.ph").forEach(function (img) {
-    img.addEventListener("error", function () {
-      var cell = img.closest(".gal a");
-      if (cell) { cell.remove(); return; }
-      img.style.display = "none";
-    });
-  });
-
-  /* ---------- reveal on scroll ---------- */
-
-  /* ---------- gallery lightbox ---------- */
-  var lb = document.getElementById("lb");
-  if (lb) {
+  function initLightbox() {
+    var lb = document.getElementById("lb");
+    if (!lb) return;
     var items = [].slice.call(document.querySelectorAll(".gal a"));
+    if (!items.length) return;
     var img = document.getElementById("lbImg"),
         cap = document.getElementById("lbCap"),
         cnt = document.getElementById("lbCount"),
@@ -267,7 +292,7 @@ const EN = {
       img.src = a.getAttribute("href");
       img.alt = thumb ? thumb.alt : "";
       cap.textContent = thumb ? thumb.alt : "";
-      cnt.textContent = (idx + 1) + " " + (EN["lb.of"] && document.documentElement.lang === "en" ? "of" : "/") + " " + items.length;
+      cnt.textContent = (idx + 1) + " / " + items.length;
     }
     function open(i, trigger) {
       lastFocus = trigger || null;
@@ -283,7 +308,6 @@ const EN = {
       document.body.style.overflow = "";
       if (lastFocus) lastFocus.focus();
     }
-
     items.forEach(function (a, i) {
       a.setAttribute("role", "button");
       a.removeAttribute("target");
@@ -299,7 +323,6 @@ const EN = {
       if (e.key === "ArrowLeft") show(idx - 1);
       if (e.key === "ArrowRight") show(idx + 1);
     });
-    /* swipe on touch */
     var x0 = null;
     lb.addEventListener("touchstart", function (e) { x0 = e.touches[0].clientX; }, { passive: true });
     lb.addEventListener("touchend", function (e) {
@@ -310,17 +333,32 @@ const EN = {
     }, { passive: true });
   }
 
-
-
-  var els = document.querySelectorAll(".rv");
-  if ("IntersectionObserver" in window) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
-      });
-    }, { threshold: 0.1 });
-    els.forEach(function (e) { io.observe(e); });
-  } else {
-    els.forEach(function (e) { e.classList.add("on"); });
+  function initReveal() {
+    var els = document.querySelectorAll(".rv");
+    if ("IntersectionObserver" in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add("on"); obs.unobserve(e.target); }
+        });
+      }, { threshold: 0.08 });
+      els.forEach(function (e) { obs.observe(e); });
+    } else {
+      els.forEach(function (e) { e.classList.add("on"); });
+    }
   }
+
+  function boot() {
+    carryLang();
+    wireLangLinks();
+    initChrome();
+    initLightbox();
+    initReveal();
+    document.body.classList.add("content-ready");
+  }
+
+  fetch("content.json", { cache: "no-store" })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (c) { if (c) applyContent(c); })
+    .catch(function () { /* HTML fallback stays in place */ })
+    .then(boot, boot);
 })();

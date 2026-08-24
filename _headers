@@ -12,3 +12,7 @@
   Cache-Control: public, max-age=604800
 /app.js
   Cache-Control: public, max-age=604800
+
+/studio/*
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: no-store

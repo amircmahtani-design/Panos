@@ -146,3 +146,135 @@ the only number I have (22910 37444) is a landline, which cannot
 receive WhatsApp. If the clinic has a mobile they use for
 bookings, send it and I will add a button — it is about five
 minutes of work.
+
+
+================================================================
+STUDIO  —  /studio/
+================================================================
+Open  your-site/studio/   and enter the password.
+Default password: panos
+Change it on line "const PASSWORD" near the bottom of
+studio/index.html.
+
+WHAT YOU CAN EDIT
+  Λογότυπο & μάρκα ..... upload your own logo image
+  Στοιχεία επικοινωνίας  phone, address, Instagram, map links,
+                         rating, review count
+  Ωράριο ............... every day, both languages, mark days closed
+  Η ομάδα .............. add/remove members, upload a CV photo,
+                         name / role / biography in both languages
+  Φωτογραφίες .......... replace any photo on the site
+  Κείμενα .............. all 112 texts, Greek and English,
+                         grouped by page, with a search box
+
+*** HOW SAVING WORKS — READ THIS ***
+The Studio has no server. Your edits are kept in YOUR browser
+only. They do NOT appear on the live site until you publish:
+
+  1. Edit in the Studio
+  2. Press "Εξαγωγή content.json" — a file downloads
+  3. Upload that content.json to the repo root on GitHub,
+     replacing the old one
+  4. Netlify redeploys and everyone sees the change
+
+So: the Studio is where you decide the changes, and content.json
+is how you publish them. Nothing is lost if you close the tab —
+the browser keeps your working copy until you export.
+
+"Επαναφορά" throws away your local edits and goes back to the
+published content.json.
+
+Uploaded images are stored inside content.json as data, so the
+file grows. Photos are resized automatically (team 700px,
+site photos 1600px). If content.json ever gets very large,
+save the photos into images/ instead and point to them.
+
+IF YOU LATER WANT REAL LIVE EDITING
+That needs a database (Firestore or similar) so edits publish
+without the export step. The site is already structured for it:
+everything reads from one content object, so swapping the
+fetch("content.json") call for a database read is a small change.
+
+================================================================
+TEAM PAGE
+================================================================
+o-iatros.html is now "Η ομάδα μας / Our Team" with five
+placeholder members. Names, roles, biographies and photos are
+all editable in the Studio. Add or remove members freely.
+
+================================================================
+CLICKABLE ICONS
+================================================================
+The four cards under the homepage hero are now links:
+  Εμπειρία & εμπιστοσύνη -> Google reviews
+  Προσωπική φροντίδα ----> contact page
+  Σύγχρονη τεχνολογία ---> the clinic page
+  Ανάβυσσος -------------> Google Maps directions
+
+
+================================================================
+ΜΕΤΑΦΡΑΣΗ  /  TRANSLATION
+================================================================
+Every text field now sits beside its pair with two buttons:
+
+      [ Ελληνικά ]   EL -> EN     [ English ]
+                     EN -> EL
+
+Write in whichever language you are comfortable with, press the
+matching arrow, and the other side fills in. It works in both
+directions, so your friend can write Greek and produce English,
+and you can write English and produce Greek.
+
+There is also "Συμπλήρωση κενών" at the top of each text group,
+which fills only the EMPTY side of every text in that group and
+never overwrites something you already wrote.
+
+The same arrows appear on team names, roles and biographies,
+and on the address.
+
+HOW IT WORKS
+Two free translation services are tried in order (MyMemory, then
+Lingva). No account or key is needed. If both fail — no internet,
+or the daily free limit is reached — the field is LEFT UNCHANGED
+and you get a message. Nothing is ever silently wiped.
+
+The free tier is roughly 5,000 characters a day per connection.
+Adding your email in Στοιχεία επικοινωνίας raises it to about
+50,000. The email is only sent to the translation service.
+
+IMPORTANT: it is machine translation. For a medical practice,
+read the result before publishing — especially treatment names.
+
+
+================================================================
+TREATMENT TEXT AND FAQ  —  PLEASE HAVE THE DENTIST READ THIS
+================================================================
+The four treatments now expand to a full description, and there
+is an eight-question FAQ on the treatments page. Both are fully
+editable in the Studio (tabs "Θεραπείες" and "Συχνές ερωτήσεις"),
+in Greek and English, with the translation arrows.
+
+WHERE THIS TEXT CAME FROM
+I wrote it from general, standard dentistry knowledge — the sort
+of thing any practice would say about whitening, implants,
+children's visits and panoramic X-rays. It is deliberately
+general and contains no claims specific to this practice: no
+prices, no brands, no success rates, no guarantees, no
+qualifications.
+
+It is accurate as general information, but it has NOT been
+checked by a dentist. Before this goes public, Dr Papantoniou
+should read all four descriptions and all eight answers and
+correct anything that does not match how he actually works.
+
+Things he will probably want to change:
+  - whether walk-ins are accepted or strictly appointment only
+  - his own recall interval (I wrote six months, the usual default)
+  - whether he takes ΕΟΠΥΥ or private insurance (not mentioned
+    at all, because I have no way to know)
+  - what patients should do out of hours
+  - anything he does differently from the general approach
+
+Nothing here promises a clinical outcome, which is the main
+thing to avoid on a medical site — but it is his professional
+name on it, so it should be his words in the end.

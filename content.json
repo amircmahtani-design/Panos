@@ -1,0 +1,956 @@
+{
+ "version": 1,
+ "updated": "",
+ "brand": {
+  "logo": "",
+  "useCustomLogo": false
+ },
+ "contact": {
+  "phoneDisplay": "22910 37444",
+  "phoneTel": "+302291037444",
+  "addressEl": "Περικλέους, Ανάβυσσος 190 13",
+  "addressEn": "Perikleous, Anavyssos 190 13",
+  "instagram": "https://www.instagram.com/papantonioudentalclinic",
+  "mapsEmbed": "https://www.google.com/maps?q=37.7375018,23.9472415&hl=el&z=17&output=embed",
+  "mapsDirections": "https://www.google.com/maps/dir/?api=1&destination=37.7375018%2C23.9472415",
+  "reviewsUrl": "https://www.google.com/maps/search/?api=1&query=37.7375018,23.9472415",
+  "rating": "4.6",
+  "reviewCount": "46"
+ },
+ "hours": [
+  {
+   "id": "mon",
+   "day": {
+    "el": "Δευτέρα",
+    "en": "Monday"
+   },
+   "value": "08:30 – 13:30",
+   "closed": false
+  },
+  {
+   "id": "tue",
+   "day": {
+    "el": "Τρίτη",
+    "en": "Tuesday"
+   },
+   "value": "08:30 – 13:30",
+   "closed": false
+  },
+  {
+   "id": "wed",
+   "day": {
+    "el": "Τετάρτη",
+    "en": "Wednesday"
+   },
+   "value": "08:30 – 13:30",
+   "closed": false
+  },
+  {
+   "id": "thu",
+   "day": {
+    "el": "Πέμπτη",
+    "en": "Thursday"
+   },
+   "value": "08:30 – 13:30",
+   "closed": false
+  },
+  {
+   "id": "fri",
+   "day": {
+    "el": "Παρασκευή",
+    "en": "Friday"
+   },
+   "value": "08:30 – 13:30",
+   "closed": false
+  },
+  {
+   "id": "sat",
+   "day": {
+    "el": "Σάββατο",
+    "en": "Saturday"
+   },
+   "value": "08:30 – 13:30",
+   "closed": false
+  },
+  {
+   "id": "sun",
+   "day": {
+    "el": "Κυριακή",
+    "en": "Sunday"
+   },
+   "value": "",
+   "closed": true
+  }
+ ],
+ "team": [
+  {
+   "id": "t1",
+   "name": {
+    "el": "Δρ. Παναγιώτης Παπαντωνίου",
+    "en": "Dr. Panagiotis Papantoniou"
+   },
+   "role": {
+    "el": "Χειρουργός Οδοντίατρος — Ιδρυτής",
+    "en": "Dental Surgeon — Founder"
+   },
+   "bio": {
+    "el": "Συμπληρωματικό κείμενο βιογραφικού. Αντικαταστήστε το από το Studio.",
+    "en": "Placeholder biography. Replace this from the Studio."
+   },
+   "photo": ""
+  },
+  {
+   "id": "t2",
+   "name": {
+    "el": "Όνομα Επώνυμο",
+    "en": "Full Name"
+   },
+   "role": {
+    "el": "Οδοντίατρος",
+    "en": "Dentist"
+   },
+   "bio": {
+    "el": "Συμπληρωματικό κείμενο βιογραφικού. Αντικαταστήστε το από το Studio.",
+    "en": "Placeholder biography. Replace this from the Studio."
+   },
+   "photo": ""
+  },
+  {
+   "id": "t3",
+   "name": {
+    "el": "Όνομα Επώνυμο",
+    "en": "Full Name"
+   },
+   "role": {
+    "el": "Ορθοδοντικός",
+    "en": "Orthodontist"
+   },
+   "bio": {
+    "el": "Συμπληρωματικό κείμενο βιογραφικού. Αντικαταστήστε το από το Studio.",
+    "en": "Placeholder biography. Replace this from the Studio."
+   },
+   "photo": ""
+  },
+  {
+   "id": "t4",
+   "name": {
+    "el": "Όνομα Επώνυμο",
+    "en": "Full Name"
+   },
+   "role": {
+    "el": "Παιδοδοντίατρος",
+    "en": "Paediatric Dentist"
+   },
+   "bio": {
+    "el": "Συμπληρωματικό κείμενο βιογραφικού. Αντικαταστήστε το από το Studio.",
+    "en": "Placeholder biography. Replace this from the Studio."
+   },
+   "photo": ""
+  },
+  {
+   "id": "t5",
+   "name": {
+    "el": "Όνομα Επώνυμο",
+    "en": "Full Name"
+   },
+   "role": {
+    "el": "Βοηθός Οδοντιάτρου",
+    "en": "Dental Assistant"
+   },
+   "bio": {
+    "el": "Συμπληρωματικό κείμενο βιογραφικού. Αντικαταστήστε το από το Studio.",
+    "en": "Placeholder biography. Replace this from the Studio."
+   },
+   "photo": ""
+  }
+ ],
+ "images": {
+  "hero": {
+   "src": "images/03_reception_waiting.jpg",
+   "label": "Αρχική — κεντρική φωτογραφία"
+  },
+  "home_about": {
+   "src": "images/06_treatment_room.jpg",
+   "label": "Αρχική — φωτογραφία ιατρείου"
+  },
+  "clinic_main": {
+   "src": "images/06_treatment_room.jpg",
+   "label": "Το ιατρείο — κύρια φωτογραφία"
+  },
+  "gal1": {
+   "src": "images/01_exterior_clinic.jpg",
+   "label": "Γκαλερί 1"
+  },
+  "gal2": {
+   "src": "images/03_reception_waiting.jpg",
+   "label": "Γκαλερί 2"
+  },
+  "gal3": {
+   "src": "images/02_entrance_branding.jpg",
+   "label": "Γκαλερί 3"
+  },
+  "gal4": {
+   "src": "images/04_clinic_corridor.jpg",
+   "label": "Γκαλερί 4"
+  },
+  "gal5": {
+   "src": "images/06_treatment_room.jpg",
+   "label": "Γκαλερί 5"
+  },
+  "gal6": {
+   "src": "images/08_lab_equipment.jpg",
+   "label": "Γκαλερί 6"
+  },
+  "gal7": {
+   "src": "images/07_dentist_microscope.jpg",
+   "label": "Γκαλερί 7"
+  },
+  "gal8": {
+   "src": "images/05_treatment_in_progress.jpg",
+   "label": "Γκαλερί 8"
+  }
+ },
+ "strings": {
+  "skip": {
+   "el": "Μετάβαση στο περιεχόμενο",
+   "en": "Skip to content",
+   "group": "Κοινά (header / footer / κουμπιά)"
+  },
+  "logo.top": {
+   "el": "Οδοντιατρικό Κέντρο",
+   "en": "Dental Centre",
+   "group": "Κοινά (header / footer / κουμπιά)"
+  },
+  "logo.name": {
+   "el": "Παπαντωνίου",
+   "en": "Papantoniou",
+   "group": "Κοινά (header / footer / κουμπιά)"
+  },
+  "logo.first": {
+   "el": "Παναγιώτης",
+   "en": "Panagiotis",
+   "group": "Κοινά (header / footer / κουμπιά)"
+  },
+  "nav.home": {
+   "el": "Αρχική",
+   "en": "Home",
+   "group": "Κοινά (header / footer / κουμπιά)"
+  },
+  "nav.clinic": {
+   "el": "Το ιατρείο",
+   "en": "The Practice",
+   "group": "Κοινά (header / footer / κουμπιά)"
+  },
+  "nav.services": {
+   "el": "Υπηρεσίες",
+   "en": "Services",
+   "group": "Κοινά (header / footer / κουμπιά)"
+  },
+  "nav.doctor": {
+   "el": "Η ομάδα",
+   "en": "Our Team",
+   "group": "Κοινά (header / footer / κουμπιά)"
+  },
+  "nav.contact": {
+   "el": "Επικοινωνία",
+   "en": "Contact",
+   "group": "Κοινά (header / footer / κουμπιά)"
+  },
+  "cta.book": {
+   "el": "Κλείστε ραντεβού",
+   "en": "Book an appointment",
+   "group": "Κοινά (header / footer / κουμπιά)"
+  },
+  "cl.h1": {
+   "el": "Ένας χώρος φτιαγμένος για να νιώθετε άνετα",
+   "en": "A space built for you to feel at ease",
+   "group": "Το ιατρείο"
+  },
+  "cl.lede": {
+   "el": "Σύγχρονος εξοπλισμός, αυστηρά πρωτόκολλα υγιεινής και μια ήρεμη ατμόσφαιρα — στην καρδιά της Ανάβυσσου.",
+   "en": "Modern equipment, strict hygiene protocols and a calm atmosphere — in the heart of Anavyssos.",
+   "group": "Το ιατρείο"
+  },
+  "cl.s1.eyebrow": {
+   "el": "Η προσέγγισή μας",
+   "en": "Our approach",
+   "group": "Το ιατρείο"
+  },
+  "cl.s1.h2a": {
+   "el": "Φροντίδα χωρίς",
+   "en": "Care without",
+   "group": "Το ιατρείο"
+  },
+  "cl.s1.h2b": {
+   "el": "το άγχος",
+   "en": "the anxiety",
+   "group": "Το ιατρείο"
+  },
+  "cl.s1.p": {
+   "el": "Κάθε λεπτομέρεια στο οδοντιατρείο μας — από την υποδοχή έως την οδοντιατρική έδρα — έχει σχεδιαστεί γύρω από εσάς. Αφιερώνουμε χρόνο ώστε να εξηγήσουμε κάθε βήμα προτού γίνει οτιδήποτε, για να ξέρετε πάντα τι ακριβώς να περιμένετε.",
+   "en": "Every detail in our practice — from reception to the dental chair — is designed around you. We take the time to explain each step before anything happens, so you always know exactly what to expect.",
+   "group": "Το ιατρείο"
+  },
+  "cl.t1": {
+   "el": "Σύγχρονος διαγνωστικός και θεραπευτικός εξοπλισμός",
+   "en": "Modern diagnostic and treatment equipment",
+   "group": "Το ιατρείο"
+  },
+  "cl.t2": {
+   "el": "Αυστηρά πρωτόκολλα αποστείρωσης και υγιεινής",
+   "en": "Strict sterilisation and hygiene protocols",
+   "group": "Το ιατρείο"
+  },
+  "cl.t3": {
+   "el": "Φιλική, ήρεμη ατμόσφαιρα για όλη την οικογένεια",
+   "en": "A friendly, calm atmosphere for the whole family",
+   "group": "Το ιατρείο"
+  },
+  "cl.t4": {
+   "el": "Σαφής ενημέρωση και κοστολόγηση πριν από κάθε θεραπεία",
+   "en": "Clear explanation and costing before treatment begins",
+   "group": "Το ιατρείο"
+  },
+  "cl.gal.eyebrow": {
+   "el": "Ο χώρος μας",
+   "en": "Our space",
+   "group": "Το ιατρείο"
+  },
+  "cl.gal.h2": {
+   "el": "Μια ματιά στο ιατρείο",
+   "en": "A look inside the practice",
+   "group": "Το ιατρείο"
+  },
+  "cl.gal.p": {
+   "el": "Φωτογραφίες από το ιατρείο μας στην οδό Περικλέους, στην Ανάβυσσο.",
+   "en": "Photographs from our practice on Perikleous street in Anavyssos.",
+   "group": "Το ιατρείο"
+  },
+  "cta.h2": {
+   "el": "Κλείστε το ραντεβού σας σήμερα",
+   "en": "Book your appointment today",
+   "group": "Κοινά (header / footer / κουμπιά)"
+  },
+  "cta.p": {
+   "el": "Καλέστε μας ή στείλτε ένα μήνυμα — θα χαρούμε να σας υποδεχτούμε στο ιατρείο μας στην Ανάβυσσο.",
+   "en": "Call us or send a message — we would be glad to welcome you to our practice in Anavyssos.",
+   "group": "Κοινά (header / footer / κουμπιά)"
+  },
+  "cta.call": {
+   "el": "Καλέστε μας",
+   "en": "Call us",
+   "group": "Κοινά (header / footer / κουμπιά)"
+  },
+  "cta.contact": {
+   "el": "Στοιχεία επικοινωνίας",
+   "en": "Contact details",
+   "group": "Κοινά (header / footer / κουμπιά)"
+  },
+  "ft.brand": {
+   "el": "Παπαντωνίου Παναγιώτης",
+   "en": "Papantoniou Dental Centre",
+   "group": "Κοινά (header / footer / κουμπιά)"
+  },
+  "ft.tag": {
+   "el": "Οδοντιατρείο στην Ανάβυσσο, αφιερωμένο στην προσωπική φροντίδα και τη σύγχρονη οδοντιατρική.",
+   "en": "A dental practice in Anavyssos, dedicated to personal care and modern dentistry.",
+   "group": "Κοινά (header / footer / κουμπιά)"
+  },
+  "ft.nav": {
+   "el": "Πλοήγηση",
+   "en": "Navigation",
+   "group": "Κοινά (header / footer / κουμπιά)"
+  },
+  "ft.services": {
+   "el": "Υπηρεσίες",
+   "en": "Services",
+   "group": "Κοινά (header / footer / κουμπιά)"
+  },
+  "srv.1.h": {
+   "el": "Αισθητική οδοντιατρική",
+   "en": "Cosmetic dentistry",
+   "group": "Υπηρεσίες"
+  },
+  "srv.2.h": {
+   "el": "Εμφυτευματολογία",
+   "en": "Implantology",
+   "group": "Υπηρεσίες"
+  },
+  "srv.3.h": {
+   "el": "Παιδοδοντιατρική",
+   "en": "Paediatric dentistry",
+   "group": "Υπηρεσίες"
+  },
+  "srv.4.h": {
+   "el": "Πανοραμικές ακτινογραφίες",
+   "en": "Panoramic radiography",
+   "group": "Υπηρεσίες"
+  },
+  "ft.contact": {
+   "el": "Επικοινωνία",
+   "en": "Contact",
+   "group": "Κοινά (header / footer / κουμπιά)"
+  },
+  "trust.4.p": {
+   "el": "Περικλέους, Ανάβυσσος 190 13",
+   "en": "Perikleous, Anavyssos 190 13",
+   "group": "Αρχική"
+  },
+  "ft.rights": {
+   "el": "© 2026 Οδοντιατρείο Παπαντωνίου Παναγιώτης",
+   "en": "© 2026 Papantoniou Dental Centre",
+   "group": "Κοινά (header / footer / κουμπιά)"
+  },
+  "ft.place": {
+   "el": "Ανάβυσσος, Αττική",
+   "en": "Anavyssos, Attica",
+   "group": "Κοινά (header / footer / κουμπιά)"
+  },
+  "cta.callnow": {
+   "el": "Καλέστε για ραντεβού",
+   "en": "Call to book",
+   "group": "Κοινά (header / footer / κουμπιά)"
+  },
+  "ty.eyebrow": {
+   "el": "Ευχαριστούμε",
+   "en": "Thank you",
+   "group": "Ευχαριστούμε"
+  },
+  "ty.h": {
+   "el": "Το μήνυμά σας στάλθηκε",
+   "en": "Your message has been sent",
+   "group": "Ευχαριστούμε"
+  },
+  "ty.p": {
+   "el": "Ευχαριστούμε που επικοινωνήσατε μαζί μας. Θα σας απαντήσουμε το συντομότερο δυνατό. Για κάτι επείγον, καλέστε μας στο 22910 37444.",
+   "en": "Thank you for getting in touch. We will reply as soon as possible. For anything urgent, please call us on 22910 37444.",
+   "group": "Ευχαριστούμε"
+  },
+  "ty.btn": {
+   "el": "Επιστροφή στην αρχική",
+   "en": "Back to homepage",
+   "group": "Ευχαριστούμε"
+  },
+  "dr.h1": {
+   "el": "Η ομάδα μας",
+   "en": "Our team",
+   "group": "Η ομάδα"
+  },
+  "dr.lede": {
+   "el": "Οι άνθρωποι που θα σας υποδεχτούν και θα φροντίσουν το χαμόγελό σας.",
+   "en": "The people who will welcome you and look after your smile.",
+   "group": "Η ομάδα"
+  },
+  "dr.eyebrow": {
+   "el": "Ο ιατρός",
+   "en": "The dentist",
+   "group": "Η ομάδα"
+  },
+  "dr.bio1": {
+   "el": "Με σταθερή παρουσία στην Ανάβυσσο, ο Δρ. Παπαντωνίου έχει χτίσει τη φήμη του πάνω στην εμπιστοσύνη και την προσοχή στη λεπτομέρεια. Πιστεύει πως η καλή οδοντιατρική φροντίδα ξεκινά από την ειλικρινή επικοινωνία με τον ασθενή.",
+   "en": "A long-standing presence in Anavyssos, Dr. Papantoniou has built his reputation on trust and attention to detail. He believes good dental care starts with honest communication with the patient.",
+   "group": "Η ομάδα"
+  },
+  "dr.bio2": {
+   "el": "Κάθε θεραπεία σχεδιάζεται στα μέτρα του ανθρώπου απέναντί του, με σύγχρονες, τεκμηριωμένες μεθόδους και χωρίς βιασύνη — γιατί ένα χαμόγελο αξίζει τον χρόνο του.",
+   "en": "Every treatment is tailored to the person in front of him, using modern, evidence-based methods and without rushing — because a smile deserves the time it takes.",
+   "group": "Η ομάδα"
+  },
+  "rev.eyebrow": {
+   "el": "Τι λένε οι ασθενείς μας",
+   "en": "What our patients say",
+   "group": "Η ομάδα"
+  },
+  "rev.h2a": {
+   "el": "Η εμπιστοσύνη σας, η",
+   "en": "Your trust is our",
+   "group": "Η ομάδα"
+  },
+  "rev.h2b": {
+   "el": "μεγαλύτερη επιβράβευσή μας",
+   "en": "greatest reward",
+   "group": "Η ομάδα"
+  },
+  "rev.1": {
+   "el": "Είναι ο καλύτερος οδοντίατρος και άνθρωπος που έχω γνωρίσει.",
+   "en": "He is the best dentist and the best person I have met.",
+   "group": "Η ομάδα"
+  },
+  "rev.src": {
+   "el": "Google Reviews",
+   "en": "Google Reviews",
+   "group": "Η ομάδα"
+  },
+  "rev.2": {
+   "el": "Άριστος στη διάγνωση και κοντά στον ασθενή μετά την επέμβαση.",
+   "en": "Excellent at diagnosis, and there for the patient after the procedure.",
+   "group": "Η ομάδα"
+  },
+  "rev.2.who": {
+   "el": "Γ. Ψ.",
+   "en": "G. Ps.",
+   "group": "Η ομάδα"
+  },
+  "rev.3": {
+   "el": "Εξαιρετικός γιατρός, μα ακόμα εξαιρετικότερος άνθρωπος.",
+   "en": "An excellent dentist, and an even more excellent human being.",
+   "group": "Η ομάδα"
+  },
+  "e404.eyebrow": {
+   "el": "Σφάλμα 404",
+   "en": "Error 404",
+   "group": "Σελίδα 404"
+  },
+  "e404.h": {
+   "el": "Η σελίδα δεν βρέθηκε",
+   "en": "Page not found",
+   "group": "Σελίδα 404"
+  },
+  "e404.p": {
+   "el": "Η σελίδα που ζητήσατε δεν υπάρχει ή έχει μετακινηθεί. Επιστρέψτε στην αρχική ή καλέστε μας.",
+   "en": "The page you asked for does not exist or has moved. Return to the homepage, or give us a call.",
+   "group": "Σελίδα 404"
+  },
+  "e404.btn": {
+   "el": "Επιστροφή στην αρχική",
+   "en": "Back to homepage",
+   "group": "Σελίδα 404"
+  },
+  "home.eyebrow": {
+   "el": "Σύγχρονη οδοντιατρική φροντίδα",
+   "en": "Modern dental care",
+   "group": "Αρχική"
+  },
+  "home.h1a": {
+   "el": "Το χαμόγελό σας,",
+   "en": "Your smile,",
+   "group": "Αρχική"
+  },
+  "home.h1b": {
+   "el": "στα καλύτερα χέρια",
+   "en": "in the best hands",
+   "group": "Αρχική"
+  },
+  "home.lede": {
+   "el": "Συνδυάζουμε εμπειρία, τεχνολογία και ανθρώπινη προσέγγιση για ένα υγιές και φυσικό αποτέλεσμα που διαρκεί.",
+   "en": "We combine experience, technology and a human approach for a healthy, natural result that lasts.",
+   "group": "Αρχική"
+  },
+  "home.discover": {
+   "el": "Γνωρίστε το ιατρείο",
+   "en": "Discover the practice",
+   "group": "Αρχική"
+  },
+  "trust.1.h": {
+   "el": "Εμπειρία & εμπιστοσύνη",
+   "en": "Experience & trust",
+   "group": "Αρχική"
+  },
+  "trust.1.p1": {
+   "el": "Πάνω από 4.6",
+   "en": "Over 4.6",
+   "group": "Αρχική"
+  },
+  "trust.1.p2": {
+   "el": "σε 46 αξιολογήσεις Google",
+   "en": "across 46 Google reviews",
+   "group": "Αρχική"
+  },
+  "trust.2.h": {
+   "el": "Προσωπική φροντίδα",
+   "en": "Personal care",
+   "group": "Αρχική"
+  },
+  "trust.2.p": {
+   "el": "Χρόνος για εσάς και τις ανάγκες σας",
+   "en": "Time for you and your needs",
+   "group": "Αρχική"
+  },
+  "trust.3.h": {
+   "el": "Σύγχρονη τεχνολογία",
+   "en": "Modern technology",
+   "group": "Αρχική"
+  },
+  "trust.3.p": {
+   "el": "Εξοπλισμός τελευταίας τεχνολογίας",
+   "en": "Latest-generation equipment",
+   "group": "Αρχική"
+  },
+  "trust.4.h": {
+   "el": "Ανάβυσσος",
+   "en": "Anavyssos",
+   "group": "Αρχική"
+  },
+  "home.services.eyebrow": {
+   "el": "Υπηρεσίες",
+   "en": "Services",
+   "group": "Αρχική"
+  },
+  "home.services.h2a": {
+   "el": "Ολοκληρωμένες λύσεις",
+   "en": "Complete solutions",
+   "group": "Αρχική"
+  },
+  "home.services.h2b": {
+   "el": "για κάθε χαμόγελο",
+   "en": "for every smile",
+   "group": "Αρχική"
+  },
+  "home.services.more": {
+   "el": "Όλες οι υπηρεσίες",
+   "en": "All services",
+   "group": "Αρχική"
+  },
+  "srv.1.p": {
+   "el": "Λεύκανση, όψεις και αισθητικές αποκαταστάσεις, με φυσικό αποτέλεσμα.",
+   "en": "Whitening, veneers and aesthetic restorations, with a natural result.",
+   "group": "Υπηρεσίες"
+  },
+  "srv.2.p": {
+   "el": "Σταθερή αποκατάσταση δοντιών που λείπουν, σχεδιασμένη να διαρκεί.",
+   "en": "Stable replacement of missing teeth, designed to last.",
+   "group": "Υπηρεσίες"
+  },
+  "srv.3.p": {
+   "el": "Ήπια, φιλική φροντίδα, ώστε τα παιδιά να νιώθουν άνετα από την πρώτη επίσκεψη.",
+   "en": "Gentle, friendly care so children feel at ease from the first visit.",
+   "group": "Υπηρεσίες"
+  },
+  "srv.4.p": {
+   "el": "Ψηφιακή πανοραμική απεικόνιση για ακριβή διάγνωση, επί τόπου στο ιατρείο.",
+   "en": "Digital panoramic imaging for accurate diagnosis, on site at the clinic.",
+   "group": "Υπηρεσίες"
+  },
+  "home.about.eyebrow": {
+   "el": "Το ιατρείο",
+   "en": "The practice",
+   "group": "Αρχική"
+  },
+  "home.about.h2a": {
+   "el": "Ένας χώρος φτιαγμένος",
+   "en": "A space built",
+   "group": "Αρχική"
+  },
+  "home.about.h2b": {
+   "el": "για να νιώθετε άνετα",
+   "en": "for you to feel at ease",
+   "group": "Αρχική"
+  },
+  "home.about.p": {
+   "el": "Κάθε λεπτομέρεια στο οδοντιατρείο μας — από την υποδοχή έως την οδοντιατρική έδρα — έχει σχεδιαστεί γύρω από εσάς. Σύγχρονος εξοπλισμός, αυστηρά πρωτόκολλα υγιεινής και μια ήρεμη ατμόσφαιρα συνθέτουν μια εμπειρία φροντίδας χωρίς άγχος, για μικρούς και μεγάλους.",
+   "en": "Every detail in our practice — from reception to the dental chair — is designed around you. Modern equipment, strict hygiene protocols and a calm atmosphere make for stress-free care, for children and adults alike.",
+   "group": "Αρχική"
+  },
+  "home.about.more": {
+   "el": "Περισσότερα για το ιατρείο",
+   "en": "More about the practice",
+   "group": "Αρχική"
+  },
+  "ct.phone": {
+   "el": "Τηλέφωνο",
+   "en": "Phone",
+   "group": "Επικοινωνία"
+  },
+  "ct.address": {
+   "el": "Τοποθεσία",
+   "en": "Address",
+   "group": "Επικοινωνία"
+  },
+  "srv.h1": {
+   "el": "Ολοκληρωμένες λύσεις για κάθε χαμόγελο",
+   "en": "Complete solutions for every smile",
+   "group": "Υπηρεσίες"
+  },
+  "srv.lede": {
+   "el": "Από την πρόληψη έως τις πιο σύνθετες αποκαταστάσεις, καλύπτουμε κάθε ανάγκη της οδοντιατρικής σας φροντίδας κάτω από μία στέγη.",
+   "en": "From prevention through to the most complex restorations, we cover every dental need under one roof.",
+   "group": "Υπηρεσίες"
+  },
+  "tr.sec.e": {
+   "el": "Οι θεραπείες μας",
+   "en": "Our treatments",
+   "group": "Υπηρεσίες"
+  },
+  "tr.sec.h": {
+   "el": "Τι καλύπτουμε",
+   "en": "What we cover",
+   "group": "Υπηρεσίες"
+  },
+  "ct.h1": {
+   "el": "Κλείστε το ραντεβού σας",
+   "en": "Book your appointment",
+   "group": "Επικοινωνία"
+  },
+  "ct.lede": {
+   "el": "Καλέστε μας ή στείλτε ένα μήνυμα — θα χαρούμε να σας υποδεχτούμε στο ιατρείο μας στην Ανάβυσσο.",
+   "en": "Call us or send a message — we would be glad to welcome you to our practice in Anavyssos.",
+   "group": "Επικοινωνία"
+  },
+  "ct.sec.e": {
+   "el": "Στοιχεία",
+   "en": "Details",
+   "group": "Επικοινωνία"
+  },
+  "ct.sec.h": {
+   "el": "Πού θα μας βρείτε",
+   "en": "Where to find us",
+   "group": "Επικοινωνία"
+  },
+  "ct.hours": {
+   "el": "Ωράριο ιατρείου",
+   "en": "Opening hours",
+   "group": "Επικοινωνία"
+  },
+  "ct.closed": {
+   "el": "Κλειστά",
+   "en": "Closed",
+   "group": "Επικοινωνία"
+  },
+  "ct.form.h": {
+   "el": "Στείλτε μας μήνυμα",
+   "en": "Send us a message",
+   "group": "Επικοινωνία"
+  },
+  "ct.form.send": {
+   "el": "Αποστολή μηνύματος",
+   "en": "Send message",
+   "group": "Επικοινωνία"
+  },
+  "map.directions": {
+   "el": "Οδηγίες πρόσβασης",
+   "en": "Get directions",
+   "group": "Κοινά (header / footer / κουμπιά)"
+  },
+  "ct.form.name": {
+   "el": "Ονοματεπώνυμο",
+   "en": "Full name",
+   "group": "Επικοινωνία"
+  },
+  "ct.form.phone": {
+   "el": "Τηλέφωνο",
+   "en": "Phone",
+   "group": "Επικοινωνία"
+  },
+  "ct.form.msg": {
+   "el": "Το μήνυμά σας...",
+   "en": "Your message...",
+   "group": "Επικοινωνία"
+  },
+  "ct.map": {
+   "el": "Χάρτης",
+   "en": "Map",
+   "group": "Επικοινωνία"
+  },
+  "map.aria": {
+   "el": "Οδηγίες πρόσβασης στο ιατρείο, άνοιγμα στους χάρτες Google",
+   "en": "Directions to the clinic, opens in Google Maps",
+   "group": "Κοινά (header / footer / κουμπιά)"
+  },
+  "dr.title": {
+   "el": "Η ομάδα μας | Οδοντιατρικό Κέντρο Παπαντωνίου",
+   "en": "Our Team | Papantoniou Dental Centre",
+   "group": "Η ομάδα"
+  },
+  "team.e": {
+   "el": "Η ομάδα",
+   "en": "The team",
+   "group": "Η ομάδα"
+  },
+  "team.h": {
+   "el": "Γνωρίστε τους ανθρώπους μας",
+   "en": "Meet our people",
+   "group": "Η ομάδα"
+  },
+  "team.p": {
+   "el": "Μια ομάδα με κοινή προσέγγιση: αναλυτική διάγνωση, σαφής ενημέρωση και φροντίδα χωρίς βιασύνη.",
+   "en": "One shared approach: thorough diagnosis, clear explanation and care without rushing.",
+   "group": "Η ομάδα"
+  },
+  "d.closed": {
+   "el": "Κλειστά",
+   "en": "Closed",
+   "group": "Επικοινωνία"
+  },
+  "tr.detail.open": {
+   "el": "Περισσότερα",
+   "en": "Read more",
+   "group": "Υπηρεσίες"
+  },
+  "tr.detail.close": {
+   "el": "Λιγότερα",
+   "en": "Show less",
+   "group": "Υπηρεσίες"
+  },
+  "faq.e": {
+   "el": "Συχνές ερωτήσεις",
+   "en": "Common questions",
+   "group": "Υπηρεσίες"
+  },
+  "faq.h": {
+   "el": "Ό,τι ρωτούν συνήθως οι ασθενείς",
+   "en": "What patients usually ask",
+   "group": "Υπηρεσίες"
+  },
+  "faq.p": {
+   "el": "Αν η ερώτησή σας δεν είναι εδώ, τηλεφωνήστε μας και θα χαρούμε να τη συζητήσουμε.",
+   "en": "If your question is not here, call us and we will be glad to talk it through.",
+   "group": "Υπηρεσίες"
+  }
+ },
+ "treatments": [
+  {
+   "id": "aes",
+   "icon": "aes",
+   "title": {
+    "el": "Αισθητική Οδοντιατρική",
+    "en": "Cosmetic Dentistry"
+   },
+   "short": {
+    "el": "Λεύκανση, όψεις και αισθητικές αποκαταστάσεις, με φυσικό αποτέλεσμα.",
+    "en": "Whitening, veneers and aesthetic restorations, with a natural result."
+   },
+   "detail": {
+    "el": "Η αισθητική οδοντιατρική βελτιώνει το χρώμα, το σχήμα και τη συνολική εμφάνιση των δοντιών, χωρίς να θυσιάζει την υγεία τους.\n\nΗ λεύκανση γίνεται είτε στο ιατρείο είτε με ατομικούς δίσκους για το σπίτι, πάντα υπό παρακολούθηση. Μια παροδική ευαισθησία τις πρώτες ημέρες είναι συνηθισμένη και υποχωρεί.\n\nΟι όψεις πορσελάνης είναι λεπτά κελύφη που συγκολλώνται στην πρόσθια επιφάνεια του δοντιού και διορθώνουν χρώμα, σχήμα ή μικρά κενά με ελάχιστη προετοιμασία. Οι συγκολλητικές αποκαταστάσεις με σύνθετη ρητίνη αποτελούν πιο συντηρητική εναλλακτική για μικρότερες διορθώσεις.\n\nΚάθε αισθητική θεραπεία ξεκινά από τα βασικά: πρώτα αντιμετωπίζεται η τερηδόνα και η υγεία των ούλων. Σημειώστε ότι η λεύκανση δεν αλλάζει το χρώμα σε υπάρχουσες σφραγίσεις, όψεις ή στεφάνες — αυτές ίσως χρειαστεί να αντικατασταθούν ώστε να ταιριάξουν.",
+    "en": "Cosmetic dentistry improves the colour, shape and overall appearance of the teeth without compromising their health.\n\nWhitening is carried out either at the practice or with custom trays for home use, always under supervision. Mild sensitivity in the first few days is common and settles.\n\nPorcelain veneers are thin shells bonded to the front surface of the tooth, correcting colour, shape or small gaps with minimal preparation. Composite bonding is a more conservative option for smaller corrections.\n\nEvery cosmetic treatment starts with the basics: decay and gum health are addressed first. Note that whitening does not change the colour of existing fillings, veneers or crowns — these may need replacing so that they match."
+   }
+  },
+  {
+   "id": "imp",
+   "icon": "imp",
+   "title": {
+    "el": "Εμφυτευματολογία",
+    "en": "Implantology"
+   },
+   "short": {
+    "el": "Σταθερή αποκατάσταση δοντιών που λείπουν, σχεδιασμένη να διαρκεί.",
+    "en": "Stable replacement of missing teeth, designed to last."
+   },
+   "detail": {
+    "el": "Το οδοντικό εμφύτευμα είναι μια βίδα τιτανίου που τοποθετείται στο οστό της γνάθου και αντικαθιστά τη ρίζα του δοντιού που λείπει. Πάνω της στηρίζεται στεφάνη, γέφυρα ή ολόκληρη οδοντοστοιχία.\n\nΤο πρώτο βήμα είναι η εκτίμηση: χρειάζεται επαρκές οστό και υγιή ούλα. Η πανοραμική ή τρισδιάστατη απεικόνιση δείχνει το διαθέσιμο ύψος και πάχος οστού και τη θέση σημαντικών ανατομικών δομών.\n\nΗ τοποθέτηση γίνεται με τοπική αναισθησία. Ακολουθεί περίοδος επούλωσης, κατά την οποία το οστό ενσωματώνει το εμφύτευμα — συνήθως μερικοί μήνες — πριν τοποθετηθεί η τελική στεφάνη.\n\nΤα εμφυτεύματα δεν τερηδονίζονται, χρειάζονται όμως την ίδια φροντίδα με τα φυσικά δόντια: βούρτσισμα, μεσοδόντιο καθαρισμό και τακτικό έλεγχο. Το κάπνισμα, ο αρρύθμιστος διαβήτης και η μη αντιμετωπισμένη περιοδοντίτιδα μειώνουν τα ποσοστά επιτυχίας και συζητούνται εκ των προτέρων.",
+    "en": "A dental implant is a titanium screw placed into the jawbone to replace the root of a missing tooth. A crown, bridge or full denture is then supported on top of it.\n\nThe first step is assessment: sufficient bone and healthy gums are needed. Panoramic or three-dimensional imaging shows the available bone height and width and the position of important anatomical structures.\n\nPlacement is carried out under local anaesthetic. A healing period follows, during which the bone integrates with the implant — usually a few months — before the final crown is fitted.\n\nImplants cannot decay, but they need the same care as natural teeth: brushing, interdental cleaning and regular review. Smoking, poorly controlled diabetes and untreated gum disease all reduce success rates and are discussed beforehand."
+   }
+  },
+  {
+   "id": "kid",
+   "icon": "kid",
+   "title": {
+    "el": "Παιδοδοντιατρική",
+    "en": "Paediatric Dentistry"
+   },
+   "short": {
+    "el": "Ήπια, φιλική φροντίδα, ώστε τα παιδιά να νιώθουν άνετα από την πρώτη επίσκεψη.",
+    "en": "Gentle, friendly care so children feel at ease from the first visit."
+   },
+   "detail": {
+    "el": "Η πρώτη επίσκεψη συνιστάται γύρω στα πρώτα γενέθλια ή μόλις εμφανιστεί το πρώτο δόντι. Είναι σύντομη και κυρίως γνωριμία με τον χώρο, χωρίς πίεση.\n\nΗ έμφαση δίνεται στην πρόληψη: εφαρμογή φθοριούχου βερνικιού, καλύψεις οπών και σχισμών στους μόνιμους γομφίους, καθώς και πρακτικές οδηγίες για το βούρτσισμα και τη διατροφή — ιδιαίτερα για τη συχνότητα των σακχάρων, που μετράει περισσότερο από την ποσότητα.\n\nΤα νεογιλά δόντια δεν είναι «προσωρινά χωρίς σημασία». Κρατούν τον χώρο για τα μόνιμα και καθοδηγούν την ανατολή τους· η πρόωρη απώλειά τους μπορεί να οδηγήσει σε συνωστισμό.\n\nΗ προσέγγιση είναι απλή: εξηγούμε τι θα γίνει με λόγια που καταλαβαίνει το παιδί, δείχνουμε πριν κάνουμε και δεν βιαζόμαστε.",
+    "en": "The first visit is recommended at around the first birthday, or as soon as the first tooth appears. It is short and mainly a chance to get familiar with the surroundings, with no pressure.\n\nThe emphasis is on prevention: fluoride varnish, fissure sealants on the permanent molars, and practical advice on brushing and diet — particularly on how often sugar is eaten, which matters more than how much.\n\nBaby teeth are not simply temporary and unimportant. They hold the space for the permanent teeth and guide them into position; losing them early can lead to crowding.\n\nThe approach is straightforward: we explain what will happen in words a child understands, show before we do, and never rush."
+   }
+  },
+  {
+   "id": "xray",
+   "icon": "xray",
+   "title": {
+    "el": "Πανοραμικές Ακτινογραφίες",
+    "en": "Panoramic Radiography"
+   },
+   "short": {
+    "el": "Ψηφιακή πανοραμική απεικόνιση για ακριβή διάγνωση, επί τόπου στο ιατρείο.",
+    "en": "Digital panoramic imaging for accurate diagnosis, on site at the practice."
+   },
+   "detail": {
+    "el": "Η πανοραμική ακτινογραφία δίνει μια ενιαία εικόνα και των δύο γνάθων: όλα τα δόντια, τις ρίζες, το οστό, τα ιγμόρεια και τις κροταφογναθικές διαρθρώσεις.\n\nΧρησιμοποιείται όταν η κλινική εξέταση δεν αρκεί — για την εκτίμηση φρονιμιτών, τον σχεδιασμό εμφυτευμάτων, την παρακολούθηση της ανάπτυξης και της ανατολής των δοντιών στα παιδιά, καθώς και για τον εντοπισμό κύστεων ή φλεγμονών που δεν φαίνονται με γυμνό μάτι.\n\nΗ εξέταση διαρκεί δευτερόλεπτα και είναι ανώδυνη: στέκεστε ακίνητοι ενώ το μηχάνημα περιστρέφεται γύρω από το κεφάλι. Δεν μπαίνει τίποτα μέσα στο στόμα.\n\nΜε τον ψηφιακό εξοπλισμό η δόση ακτινοβολίας είναι πολύ χαμηλή — συγκρίσιμη με τη φυσική ακτινοβολία περιβάλλοντος λίγων ημερών. Οι ακτινογραφίες λαμβάνονται μόνο όταν υπάρχει κλινική ένδειξη. Ενημερώστε μας αν είστε ή ενδέχεται να είστε έγκυος.",
+    "en": "A panoramic radiograph gives a single image of both jaws: all the teeth, the roots, the bone, the sinuses and the jaw joints.\n\nIt is used when clinical examination alone is not enough — for assessing wisdom teeth, planning implants, following growth and tooth eruption in children, and detecting cysts or infections that are not visible to the naked eye.\n\nThe scan takes seconds and is painless: you stand still while the machine rotates around your head. Nothing is placed inside the mouth.\n\nWith digital equipment the radiation dose is very low — comparable to a few days of natural background radiation. Radiographs are only taken when there is a clinical reason. Please tell us if you are, or may be, pregnant."
+   }
+  }
+ ],
+ "faq": [
+  {
+   "id": "f1",
+   "q": {
+    "el": "Χρειάζομαι ραντεβού;",
+    "en": "Do I need an appointment?"
+   },
+   "a": {
+    "el": "Ναι — οι επισκέψεις γίνονται κατόπιν ραντεβού, ώστε να αφιερώνεται ο απαραίτητος χρόνος σε κάθε ασθενή. Τηλεφωνήστε μας και θα βρούμε μαζί την πρώτη διαθέσιμη ώρα. Για έντονο πόνο, ενημερώστε μας ότι πρόκειται για επείγον.",
+    "en": "Yes — visits are by appointment, so that each patient gets the time they need. Call us and we will find the earliest suitable slot together. If you are in severe pain, tell us that it is urgent."
+   }
+  },
+  {
+   "id": "f2",
+   "q": {
+    "el": "Τι γίνεται στην πρώτη επίσκεψη;",
+    "en": "What happens at the first visit?"
+   },
+   "a": {
+    "el": "Καταγράφουμε το ιατρικό και οδοντιατρικό ιστορικό, κάνουμε πλήρη κλινική εξέταση δοντιών και ούλων και, εφόσον χρειάζεται, ακτινογραφικό έλεγχο. Στη συνέχεια συζητάμε τι βρήκαμε, ποιες είναι οι επιλογές και τι κόστος έχει η καθεμία — πριν ξεκινήσει οποιαδήποτε θεραπεία.",
+    "en": "We take your medical and dental history, carry out a full examination of the teeth and gums and, if needed, take radiographs. We then talk through what we found, what the options are and what each one costs — before any treatment begins."
+   }
+  },
+  {
+   "id": "f3",
+   "q": {
+    "el": "Πόσο συχνά πρέπει να κάνω έλεγχο;",
+    "en": "How often should I have a check-up?"
+   },
+   "a": {
+    "el": "Για τους περισσότερους ενήλικες ένας έλεγχος κάθε έξι μήνες είναι επαρκής, μαζί με επαγγελματικό καθαρισμό. Αν υπάρχει ιστορικό περιοδοντίτιδας, υψηλός κίνδυνος τερηδόνας ή κάποιο χρόνιο πρόβλημα υγείας, μπορεί να συστηθεί συχνότερη παρακολούθηση. Το διάστημα καθορίζεται εξατομικευμένα.",
+    "en": "For most adults a check-up every six months, together with a professional clean, is enough. If there is a history of gum disease, a high risk of decay or a relevant medical condition, more frequent review may be advised. The interval is set individually."
+   }
+  },
+  {
+   "id": "f4",
+   "q": {
+    "el": "Θα πονέσω;",
+    "en": "Will it hurt?"
+   },
+   "a": {
+    "el": "Οι επεμβατικές θεραπείες γίνονται με τοπική αναισθησία, ώστε να μην αισθάνεστε πόνο. Κάποια ευαισθησία τις επόμενες ημέρες είναι φυσιολογική και υποχωρεί. Αν αγχώνεστε με τον οδοντίατρο, πείτε το μας από την αρχή: εξηγούμε κάθε βήμα πριν γίνει και σταματάμε όποτε το ζητήσετε.",
+    "en": "Invasive treatments are carried out under local anaesthetic, so you should not feel pain. Some tenderness over the following days is normal and settles. If you are anxious about dental treatment, tell us at the outset: we explain each step before it happens and stop whenever you ask."
+   }
+  },
+  {
+   "id": "f5",
+   "q": {
+    "el": "Πότε πρέπει να έρθει το παιδί μου για πρώτη φορά;",
+    "en": "When should my child first come in?"
+   },
+   "a": {
+    "el": "Γύρω στα πρώτα γενέθλια ή μόλις βγει το πρώτο δόντι. Η πρώτη επίσκεψη είναι σύντομη και κυρίως γνωριμία — στόχος είναι το παιδί να συνδέσει το ιατρείο με κάτι οικείο και όχι με κάτι που φοβάται.",
+    "en": "At around the first birthday, or as soon as the first tooth comes through. The first visit is short and mainly about getting familiar — the aim is for the child to associate the practice with something ordinary rather than something to fear."
+   }
+  },
+  {
+   "id": "f6",
+   "q": {
+    "el": "Είναι ασφαλείς οι οδοντιατρικές ακτινογραφίες;",
+    "en": "Are dental X-rays safe?"
+   },
+   "a": {
+    "el": "Με ψηφιακό εξοπλισμό η δόση είναι πολύ χαμηλή — συγκρίσιμη με τη φυσική ακτινοβολία περιβάλλοντος λίγων ημερών. Λαμβάνονται μόνο όταν υπάρχει κλινική ένδειξη και όχι ως ρουτίνα. Ενημερώστε μας αν είστε ή ενδέχεται να είστε έγκυος.",
+    "en": "With digital equipment the dose is very low — comparable to a few days of natural background radiation. They are only taken when there is a clinical reason, not as routine. Please tell us if you are, or may be, pregnant."
+   }
+  },
+  {
+   "id": "f7",
+   "q": {
+    "el": "Η λεύκανση καταστρέφει τα δόντια;",
+    "en": "Does whitening damage the teeth?"
+   },
+   "a": {
+    "el": "Η λεύκανση υπό οδοντιατρική παρακολούθηση δεν βλάπτει το σμάλτο. Η πιο συνηθισμένη παρενέργεια είναι παροδική ευαισθησία, που υποχωρεί. Τα προϊόντα ελεύθερης αγοράς χωρίς προηγούμενη εξέταση ενέχουν κίνδυνο, ιδίως αν υπάρχει τερηδόνα, ουλίτιδα ή εκτεθειμένες ρίζες. Προηγείται πάντα έλεγχος.",
+    "en": "Whitening supervised by a dentist does not harm the enamel. The most common side effect is temporary sensitivity, which settles. Over-the-counter products used without an examination carry risk, particularly where there is decay, gum inflammation or exposed roots. An examination always comes first."
+   }
+  },
+  {
+   "id": "f8",
+   "q": {
+    "el": "Έσπασε ή έπεσε δόντι — τι κάνω;",
+    "en": "A tooth has broken or been knocked out — what do I do?"
+   },
+   "a": {
+    "el": "Τηλεφωνήστε μας το συντομότερο δυνατό. Αν έχει αποκολληθεί ολόκληρο μόνιμο δόντι, κρατήστε το από τη μύλη (το λευκό μέρος) και όχι από τη ρίζα, μην το τρίψετε και μην το καθαρίσετε· διατηρήστε το μέσα σε γάλα ή στο σάλιο και αναζητήστε φροντίδα ιδανικά μέσα σε μία ώρα. Νεογιλό δόντι που έχει αποκολληθεί δεν επανατοποθετείται.",
+    "en": "Call us as soon as you can. If a whole permanent tooth has come out, hold it by the crown (the white part) rather than the root, do not scrub or clean it, keep it in milk or saliva and seek care ideally within an hour. A knocked-out baby tooth should not be put back."
+   }
+  }
+ ]
+}
