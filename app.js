@@ -1,193 +1,174 @@
 /* ============================================================
-   Οδοντιατρείο Παπαντωνίου — shared behaviour
-   Greek is the source language (written directly in the HTML).
-   English is applied on top via the dictionary below when ?lang=en
+   Οδοντιατρικό Κέντρο Παπαντωνίου — shared behaviour
+   Greek is the source language, written directly in the HTML.
+   English is applied on top from this dictionary when ?lang=en
    ============================================================ */
 
 const EN = {
-  /* --- navigation / chrome --- */
-  "nav.home": "Home",
-  "nav.clinic": "The Practice",
-  "nav.services": "Services",
-  "nav.doctor": "The Dentist",
-  "nav.contact": "Contact",
-  "cta.book": "Book an appointment",
-  "logo.top": "Dental Practice",
+  /* chrome */
+  "logo.top": "Dental Centre",
   "logo.name": "Papantoniou",
   "logo.first": "Panagiotis",
-  "ft.brand": "Papantoniou Panagiotis",
-  "dr.mono": "P.P",
-  "rev.2.who": "G. Ps.",
-  "cta.call": "Call us",
+  "nav.home": "Home",
+  "nav.clinic": "The Clinic",
+  "nav.services": "Treatments",
+  "nav.doctor": "The Dentist",
+  "nav.contact": "Contact",
+  "cta.book": "Book",
+  "cta.callnow": "Call to book",
+  "cta.h": "Book your appointment",
+  "cta.p": "Call us or send a message. We would be glad to welcome you to our clinic in Anavyssos.",
+  "cta.details": "Contact details",
 
-  /* --- home --- */
-  "home.title": "Papantoniou Dental Practice | Anavyssos",
-  "home.eyebrow": "Modern dental care",
-  "home.h1a": "Your smile,",
-  "home.h1b": "in the best hands.",
-  "home.lede": "We combine experience, technology and a human approach for a healthy, natural result that lasts.",
-  "home.discover": "Discover the practice",
+  /* home */
+  "home.title": "Papantoniou Dental Centre | Anavyssos",
+  "home.eyebrow": "Anavyssos, Attica",
+  "home.h1a": "Modern dentistry.",
+  "home.h1b": "Personal care.",
+  "home.lede": "More than 20 years of experience, combining modern dental technology with careful, individual treatment.",
+  "home.treatments": "Our treatments",
+  "home.badge": "46 Google reviews",
 
-  "trust.1.h": "Experience & trust",
-  "trust.1.p1": "Over 4.6",
-  "trust.1.p2": "across 53 Google reviews",
-  "trust.2.h": "Personal care",
-  "trust.2.p": "Time for you and your needs",
-  "trust.3.h": "Modern technology",
-  "trust.3.p": "Latest-generation equipment",
-  "trust.4.h": "Anavyssos",
-  "trust.4.p": "Perikleous, Anavyssos 190 13",
+  "s1.h": "More than 20 years of experience",
+  "s1.p": "A long-standing presence in Anavyssos, with thousands of completed treatments.",
+  "s2.h": "Modern technology",
+  "s2.p": "Dental microscope and digital imaging for precision in the detail.",
+  "s3.h": "Personal care",
+  "s3.p": "Time for every patient, and a clear explanation before every step.",
 
-  "home.services.eyebrow": "Services",
-  "home.services.h2a": "Complete solutions",
-  "home.services.h2b": "for every smile",
-  "home.services.more": "All services",
+  "home.about.e": "The clinic",
+  "home.about.h": "A space designed around the patient.",
+  "home.about.p": "From reception through to the dental chair, our centre is designed to feel calm and familiar. Modern equipment and strict hygiene protocols, in surroundings that do not feel like a hospital.",
+  "home.t1": "Dental microscope for precision treatment",
+  "home.t2": "Digital panoramic radiography on site",
+  "home.t3": "Strict sterilisation protocols",
+  "home.about.more": "See the space",
+  "fig.rec": "Reception",
+  "fig.room": "Treatment room",
 
-  "home.about.eyebrow": "The practice",
-  "home.about.h2a": "A space built",
-  "home.about.h2b": "for you to feel at ease.",
-  "home.about.p": "Every detail in our practice — from reception to the dental chair — is designed around you. Modern equipment, strict hygiene protocols and a calm atmosphere make for stress-free care, for children and adults alike.",
-  "home.about.more": "More about the practice",
+  "home.tr.e": "Treatments",
+  "home.tr.h": "What we do",
+  "home.tr.p": "The main treatment categories offered at our centre.",
+  "home.tech.e": "Technology",
+  "home.tech.h": "Precision dentistry.",
+  "home.tech.p": "Working under magnification allows greater accuracy and more conservative treatment — removing less healthy tissue and protecting the natural tooth.",
+  "home.tech.more": "Our equipment",
 
-  "cta.h2": "Book your appointment today",
-  "cta.p": "Call us or send a message — we would be glad to welcome you to our practice in Anavyssos.",
-  "cta.contact": "Contact details",
+  /* treatments */
+  "t1.h": "Cosmetic dentistry",
+  "t1.p": "Whitening, veneers and aesthetic restorations, with a natural result.",
+  "t2.h": "Implantology",
+  "t2.p": "Stable replacement of missing teeth, designed to last.",
+  "t3.h": "Paediatric dentistry",
+  "t3.p": "Gentle, friendly care so children feel at ease from the first visit.",
+  "t4.h": "Panoramic radiography",
+  "t4.p": "Digital panoramic imaging for accurate diagnosis, on site at the clinic.",
 
-  /* --- services --- */
-  "srv.title": "Services | Papantoniou Dental Practice",
-  "srv.h1": "Complete solutions for every smile",
-  "srv.lede": "From prevention through to the most complex restorations, we cover every dental need under one roof.",
-  "srv.1.h": "General dentistry",
-  "srv.1.p": "Prevention, diagnosis and treatment for healthy teeth and gums at every age.",
-  "srv.2.h": "Cosmetic dentistry",
-  "srv.2.p": "Whitening, porcelain veneers and aesthetic restorations for a brighter smile.",
-  "srv.3.h": "Implants",
-  "srv.3.p": "Stable, natural tooth replacement designed to last.",
-  "srv.4.h": "Orthodontics",
-  "srv.4.p": "Modern methods for a beautiful, properly aligned smile.",
-  "srv.5.h": "Endodontics",
-  "srv.5.p": "Root canal treatment with modern techniques, for relief without anxiety.",
-  "srv.6.h": "Prosthetics",
-  "srv.6.p": "Crowns, bridges and dentures made to measure.",
-  "srv.7.h": "Paediatric dentistry",
-  "srv.7.p": "Gentle, friendly care that puts young smiles at ease.",
-  "srv.8.h": "Periodontology",
-  "srv.8.p": "Treatment and prevention of gum disease, the foundation of every healthy smile.",
-  "srv.9.h": "Oral surgery",
-  "srv.9.p": "Extractions and minor surgical procedures, safely and carefully.",
+  "tr.title": "Treatments | Papantoniou Dental Centre",
+  "tr.h1": "Our treatments",
+  "tr.lede": "The main treatment categories offered at our centre. For anything else, please get in touch.",
+  "tr.note": "This list covers the main categories. For any other dental need, call us and we will be glad to advise.",
+  "tr.s.e": "Our approach",
+  "tr.s.h": "Diagnosis first.",
+  "tr.s.p": "Every treatment begins with a full examination and, where needed, digital imaging. We discuss the options and the cost before anything begins.",
 
-  /* --- clinic --- */
-  "cl.title": "The Practice | Papantoniou Dental Practice",
-  "cl.h1": "A space built for you to feel at ease",
-  "cl.lede": "Modern equipment, strict hygiene protocols and a calm atmosphere — in the heart of Anavyssos.",
-  "cl.s1.eyebrow": "Our approach",
-  "cl.s1.h2a": "Care without",
-  "cl.s1.h2b": "the anxiety.",
-  "cl.s1.p": "Every detail in our practice — from reception to the dental chair — is designed around you. We take the time to explain each step before anything happens, so you always know exactly what to expect.",
-  "cl.t1": "Modern diagnostic and treatment equipment",
+  /* clinic */
+  "cl.title": "The Clinic | Papantoniou Dental Centre",
+  "cl.h1": "A space designed around the patient",
+  "cl.lede": "Calm surroundings, modern equipment and attention to detail — in the heart of Anavyssos.",
+  "cl.s1.e": "The space",
+  "cl.s1.h": "Care without the anxiety.",
+  "cl.s1.p": "Each room is equipped for a full range of treatments, with natural light and calm surroundings. We take the time to explain every step before it begins.",
+  "cl.t1": "Clear explanation and costing before every treatment",
   "cl.t2": "Strict sterilisation and hygiene protocols",
-  "cl.t3": "A friendly, calm atmosphere for the whole family",
-  "cl.t4": "Clear explanation and costing before treatment begins",
-  "cl.gal.eyebrow": "Our space",
-  "cl.gal.h2": "A look inside the practice",
-  "cl.gal.p": "Photographs from our practice on Perikleous street in Anavyssos.",
+  "cl.t3": "A welcoming environment for children and adults alike",
+  "cl.s2.e": "Equipment",
+  "cl.s2.h": "Technology in the service of precision.",
+  "cl.s2.p": "Dental microscope, digital panoramic radiography and modern sterilisation equipment — so that diagnosis and treatment are carried out with the greatest possible accuracy.",
+  "cl.gal.e": "Gallery",
+  "cl.gal.h": "A look inside",
 
-  /* --- doctor --- */
-  "dr.title": "The Dentist | Papantoniou Dental Practice",
-  "dr.h1": "Meet Dr. Papantoniou",
-  "dr.lede": "Experience, precision and a genuine interest in the person in the chair.",
-  "dr.eyebrow": "The dentist",
-  "dr.h2a": "Meet",
-  "dr.h2b": "Dr. Papantoniou",
+  /* doctor */
+  "dr.title": "The Dentist | Papantoniou Dental Centre",
+  "dr.h1": "The dentist",
+  "dr.lede": "More than 20 years of dental practice in Anavyssos.",
+  "dr.e": "The dentist",
   "dr.name": "Dr. Panagiotis Papantoniou",
   "dr.role": "Dental surgeon",
-  "dr.bio1": "A long-standing presence in Anavyssos, Dr. Papantoniou has built his reputation on trust and attention to detail. He believes good dental care starts with honest communication with the patient.",
-  "dr.bio2": "Every treatment is tailored to the person in front of him, using modern, evidence-based methods and without rushing — because a smile deserves the time it takes.",
-  "dr.chip1": "4.6 ★ across 53 reviews",
-  "dr.chip2": "Anavyssos, Attica",
-  "dr.photo": "Photograph of the dentist — to be added",
-  "rev.eyebrow": "What our patients say",
-  "rev.h2a": "Your trust is our",
-  "rev.h2b": "greatest reward",
-  "rev.1": "He is the best dentist and the best person I have met.",
-  "rev.2": "Excellent at diagnosis, and there for the patient after the procedure.",
-  "rev.3": "An excellent dentist, and an even more excellent human being.",
+  "dr.photo": "Photograph of the dentist<br>to be added",
+  "dr.p1": "The Papantoniou Dental Centre has served Anavyssos for more than twenty years. The clinic's approach is built on thorough diagnosis, clear communication with the patient, and the use of modern equipment to keep treatment as conservative as possible.",
+  "dr.t1": "More than 20 years of dental practice",
+  "dr.t2": "Treatment under the dental microscope",
+  "dr.t3": "4.6 / 5 across 46 Google reviews",
+  "rev.e": "Reviews",
+  "rev.h": "What patients say",
   "rev.src": "Google Reviews",
+  "rev.count": "Based on 46 Google reviews",
+  "r1": "He is the best dentist and the best person I have met.",
+  "r2": "Excellent at diagnosis, and there for the patient after the procedure.",
+  "r2.who": "G. Ps.",
+  "r3": "An excellent dentist, and an even more excellent human being.",
 
-  /* --- contact --- */
-  "ct.title": "Contact | Papantoniou Dental Practice",
+  /* contact */
+  "ct.title": "Contact | Papantoniou Dental Centre",
   "ct.h1": "Book your appointment",
-  "ct.lede": "Call us or send a message — we would be glad to welcome you to our practice in Anavyssos.",
-  "ct.address": "Address",
+  "ct.lede": "Call us or send a message. We would be glad to welcome you to our clinic.",
+  "ct.addr": "Address",
+  "ct.addr.v": "Perikleous, Anavyssos 190 13",
   "ct.phone": "Phone",
   "ct.hours": "Opening hours",
-  "ct.hours.mon": "Monday",
-  "ct.hours.tue": "Tuesday",
-  "ct.hours.wed": "Wednesday",
-  "ct.hours.thu": "Thursday",
-  "ct.hours.fri": "Friday",
-  "ct.hours.sat": "Saturday",
-  "ct.hours.sun": "Sunday",
-  "ct.closed": "Closed",
-  "ct.form.h": "Send us a message",
-  "ct.form.name": "Full name",
-  "ct.form.phone": "Phone",
-  "ct.form.msg": "Your message...",
-  "ct.form.send": "Send message",
   "ct.map": "Map",
+  "d.mon": "Monday", "d.tue": "Tuesday", "d.wed": "Wednesday", "d.thu": "Thursday",
+  "d.fri": "Friday", "d.sat": "Saturday", "d.sun": "Sunday", "d.closed": "Closed",
+  "ct.form.h": "Send us a message",
+  "ct.f.name": "Full name",
+  "ct.f.phone": "Phone",
+  "ct.f.msg": "Your message…",
+  "ct.f.send": "Send",
 
-  /* --- footer --- */
-  "ft.tag": "A dental practice in Anavyssos, dedicated to personal care and modern dentistry.",
+  /* footer */
+  "ft.tag": "A dental centre in Anavyssos. Modern dental technology and personal care for every patient.",
   "ft.nav": "Navigation",
-  "ft.services": "Services",
+  "ft.services": "Treatments",
   "ft.contact": "Contact",
-  "ft.rights": "© 2026 Papantoniou Dental Practice",
+  "ft.rights": "© 2026 Papantoniou Dental Centre",
   "ft.place": "Anavyssos, Attica"
 };
 
 (function () {
   "use strict";
-
-  /* ---------- language ---------- */
   var params = new URLSearchParams(window.location.search);
   var lang = params.get("lang") === "en" ? "en" : "el";
 
   function applyEnglish() {
     document.documentElement.lang = "en";
-
     document.querySelectorAll("[data-i18n]").forEach(function (el) {
       var v = EN[el.getAttribute("data-i18n")];
-      if (v != null) el.textContent = v;
+      if (v == null) return;
+      if (v.indexOf("<br>") > -1) el.innerHTML = v; else el.textContent = v;
     });
-    document.querySelectorAll("[data-i18n-placeholder]").forEach(function (el) {
-      var v = EN[el.getAttribute("data-i18n-placeholder")];
-      if (v != null) el.setAttribute("placeholder", v);
-    });
-    document.querySelectorAll("[data-i18n-aria]").forEach(function (el) {
-      var v = EN[el.getAttribute("data-i18n-aria")];
-      if (v != null) el.setAttribute("aria-label", v);
-    });
-    document.querySelectorAll("[data-i18n-alt]").forEach(function (el) {
-      var v = EN[el.getAttribute("data-i18n-alt")];
-      if (v != null) el.setAttribute("alt", v);
-    });
+    [["data-i18n-placeholder","placeholder"],["data-i18n-aria","aria-label"],["data-i18n-alt","alt"]]
+      .forEach(function (pair) {
+        document.querySelectorAll("[" + pair[0] + "]").forEach(function (el) {
+          var v = EN[el.getAttribute(pair[0])];
+          if (v != null) el.setAttribute(pair[1], v);
+        });
+      });
     var t = document.body.getAttribute("data-title-key");
     if (t && EN[t]) document.title = EN[t];
   }
 
-  /* keep ?lang=en across internal navigation */
   function carryLang() {
     if (lang !== "en") return;
     document.querySelectorAll("a[href]").forEach(function (a) {
-      var href = a.getAttribute("href");
-      if (!href) return;
-      if (/^(https?:|tel:|mailto:|#)/i.test(href)) return;
+      var h = a.getAttribute("href");
+      if (!h || /^(https?:|tel:|mailto:|#)/i.test(h)) return;
       if (a.hasAttribute("data-lang-link")) return;
-      a.setAttribute("href", href.indexOf("?") > -1 ? href + "&lang=en" : href + "?lang=en");
+      if (/\.(jpg|jpeg|png|webp|svg|pdf)$/i.test(h)) return;   // image links stay clean
+      a.setAttribute("href", h.indexOf("?") > -1 ? h + "&lang=en" : h + "?lang=en");
     });
   }
 
-  /* language switch links point at the current page */
   function wireLangLinks() {
     var page = window.location.pathname.split("/").pop() || "index.html";
     document.querySelectorAll("[data-lang-link]").forEach(function (a) {
@@ -201,23 +182,17 @@ const EN = {
   carryLang();
   wireLangLinks();
 
-  /* ---------- header shadow ---------- */
   var hdr = document.getElementById("hdr");
-  if (hdr) {
-    window.addEventListener("scroll", function () {
-      hdr.classList.toggle("scrolled", window.scrollY > 8);
-    }, { passive: true });
-  }
+  if (hdr) window.addEventListener("scroll", function () {
+    hdr.classList.toggle("scrolled", window.scrollY > 8);
+  }, { passive: true });
 
-  /* ---------- mobile drawer ---------- */
   var burger = document.getElementById("burger");
   var drawer = document.getElementById("drawer");
   if (burger && drawer) {
     var close = function () {
-      burger.classList.remove("open");
-      drawer.classList.remove("open");
-      burger.setAttribute("aria-expanded", "false");
-      document.body.style.overflow = "";
+      burger.classList.remove("open"); drawer.classList.remove("open");
+      burger.setAttribute("aria-expanded", "false"); document.body.style.overflow = "";
     };
     burger.addEventListener("click", function () {
       var open = drawer.classList.toggle("open");
@@ -225,33 +200,15 @@ const EN = {
       burger.setAttribute("aria-expanded", String(open));
       document.body.style.overflow = open ? "hidden" : "";
     });
-    drawer.querySelectorAll("a").forEach(function (a) {
-      a.addEventListener("click", close);
-    });
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") close();
-    });
+    drawer.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", close); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
   }
 
-  /* ---------- drop photos that fail to load ---------- */
-  document.querySelectorAll("img.ph").forEach(function (img) {
-    img.addEventListener("error", function () {
-      var cell = img.closest(".gal a");
-      if (cell) { cell.remove(); return; }
-      img.style.display = "none";
-    });
-  });
-
-  /* ---------- reveal on scroll ---------- */
   var els = document.querySelectorAll(".rv");
   if ("IntersectionObserver" in window) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
-      });
-    }, { threshold: 0.1 });
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); } });
+    }, { threshold: 0.08 });
     els.forEach(function (e) { io.observe(e); });
-  } else {
-    els.forEach(function (e) { e.classList.add("on"); });
-  }
+  } else els.forEach(function (e) { e.classList.add("on"); });
 })();
