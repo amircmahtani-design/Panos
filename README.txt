@@ -1,93 +1,68 @@
 ΟΔΟΝΤΙΑΤΡΙΚΟ ΚΕΝΤΡΟ ΠΑΠΑΝΤΩΝΙΟΥ — website
 ==========================================
 
+White + turquoise clinical style, with the clinic's real
+photographs and real logo mark.
+
 DEPLOY
 ------
-Upload everything to the ROOT of the repo, keeping the images/
-folder as a subfolder:
+Upload to the ROOT of the repo, keeping images/ as a subfolder:
 
-  index.html
-  to-iatreio.html
-  ypiresies.html
-  o-iatros.html
-  epikoinonia.html
-  styles.css
-  app.js
+  index.html  to-iatreio.html  ypiresies.html
+  o-iatros.html  epikoinonia.html
+  styles.css  app.js
   images/          <- keep this folder name exactly
 
-Netlify then auto-deploys. Nothing to build.
+Netlify auto-deploys. Nothing to build.
 
 LANGUAGE
 --------
-Greek is the default and is written into the HTML, so it is what
-Google indexes and what shows if JavaScript fails.
-English is applied on top when the URL ends in ?lang=en
-The EL | EN switch sits in the header and the mobile menu.
-To change English wording, edit the EN dictionary at the top of app.js.
-To change Greek, edit the HTML directly.
+Greek is the default, written into the HTML.
+English applies when the URL ends in ?lang=en
+EL | EN switch is in the header and mobile menu.
+Edit English in the EN dictionary at the top of app.js.
 
+COLOURS
+-------
+All colours are variables at the top of styles.css:
+  --teal:#16A3A0   turquoise accent
+  --bg:#F2F9FB     pale background
+  --ink:#16303B    headings
+Change once, applies to all five pages.
 
-================================================================
-PLEASE CHECK BEFORE THIS GOES LIVE
-================================================================
+The logo mark is gold (#C9A45C), matching the real sign on the
+building. If you would rather it were turquoise, search the HTML
+files for  #C9A45C  and  #D9AE5F  and replace with  #16A3A0.
 
-1. PATIENT PHOTOGRAPHS  ** most important **
-   Two images show identifiable patients being treated:
-     images/05_treatment_in_progress.jpg
-     images/07_dentist_microscope.jpg
-   These are used on the clinic page, the treatments page and the
-   homepage technology section. Under GDPR, publishing photographs
-   of identifiable patients on a website needs their explicit
-   written consent — separate from consent to post on Instagram.
-   Please confirm consent exists, or tell me and I will swap them
-   for the equipment-only shots.
+NOTES
+-----
+1. THE LOGO IS MY REDRAW. The gold tooth-and-leaves mark is an
+   SVG I drew by eye from the storefront photo. Close, but not
+   the clinic's artwork — ask them for the original vector.
 
-2. THE LOGO IS MY REDRAW, NOT THE ORIGINAL
-   The gold tooth-and-leaves mark in the header, footer and favicon
-   is an SVG I drew by eye from the storefront photograph. It is
-   close but it is not the clinic's artwork. Ask them for the
-   original vector file (.ai / .eps / .svg) and replace it — the
-   SVG paths sit in each HTML file inside <a class="logo">, and
-   in app.js there is nothing to change.
+2. IMAGE QUALITY. Photos came from Instagram screenshots, not
+   originals. I removed the Instagram counter and mute icon and
+   resized for web, but the detail is not there. If the clinic
+   sends the original files, drop them into images/ with the
+   same filenames — nothing else needs changing.
 
-3. IMAGE QUALITY
-   The photos came from Instagram screenshots, not original files.
-   I cropped off the Instagram counter and mute icon and resized
-   them for the web, but the detail simply is not there. If the
-   clinic can send the original photographs, they will look
-   noticeably sharper — drop them into images/ using the same
-   filenames and nothing else needs changing.
+3. THE DENTIST'S PHOTO. o-iatros.html still shows the "Π.Π"
+   monogram. Replace with a real portrait when available.
 
-4. THE DENTIST'S PHOTO AND BIOGRAPHY
-   o-iatros.html shows a placeholder panel instead of a portrait.
-   The biography text is deliberately generic and describes the
-   clinic's approach — I did not invent qualifications, training
-   or career history. Ask Dr Papantoniou for a portrait and a
-   short real bio.
+4. TREATMENTS. Limited to the four shown on the entrance glass:
+   Αισθητική Οδοντιατρική, Εμφυτευματολογία, Παιδοδοντιατρική,
+   Πανοραμικές Ακτινογραφίες. Earlier drafts listed orthodontics,
+   endodontics, periodontology, prosthetics and oral surgery —
+   removed, as nothing confirmed the clinic offers them. Add back
+   any that are genuine.
 
-5. TREATMENTS LIST
-   I limited this to the four categories actually shown on the
-   clinic's entrance glass:
-     Αισθητική Οδοντιατρική / Cosmetic dentistry
-     Εμφυτευματολογία / Implantology
-     Παιδοδοντιατρική / Paediatric dentistry
-     Πανοραμικές Ακτινογραφίες / Panoramic radiography
-   Earlier drafts listed orthodontics, endodontics, periodontology,
-   prosthetics and oral surgery — I removed those because nothing
-   confirmed the clinic offers them. Add any that are genuine.
+5. TWO PHOTOS SHOW PATIENTS
+   images/05_treatment_in_progress.jpg
+   images/07_dentist_microscope.jpg
+   You have confirmed the clinic is fine with these.
 
-6. "20+ YEARS OF EXPERIENCE"
-   Taken from your brief. Worth confirming with the clinic, since
-   it appears in the hero, the trust strip and the dentist page.
-
-7. NAME
-   The storefront reads ΟΔΟΝΤΙΑΤΡΙΚΟ ΚΕΝΤΡΟ (Dental Centre), so I
-   used that rather than Οδοντιατρείο. The Google listing still
-   says "Οδοντιατρείο Παπαντωνίου Παναγιώτης" — worth aligning.
-
-
-CONTACT DETAILS USED
---------------------
+DETAILS USED
+------------
 Phone:     22910 37444
 Address:   Περικλέους, Ανάβυσσος 190 13
 Hours:     Δευτέρα–Σάββατο 08:30–13:30 · Κυριακή κλειστά
@@ -95,6 +70,5 @@ Instagram: @papantonioudentalclinic
 Map:       37.7375018, 23.9472415
 Rating:    4.6 from 46 Google reviews
 
-The contact form uses Netlify Forms — it will start working
-automatically once deployed to Netlify, and submissions appear
-in the Netlify dashboard under "Forms".
+The contact form uses Netlify Forms — it starts working once
+deployed; submissions appear under "Forms" in Netlify.
