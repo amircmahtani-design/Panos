@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Studio · Οδοντιατρικό Κέντρο Παπαντωνίου</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#16A3A0;--teal-dk:#0E8B88;--ink:#16303B;--soft:#5C7480;--line:#DCE9ED;
+  --bg:#F2F9FB;--white:#fff;--gold:#C9A45C;--warn:#B4553F;--ok:#2E7D5B}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);
+  font-size:14px;line-height:1.6}
+a{color:var(--teal-dk)}
+h1,h2,h3{font-family:'Cormorant Garamond',serif;margin:0;font-weight:600}
+button{font-family:inherit;cursor:pointer;font-size:13px}
+input,textarea,select{font-family:inherit;font-size:13.5px;width:100%;padding:10px 12px;
+  border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink)}
+input:focus,textarea:focus,select:focus{outline:none;border-color:var(--teal)}
+textarea{min-height:80px;resize:vertical;line-height:1.6}
+
+/* gate */
+#gate{position:fixed;inset:0;background:var(--ink);display:flex;align-items:center;
+  justify-content:center;z-index:100;padding:24px}
+#gate .box{background:#fff;border-radius:16px;padding:38px 34px;max-width:360px;width:100%;text-align:center}
+#gate h1{font-size:26px;margin-bottom:6px}
+#gate p{color:var(--soft);font-size:13px;margin:0 0 22px}
+#gate input{text-align:center;margin-bottom:12px}
+#gate button{width:100%;background:var(--teal);color:#fff;border:0;padding:13px;border-radius:8px;font-weight:600}
+#gate .err{color:var(--warn);font-size:12.5px;min-height:18px;margin-top:8px}
+
+/* shell */
+header{position:sticky;top:0;z-index:40;background:#fff;border-bottom:1px solid var(--line);
+  display:flex;align-items:center;gap:16px;padding:12px 20px;flex-wrap:wrap}
+header .title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;flex:none}
+header .badge{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);
+  border:1px solid var(--gold);padding:3px 8px;border-radius:99px}
+header .sp{flex:1}
+.btn{border:1px solid var(--line);background:#fff;color:var(--ink);padding:9px 16px;border-radius:8px;font-weight:600}
+.btn:hover{border-color:var(--teal);color:var(--teal-dk)}
+.btn.primary{background:var(--teal);border-color:var(--teal);color:#fff}
+.btn.primary:hover{background:var(--teal-dk);color:#fff}
+.btn.ghost{background:transparent}
+.btn.danger:hover{border-color:var(--warn);color:var(--warn)}
+
+.wrap{display:grid;grid-template-columns:220px 1fr;gap:0;min-height:calc(100vh - 58px)}
+nav.side{background:#fff;border-right:1px solid var(--line);padding:16px 12px}
+nav.side button{display:block;width:100%;text-align:left;background:none;border:0;padding:10px 12px;
+  border-radius:8px;color:var(--soft);font-weight:600}
+nav.side button:hover{background:var(--bg);color:var(--ink)}
+nav.side button.on{background:var(--teal);color:#fff}
+nav.side .grp{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#9BB0B8;
+  padding:16px 12px 6px}
+main{padding:26px 28px 90px;max-width:900px}
+main h2{font-size:26px;margin-bottom:4px}
+main .sub{color:var(--soft);font-size:13px;margin-bottom:26px}
+
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px;margin-bottom:16px}
+.card h3{font-size:17px;margin-bottom:2px}
+.card .k{font-size:10.5px;color:#9BB0B8;font-family:ui-monospace,monospace;margin-bottom:12px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fld label{display:block;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:#9BB0B8;font-weight:600;margin-bottom:5px}
+.flag{font-size:11px}
+@media (max-width:820px){.wrap{grid-template-columns:1fr}nav.side{border-right:0;border-bottom:1px solid var(--line);
+  display:flex;flex-wrap:wrap;gap:6px}nav.side .grp{width:100%}nav.side button{width:auto}
+  main{padding:20px 16px 90px}.row{grid-template-columns:1fr}}
+
+/* hours */
+.hrow{display:grid;grid-template-columns:1.1fr 1.1fr 1fr auto;gap:10px;align-items:center;
+  padding:10px 0;border-bottom:1px dashed var(--line)}
+.hrow:last-child{border-bottom:0}
+.hrow .cl{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--soft);white-space:nowrap}
+@media (max-width:820px){.hrow{grid-template-columns:1fr 1fr;}}
+
+/* images / team */
+.imgcard{display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:start}
+.imgcard .prev{width:120px;height:120px;border-radius:10px;overflow:hidden;background:var(--bg);
+  border:1px solid var(--line);display:flex;align-items:center;justify-content:center}
+.imgcard .prev img{width:100%;height:100%;object-fit:cover}
+.imgcard .prev span{font-size:11px;color:#9BB0B8}
+.filebtn{position:relative;overflow:hidden;display:inline-block}
+.filebtn input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.hint{font-size:11.5px;color:#9BB0B8;margin-top:8px}
+
+/* save bar */
+.savebar{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--ink);color:#fff;
+  display:flex;align-items:center;gap:12px;padding:12px 20px;flex-wrap:wrap}
+.savebar .msg{flex:1;font-size:12.5px;color:rgba(255,255,255,.75)}
+.savebar .btn{background:transparent;border-color:rgba(255,255,255,.3);color:#fff}
+.savebar .btn:hover{border-color:var(--gold);color:var(--gold)}
+.savebar .btn.primary{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+.notice{background:#FFF7E8;border:1px solid #E8D5A8;border-radius:10px;padding:14px 16px;
+  font-size:13px;margin-bottom:20px;line-height:1.65}
+.notice b{color:var(--ink)}
+.search{margin-bottom:18px}
+
+/* translate controls */
+.trrow{display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:end}
+.trbox{display:flex;flex-direction:column;gap:6px;padding-bottom:2px}
+.trbtn{border:1px solid var(--line);background:#fff;color:var(--soft);border-radius:7px;
+  padding:7px 10px;font-size:10.5px;font-weight:700;letter-spacing:.04em;white-space:nowrap;
+  transition:.2s;min-width:78px}
+.trbtn:hover{border-color:var(--teal);color:var(--teal-dk);background:#F2FAFA}
+.trbtn:disabled{opacity:.5;cursor:default}
+.bulkbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:#fff;
+  border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin-bottom:14px;font-size:12.5px;color:var(--soft)}
+@media (max-width:820px){
+  .trrow{grid-template-columns:1fr}
+  .trbox{flex-direction:row;justify-content:center}
+  .trbtn{flex:1}
+}
+</style>
+</head>
+<body>
+
+<div id="gate">
+  <div class="box">
+    <h1>Studio</h1>
+    <p>Οδοντιατρικό Κέντρο Παπαντωνίου</p>
+    <input type="password" id="pw" placeholder="Κωδικός" autocomplete="current-password">
+    <button id="go">Είσοδος</button>
+    <div class="err" id="err"></div>
+  </div>
+</div>
+
+<div id="app" hidden>
+  <header>
+    <span class="title">Studio</span>
+    <span class="badge" id="dirty" hidden>μη αποθηκευμένο</span>
+    <span class="sp"></span>
+    <a class="btn ghost" href="../index.html" target="_blank" rel="noopener">Προβολή site</a>
+    <button class="btn" id="importBtn">Εισαγωγή JSON</button>
+    <input type="file" id="importFile" accept="application/json" hidden>
+    <button class="btn primary" id="exportBtn">Εξαγωγή content.json</button>
+  </header>
+
+  <div class="wrap">
+    <nav class="side" id="nav"></nav>
+    <main id="view"></main>
+  </div>
+
+  <div class="savebar">
+    <span class="msg" id="msg">Οι αλλαγές αποθηκεύονται τοπικά σε αυτόν τον browser.</span>
+    <button class="btn" id="resetBtn">Επαναφορά</button>
+    <button class="btn primary" id="exportBtn2">Εξαγωγή content.json</button>
+  </div>
+</div>
+
+<script>
+/* =====================================================================
+   Studio — edits a working copy of content.json in this browser, then
+   exports a new content.json for you to upload to GitHub.
+   The password is only a convenience latch, not real security.
+   ===================================================================== */
+const PASSWORD = "panos";                 // change me
+const LSKEY    = "papantoniou_studio_v1";
+
+let DATA = null, BASE = null, dirty = false, tab = "brand";
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s==null?"":s).replace(/[&<>"]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m]));
+
+/* ---------- gate ---------- */
+$("#go").onclick = tryEnter;
+$("#pw").onkeydown = e => { if (e.key === "Enter") tryEnter(); };
+function tryEnter(){
+  if ($("#pw").value === PASSWORD){ sessionStorage.setItem("studio_ok","1"); enter(); }
+  else $("#err").textContent = "Λάθος κωδικός.";
+}
+if (sessionStorage.getItem("studio_ok") === "1") enter();
+
+function enter(){
+  $("#gate").remove?.();
+  const g = $("#gate"); if (g) g.style.display = "none";
+  $("#app").hidden = false;
+  load();
+}
+
+/* ---------- data ---------- */
+async function load(){
+  const res = await fetch("../content.json", {cache:"no-store"});
+  BASE = await res.json();
+  const saved = localStorage.getItem(LSKEY);
+  DATA = saved ? JSON.parse(saved) : JSON.parse(JSON.stringify(BASE));
+  if (saved) setDirty(true, "Φορτώθηκε τοπικό αντίγραφο με μη εξαγόμενες αλλαγές.");
+  buildNav(); render();
+}
+function persist(){ localStorage.setItem(LSKEY, JSON.stringify(DATA)); setDirty(true); }
+function setDirty(v, m){
+  dirty = v; $("#dirty").hidden = !v;
+  if (m) $("#msg").textContent = m;
+  else if (v) $("#msg").textContent = "Μη εξαγόμενες αλλαγές — πατήστε Εξαγωγή όταν τελειώσετε.";
+}
+
+/* ---------- nav ---------- */
+function groups(){
+  const g = new Set();
+  Object.values(DATA.strings).forEach(v => g.add(v.group || "Άλλα"));
+  return [...g].sort();
+}
+function buildNav(){
+  const n = $("#nav");
+  let h = '<div class="grp">Ρυθμίσεις</div>';
+  h += tabBtn("brand","Λογότυπο & μάρκα");
+  h += tabBtn("contact","Στοιχεία επικοινωνίας");
+  h += tabBtn("hours","Ωράριο");
+  h += tabBtn("team","Η ομάδα");
+  h += tabBtn("treatments","Θεραπείες");
+  h += tabBtn("faq","Συχνές ερωτήσεις");
+  h += tabBtn("images","Φωτογραφίες");
+  h += '<div class="grp">Κείμενα</div>';
+  groups().forEach(g => h += tabBtn("g:"+g, g));
+  n.innerHTML = h;
+  n.querySelectorAll("button").forEach(b => b.onclick = () => { tab = b.dataset.t; buildNav(); render(); });
+}
+function tabBtn(id,label){
+  return `<button data-t="${esc(id)}" class="${tab===id?"on":""}">${esc(label)}</button>`;
+}
+
+/* ---------- render ---------- */
+function render(){
+  const v = $("#view");
+  if (tab === "brand")   return v.innerHTML = viewBrand(), bindBrand();
+  if (tab === "contact") return v.innerHTML = viewContact(), bindGeneric("contact");
+  if (tab === "hours")   return v.innerHTML = viewHours(), bindHours();
+  if (tab === "team")    return v.innerHTML = viewTeam(), bindTeam();
+  if (tab === "treatments") return v.innerHTML = viewTreat(), bindTreat();
+  if (tab === "faq")     return v.innerHTML = viewFaq(), bindFaq();
+  if (tab === "images")  return v.innerHTML = viewImages(), bindImages();
+  if (tab.startsWith("g:")) return v.innerHTML = viewStrings(tab.slice(2)), bindStrings();
+}
+
+function viewBrand(){
+  const b = DATA.brand || {};
+  return `<h2>Λογότυπο & μάρκα</h2>
+  <p class="sub">Το όνομα στην κεφαλίδα αλλάζει από τα Κείμενα → Κοινά.</p>
+  <div class="card">
+    <div class="imgcard">
+      <div class="prev">${b.logo ? `<img src="${esc(b.logo)}">` : "<span>χωρίς αρχείο</span>"}</div>
+      <div>
+        <h3>Δικό σας λογότυπο</h3>
+        <p class="k">brand.logo</p>
+        <label class="btn filebtn">Ανέβασμα εικόνας<input type="file" accept="image/*" id="logoFile"></label>
+        ${b.logo ? '<button class="btn danger" id="logoClear" style="margin-left:8px">Αφαίρεση</button>' : ""}
+        <div style="margin-top:14px">
+          <label class="flag"><input type="checkbox" id="useLogo" ${b.useCustomLogo?"checked":""} style="width:auto;margin-right:6px">
+          Χρήση δικού μου λογότυπου αντί του σχεδιασμένου</label>
+        </div>
+        <p class="hint">Προτείνεται PNG με διαφάνεια, τετράγωνο, τουλάχιστον 200×200.
+        Αν το αφήσετε κενό, χρησιμοποιείται το σχεδιασμένο λογότυπο.</p>
+      </div>
+    </div>
+  </div>`;
+}
+function bindBrand(){
+  const f = $("#logoFile");
+  if (f) f.onchange = e => readImage(e.target.files[0], 400, d => { DATA.brand.logo = d; DATA.brand.useCustomLogo = true; persist(); render(); });
+  const c = $("#logoClear");
+  if (c) c.onclick = () => { DATA.brand.logo = ""; DATA.brand.useCustomLogo = false; persist(); render(); };
+  const u = $("#useLogo");
+  if (u) u.onchange = () => { DATA.brand.useCustomLogo = u.checked; persist(); };
+}
+
+const CONTACT_FIELDS = [
+ ["phoneDisplay","Τηλέφωνο (όπως εμφανίζεται)"],["phoneTel","Τηλέφωνο (μορφή κλήσης)"],
+ ["addressEl","Διεύθυνση (ελληνικά)"],["addressEn","Διεύθυνση (αγγλικά)"],
+ ["instagram","Instagram URL"],["reviewsUrl","Σύνδεσμος κριτικών Google"],
+ ["mapsDirections","Σύνδεσμος οδηγιών Google Maps"],["mapsEmbed","Ενσωματωμένος χάρτης (embed URL)"],
+ ["rating","Βαθμολογία"],["reviewCount","Πλήθος κριτικών"]];
+
+function viewContact(){
+  return `<h2>Στοιχεία επικοινωνίας</h2>
+  <p class="sub">Αλλάζουν παντού στο site ταυτόχρονα.</p>
+  <div class="card"><div class="row">` +
+  CONTACT_FIELDS.map(([k,l]) =>
+    `<div class="fld"><label>${esc(l)}</label>
+     <input data-sec="contact" data-k="${k}" data-pair-field="contact:address"
+      data-l="${k==="addressEl"?"el":k==="addressEn"?"en":""}" value="${esc(DATA.contact[k]||"")}"></div>`).join("") +
+  `</div>
+   <div class="fld" style="margin-top:16px;max-width:340px"><label>Email για μεγαλύτερο όριο μεταφράσεων (προαιρετικό)</label>
+     <input id="trEmail" placeholder="you@example.com" value="${esc(localStorage.getItem(TR_EMAIL_KEY)||"")}"></div>
+   <div style="margin-top:12px">${trControls("contact:address")}
+     <span class="hint" style="margin-left:8px">μεταφράζει τη διεύθυνση</span></div></div>`;
+}
+function bindGeneric(sec){
+  bindTr();
+  const em = $("#trEmail");
+  if (em) em.oninput = () => localStorage.setItem(TR_EMAIL_KEY, em.value.trim());
+  $("#view").querySelectorAll(`[data-sec="${sec}"]`).forEach(i =>
+    i.oninput = () => { DATA[sec][i.dataset.k] = i.value; persist(); });
+}
+
+function viewHours(){
+  return `<h2>Ωράριο</h2><p class="sub">Εμφανίζεται στη σελίδα Επικοινωνίας.</p><div class="card">` +
+  DATA.hours.map((h,i) => `<div class="hrow">
+    <input data-h="${i}" data-f="el" value="${esc(h.day.el)}" placeholder="Ημέρα (EL)">
+    <input data-h="${i}" data-f="en" value="${esc(h.day.en)}" placeholder="Day (EN)">
+    <input data-h="${i}" data-f="value" value="${esc(h.value)}" placeholder="08:30 – 13:30" ${h.closed?"disabled":""}>
+    <label class="cl"><input type="checkbox" data-h="${i}" data-f="closed" ${h.closed?"checked":""} style="width:auto"> κλειστά</label>
+  </div>`).join("") + `</div>`;
+}
+function bindHours(){
+  $("#view").querySelectorAll("[data-h]").forEach(el => {
+    const i = +el.dataset.h, f = el.dataset.f;
+    const fn = () => {
+      if (f === "closed") { DATA.hours[i].closed = el.checked; persist(); render(); return; }
+      if (f === "value") DATA.hours[i].value = el.value;
+      else DATA.hours[i].day[f] = el.value;
+      persist();
+    };
+    el.oninput = fn; if (f === "closed") el.onchange = fn;
+  });
+}
+
+function viewTeam(){
+  return `<h2>Η ομάδα</h2>
+  <p class="sub">Φωτογραφία τύπου βιογραφικού και σύντομο κείμενο για κάθε μέλος.</p>
+  <div style="margin-bottom:14px"><button class="btn" id="addMember">+ Νέο μέλος</button></div>` +
+  DATA.team.map((m,i) => `<div class="card"><div class="imgcard">
+    <div class="prev">${m.photo ? `<img src="${esc(m.photo)}">` : "<span>χωρίς φωτό</span>"}</div>
+    <div style="min-width:0">
+      <div class="trrow">
+        <div class="fld"><label>Όνομα (EL)</label>
+          <input data-m="${i}" data-p="name" data-l="el" data-pair-field="team:${i}:name" value="${esc(m.name.el)}"></div>
+        ${trControls("team:"+i+":name")}
+        <div class="fld"><label>Name (EN)</label>
+          <input data-m="${i}" data-p="name" data-l="en" data-pair-field="team:${i}:name" value="${esc(m.name.en)}"></div>
+      </div>
+      <div class="trrow" style="margin-top:12px">
+        <div class="fld"><label>Ιδιότητα (EL)</label>
+          <input data-m="${i}" data-p="role" data-l="el" data-pair-field="team:${i}:role" value="${esc(m.role.el)}"></div>
+        ${trControls("team:"+i+":role")}
+        <div class="fld"><label>Role (EN)</label>
+          <input data-m="${i}" data-p="role" data-l="en" data-pair-field="team:${i}:role" value="${esc(m.role.en)}"></div>
+      </div>
+      <div class="trrow" style="margin-top:12px">
+        <div class="fld"><label>Βιογραφικό (EL)</label>
+          <textarea data-m="${i}" data-p="bio" data-l="el" data-pair-field="team:${i}:bio">${esc(m.bio.el)}</textarea></div>
+        ${trControls("team:"+i+":bio")}
+        <div class="fld"><label>Biography (EN)</label>
+          <textarea data-m="${i}" data-p="bio" data-l="en" data-pair-field="team:${i}:bio">${esc(m.bio.en)}</textarea></div>
+      </div>
+      <div style="margin-top:14px">
+        <label class="btn filebtn">Φωτογραφία<input type="file" accept="image/*" data-mf="${i}"></label>
+        ${m.photo ? `<button class="btn danger" data-mc="${i}" style="margin-left:8px">Αφαίρεση φωτό</button>` : ""}
+        <button class="btn danger" data-md="${i}" style="margin-left:8px">Διαγραφή μέλους</button>
+      </div>
+      <p class="hint">Η φωτογραφία μικραίνει αυτόματα σε 700px και αποθηκεύεται μέσα στο content.json.</p>
+    </div></div></div>`).join("");
+}
+function bindTeam(){
+  const v = $("#view");
+  v.querySelectorAll("[data-m]").forEach(el => el.oninput = () => {
+    DATA.team[+el.dataset.m][el.dataset.p][el.dataset.l] = el.value; persist();
+  });
+  v.querySelectorAll("[data-mf]").forEach(el => el.onchange = e =>
+    readImage(e.target.files[0], 700, d => { DATA.team[+el.dataset.mf].photo = d; persist(); render(); }));
+  v.querySelectorAll("[data-mc]").forEach(el => el.onclick = () => {
+    DATA.team[+el.dataset.mc].photo = ""; persist(); render(); });
+  v.querySelectorAll("[data-md]").forEach(el => el.onclick = () => {
+    if (!confirm("Διαγραφή αυτού του μέλους;")) return;
+    DATA.team.splice(+el.dataset.md,1); persist(); render(); });
+  bindTr();
+  $("#addMember").onclick = () => {
+    DATA.team.push({id:"t"+Date.now(), name:{el:"Όνομα Επώνυμο",en:"Full Name"},
+      role:{el:"Ιδιότητα",en:"Role"}, bio:{el:"",en:""}, photo:""});
+    persist(); render();
+  };
+}
+
+
+function viewTreat(){
+  return `<h2>Θεραπείες</h2>
+  <p class="sub">Τίτλος, σύντομη περιγραφή και αναλυτικό κείμενο. Κενή γραμμή = νέα παράγραφος.</p>
+  <div style="margin-bottom:14px"><button class="btn" id="addTreat">+ Νέα θεραπεία</button></div>` +
+  DATA.treatments.map((t,i) => `<div class="card">
+    <p class="k">${esc(t.id)}</p>
+    <div class="trrow">
+      <div class="fld"><label>Τίτλος (EL)</label>
+        <input data-t="${i}" data-p="title" data-l="el" data-pair-field="treat:${i}:title" value="${esc(t.title.el)}"></div>
+      ${trControls("treat:"+i+":title")}
+      <div class="fld"><label>Title (EN)</label>
+        <input data-t="${i}" data-p="title" data-l="en" data-pair-field="treat:${i}:title" value="${esc(t.title.en)}"></div>
+    </div>
+    <div class="trrow" style="margin-top:12px">
+      <div class="fld"><label>Σύντομη (EL)</label>
+        <textarea data-t="${i}" data-p="short" data-l="el" data-pair-field="treat:${i}:short">${esc(t.short.el)}</textarea></div>
+      ${trControls("treat:"+i+":short")}
+      <div class="fld"><label>Short (EN)</label>
+        <textarea data-t="${i}" data-p="short" data-l="en" data-pair-field="treat:${i}:short">${esc(t.short.en)}</textarea></div>
+    </div>
+    <div class="trrow" style="margin-top:12px">
+      <div class="fld"><label>Αναλυτικά (EL)</label>
+        <textarea style="min-height:190px" data-t="${i}" data-p="detail" data-l="el" data-pair-field="treat:${i}:detail">${esc(t.detail.el)}</textarea></div>
+      ${trControls("treat:"+i+":detail")}
+      <div class="fld"><label>Detail (EN)</label>
+        <textarea style="min-height:190px" data-t="${i}" data-p="detail" data-l="en" data-pair-field="treat:${i}:detail">${esc(t.detail.en)}</textarea></div>
+    </div>
+    <div style="margin-top:14px">
+      <label class="flag">Εικονίδιο:
+        <select data-ti="${i}" style="width:auto;display:inline-block;margin-left:6px">
+          ${["aes","imp","kid","xray"].map(k=>`<option value="${k}" ${t.icon===k?"selected":""}>${k}</option>`).join("")}
+        </select></label>
+      <button class="btn danger" data-td="${i}" style="margin-left:12px">Διαγραφή θεραπείας</button>
+    </div></div>`).join("");
+}
+function bindTreat(){
+  const v = $("#view");
+  v.querySelectorAll("[data-t]").forEach(el => el.oninput = () => {
+    DATA.treatments[+el.dataset.t][el.dataset.p][el.dataset.l] = el.value; persist(); });
+  v.querySelectorAll("[data-ti]").forEach(el => el.onchange = () => {
+    DATA.treatments[+el.dataset.ti].icon = el.value; persist(); });
+  v.querySelectorAll("[data-td]").forEach(el => el.onclick = () => {
+    if (!confirm("Διαγραφή αυτής της θεραπείας;")) return;
+    DATA.treatments.splice(+el.dataset.td,1); persist(); render(); });
+  $("#addTreat").onclick = () => {
+    DATA.treatments.push({id:"tr"+Date.now(), icon:"aes",
+      title:{el:"Νέα θεραπεία",en:"New treatment"}, short:{el:"",en:""}, detail:{el:"",en:""}});
+    persist(); render();
+  };
+  bindTr();
+}
+
+function viewFaq(){
+  return `<h2>Συχνές ερωτήσεις</h2>
+  <p class="sub">Εμφανίζονται στη σελίδα Θεραπειών.</p>
+  <div style="margin-bottom:14px"><button class="btn" id="addFaq">+ Νέα ερώτηση</button></div>` +
+  DATA.faq.map((f,i) => `<div class="card">
+    <div class="trrow">
+      <div class="fld"><label>Ερώτηση (EL)</label>
+        <input data-f="${i}" data-p="q" data-l="el" data-pair-field="faq:${i}:q" value="${esc(f.q.el)}"></div>
+      ${trControls("faq:"+i+":q")}
+      <div class="fld"><label>Question (EN)</label>
+        <input data-f="${i}" data-p="q" data-l="en" data-pair-field="faq:${i}:q" value="${esc(f.q.en)}"></div>
+    </div>
+    <div class="trrow" style="margin-top:12px">
+      <div class="fld"><label>Απάντηση (EL)</label>
+        <textarea style="min-height:130px" data-f="${i}" data-p="a" data-l="el" data-pair-field="faq:${i}:a">${esc(f.a.el)}</textarea></div>
+      ${trControls("faq:"+i+":a")}
+      <div class="fld"><label>Answer (EN)</label>
+        <textarea style="min-height:130px" data-f="${i}" data-p="a" data-l="en" data-pair-field="faq:${i}:a">${esc(f.a.en)}</textarea></div>
+    </div>
+    <div style="margin-top:12px"><button class="btn danger" data-fd="${i}">Διαγραφή ερώτησης</button></div>
+  </div>`).join("");
+}
+function bindFaq(){
+  const v = $("#view");
+  v.querySelectorAll("[data-f]").forEach(el => el.oninput = () => {
+    DATA.faq[+el.dataset.f][el.dataset.p][el.dataset.l] = el.value; persist(); });
+  v.querySelectorAll("[data-fd]").forEach(el => el.onclick = () => {
+    if (!confirm("Διαγραφή αυτής της ερώτησης;")) return;
+    DATA.faq.splice(+el.dataset.fd,1); persist(); render(); });
+  $("#addFaq").onclick = () => {
+    DATA.faq.push({id:"f"+Date.now(), q:{el:"Νέα ερώτηση",en:"New question"}, a:{el:"",en:""}});
+    persist(); render();
+  };
+  bindTr();
+}
+
+function viewImages(){
+  return `<h2>Φωτογραφίες</h2>
+  <p class="sub">Αντικαταστήστε οποιαδήποτε φωτογραφία του site.</p>` +
+  Object.entries(DATA.images).map(([k,rec]) => `<div class="card"><div class="imgcard">
+    <div class="prev"><img src="${esc(rec.src.startsWith("data:")?rec.src:"../"+rec.src)}"></div>
+    <div><h3>${esc(rec.label||k)}</h3><p class="k">images.${esc(k)}</p>
+      <label class="btn filebtn">Αντικατάσταση<input type="file" accept="image/*" data-if="${esc(k)}"></label>
+      <button class="btn danger" data-ir="${esc(k)}" style="margin-left:8px">Επαναφορά</button>
+      <p class="hint">Μικραίνει αυτόματα σε 1600px.</p>
+    </div></div></div>`).join("");
+}
+function bindImages(){
+  const v = $("#view");
+  v.querySelectorAll("[data-if]").forEach(el => el.onchange = e =>
+    readImage(e.target.files[0], 1600, d => { DATA.images[el.dataset.if].src = d; persist(); render(); }));
+  v.querySelectorAll("[data-ir]").forEach(el => el.onclick = () => {
+    DATA.images[el.dataset.ir].src = BASE.images[el.dataset.ir].src; persist(); render(); });
+}
+
+function viewStrings(group){
+  const keys = Object.keys(DATA.strings).filter(k => (DATA.strings[k].group||"Άλλα") === group).sort();
+  return `<h2>${esc(group)}</h2>
+  <p class="sub">${keys.length} κείμενα. Γράψτε σε όποια γλώσσα σας βολεύει και πατήστε το βέλος για μετάφραση.</p>
+  <div class="bulkbar">
+    <span>Συμπλήρωση κενών:</span>
+    <button class="btn" id="bulkEl2En">EL → EN</button>
+    <button class="btn" id="bulkEn2El">EN → EL</button>
+  </div>
+  <div class="search"><input id="filter" placeholder="Αναζήτηση κειμένου…"></div>` +
+  keys.map(k => `<div class="card str" data-txt="${esc((DATA.strings[k].el+" "+DATA.strings[k].en).toLowerCase())}">
+    <p class="k">${esc(k)}</p>
+    <div class="trrow">
+      <div class="fld"><label>Ελληνικά</label>
+        <textarea data-s="${esc(k)}" data-l="el" data-pair-field="strings:${esc(k)}">${esc(DATA.strings[k].el)}</textarea></div>
+      ${trControls("strings:"+k)}
+      <div class="fld"><label>English</label>
+        <textarea data-s="${esc(k)}" data-l="en" data-pair-field="strings:${esc(k)}">${esc(DATA.strings[k].en)}</textarea></div>
+    </div></div>`).join("");
+}
+function bindStrings(){
+  $("#view").querySelectorAll("[data-s]").forEach(el => el.oninput = () => {
+    DATA.strings[el.dataset.s][el.dataset.l] = el.value; persist();
+  });
+  bindTr();
+  const grp = tab.slice(2);
+  const keys = Object.keys(DATA.strings)
+    .filter(k => (DATA.strings[k].group||"Άλλα") === grp).map(k => "strings:"+k);
+  const b1 = $("#bulkEl2En"), b2 = $("#bulkEn2El");
+  if (b1) b1.onclick = () => translateGroupMissing(keys, "el2en");
+  if (b2) b2.onclick = () => translateGroupMissing(keys, "en2el");
+  const f = $("#filter");
+  if (f) f.oninput = () => {
+    const q = f.value.toLowerCase().trim();
+    $("#view").querySelectorAll(".str").forEach(c =>
+      c.style.display = !q || c.dataset.txt.includes(q) ? "" : "none");
+  };
+}
+
+
+/* ---------- translation ----------
+   Two free providers, tried in order. No API key needed.
+   If both fail (offline / rate limited) the field is left alone
+   and a message is shown, so nothing is ever silently wiped.     */
+const TR_EMAIL_KEY = "papantoniou_studio_email";
+
+async function translateText(text, from, to){
+  text = (text || "").trim();
+  if (!text) return "";
+  const email = localStorage.getItem(TR_EMAIL_KEY) || "";
+  // provider 1 — MyMemory
+  try{
+    let u = "https://api.mymemory.translated.net/get?q=" + encodeURIComponent(text) +
+            "&langpair=" + from + "|" + to + (email ? "&de=" + encodeURIComponent(email) : "");
+    const r = await fetch(u);
+    const j = await r.json();
+    const out = j && j.responseData && j.responseData.translatedText;
+    if (out && !/^MYMEMORY WARNING/i.test(out) && !/QUERY LENGTH LIMIT/i.test(out)) {
+      return out.replace(/&#39;/g,"'").replace(/&quot;/g,'"').replace(/&amp;/g,"&");
+    }
+  }catch(_){}
+  // provider 2 — Lingva
+  try{
+    const r = await fetch("https://lingva.ml/api/v1/" + from + "/" + to + "/" + encodeURIComponent(text));
+    const j = await r.json();
+    if (j && j.translation) return j.translation;
+  }catch(_){}
+  throw new Error("no-provider");
+}
+
+function trPair(key){          // "strings:home.h1a"  |  "team:0:name"  |  "contact:address"
+  if (key.startsWith("strings:")){
+    const k = key.slice(8);
+    return { get:l => DATA.strings[k][l], set:(l,v) => { DATA.strings[k][l] = v; } };
+  }
+  if (key.startsWith("team:")){
+    const [,i,p] = key.split(":");
+    return { get:l => DATA.team[+i][p][l], set:(l,v) => { DATA.team[+i][p][l] = v; } };
+  }
+  if (key.startsWith("treat:")){
+    const [,i,p] = key.split(":");
+    return { get:l => DATA.treatments[+i][p][l], set:(l,v) => { DATA.treatments[+i][p][l] = v; } };
+  }
+  if (key.startsWith("faq:")){
+    const [,i,p] = key.split(":");
+    return { get:l => DATA.faq[+i][p][l], set:(l,v) => { DATA.faq[+i][p][l] = v; } };
+  }
+  if (key === "contact:address"){
+    return { get:l => DATA.contact[l === "el" ? "addressEl" : "addressEn"],
+             set:(l,v) => { DATA.contact[l === "el" ? "addressEl" : "addressEn"] = v; } };
+  }
+  return null;
+}
+
+async function runTranslate(btn){
+  const pair = trPair(btn.dataset.pair);
+  if (!pair) return;
+  const dir = btn.dataset.dir;                 // "el2en" or "en2el"
+  const from = dir === "el2en" ? "el" : "en";
+  const to   = dir === "el2en" ? "en" : "el";
+  const src  = pair.get(from);
+  if (!src || !src.trim()){ flash("Η γλώσσα προέλευσης είναι κενή."); return; }
+  const old = btn.textContent;
+  btn.textContent = "…"; btn.disabled = true;
+  try{
+    const out = await translateText(src, from, to);
+    pair.set(to, out);
+    persist();
+    const field = document.querySelector(`[data-pair-field="${btn.dataset.pair}"][data-l="${to}"]`);
+    if (field) field.value = out;
+    flash("Μετάφραση " + (dir === "el2en" ? "EL → EN" : "EN → EL") + " ολοκληρώθηκε.");
+  }catch(_){
+    flash("Η μετάφραση απέτυχε (χωρίς σύνδεση ή όριο υπηρεσίας). Το πεδίο δεν άλλαξε.");
+  }
+  btn.textContent = old; btn.disabled = false;
+}
+
+async function translateGroupMissing(pairs, dir){
+  const from = dir === "el2en" ? "el" : "en";
+  const to   = dir === "el2en" ? "en" : "el";
+  let done = 0, failed = 0;
+  flash("Μετάφραση σε εξέλιξη…");
+  for (const key of pairs){
+    const pair = trPair(key);
+    if (!pair) continue;
+    const src = pair.get(from), dst = pair.get(to);
+    if (!src || !src.trim() || (dst && dst.trim())) continue;   // only fill blanks
+    try{ pair.set(to, await translateText(src, from, to)); done++; }
+    catch(_){ failed++; if (failed > 2) break; }
+    await new Promise(r => setTimeout(r, 320));                  // be gentle on the free tier
+  }
+  persist(); render();
+  flash(done + " κείμενα μεταφράστηκαν" + (failed ? ", " + failed + " απέτυχαν" : "") + ".");
+}
+
+function flash(m){ $("#msg").textContent = m; }
+
+function trControls(pairKey){
+  return `<div class="trbox">
+    <button class="trbtn" data-pair="${esc(pairKey)}" data-dir="el2en" title="Μετάφραση Ελληνικά → English">EL&nbsp;→&nbsp;EN</button>
+    <button class="trbtn" data-pair="${esc(pairKey)}" data-dir="en2el" title="Μετάφραση English → Ελληνικά">EN&nbsp;→&nbsp;EL</button>
+  </div>`;
+}
+function bindTr(){
+  $("#view").querySelectorAll(".trbtn").forEach(b => b.onclick = () => runTranslate(b));
+}
+
+/* ---------- image handling ---------- */
+function readImage(file, maxEdge, cb){
+  if (!file) return;
+  const fr = new FileReader();
+  fr.onload = () => {
+    const im = new Image();
+    im.onload = () => {
+      let {width:w, height:h} = im;
+      const sc = Math.min(1, maxEdge / Math.max(w,h));
+      w = Math.round(w*sc); h = Math.round(h*sc);
+      const cv = document.createElement("canvas");
+      cv.width = w; cv.height = h;
+      cv.getContext("2d").drawImage(im, 0, 0, w, h);
+      const isPng = /png$/i.test(file.type);
+      cb(cv.toDataURL(isPng ? "image/png" : "image/jpeg", isPng ? undefined : 0.82));
+    };
+    im.src = fr.result;
+  };
+  fr.readAsDataURL(file);
+}
+
+/* ---------- export / import / reset ---------- */
+function doExport(){
+  DATA.updated = new Date().toISOString().slice(0,10);
+  const blob = new Blob([JSON.stringify(DATA, null, 1)], {type:"application/json"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob); a.download = "content.json"; a.click();
+  URL.revokeObjectURL(a.href);
+  setDirty(false, "Έγινε εξαγωγή. Ανεβάστε το content.json στο GitHub για να δημοσιευτεί.");
+  $("#dirty").hidden = true;
+}
+$("#exportBtn").onclick = doExport;
+$("#exportBtn2").onclick = doExport;
+$("#importBtn").onclick = () => $("#importFile").click();
+$("#importFile").onchange = e => {
+  const f = e.target.files[0]; if (!f) return;
+  const r = new FileReader();
+  r.onload = () => { try { DATA = JSON.parse(r.result); persist(); buildNav(); render();
+    setDirty(true,"Έγινε εισαγωγή αρχείου."); } catch(_) { alert("Μη έγκυρο JSON."); } };
+  r.readAsText(f);
+};
+$("#resetBtn").onclick = () => {
+  if (!confirm("Επαναφορά όλων στο δημοσιευμένο content.json; Οι τοπικές αλλαγές θα χαθούν.")) return;
+  localStorage.removeItem(LSKEY);
+  DATA = JSON.parse(JSON.stringify(BASE));
+  buildNav(); render(); setDirty(false, "Έγινε επαναφορά.");
+};
+window.addEventListener("beforeunload", e => { if (dirty) { e.preventDefault(); e.returnValue = ""; } });
+</script>
+</body>
+</html>
