@@ -795,6 +795,61 @@
    "el": "Αν η ερώτησή σας δεν είναι εδώ, τηλεφωνήστε μας και θα χαρούμε να τη συζητήσουμε.",
    "en": "If your question is not here, call us and we will be glad to talk it through.",
    "group": "Υπηρεσίες"
+  },
+  "nav.faq": {
+   "el": "Ερωτήσεις",
+   "en": "FAQ",
+   "group": "Κοινά (header / footer / κουμπιά)"
+  },
+  "ft.faq": {
+   "el": "Συχνές ερωτήσεις",
+   "en": "Frequently asked questions",
+   "group": "Κοινά (header / footer / κουμπιά)"
+  },
+  "fq.title": {
+   "el": "Συχνές ερωτήσεις | Οδοντιατρείο Παπαντωνίου Παναγιώτης",
+   "en": "Frequently asked questions | Papantoniou Dental Centre",
+   "group": "Συχνές ερωτήσεις"
+  },
+  "fq.h1": {
+   "el": "Συχνές ερωτήσεις",
+   "en": "Frequently asked questions",
+   "group": "Συχνές ερωτήσεις"
+  },
+  "fq.lede": {
+   "el": "Οι ερωτήσεις που μας κάνουν πιο συχνά οι ασθενείς — για τα ραντεβού, τα επείγοντα, τις θεραπείες και το κόστος. Αν δεν βρίσκετε αυτό που ψάχνετε, τηλεφωνήστε μας.",
+   "en": "The questions our patients ask us most often — about appointments, emergencies, treatment and cost. If you cannot find what you are looking for, please call us.",
+   "group": "Συχνές ερωτήσεις"
+  },
+  "fq.e": {
+   "el": "Ό,τι ρωτούν συνήθως οι ασθενείς",
+   "en": "What patients usually ask",
+   "group": "Συχνές ερωτήσεις"
+  },
+  "fq.h": {
+   "el": "Απαντήσεις με μια ματιά",
+   "en": "Answers at a glance",
+   "group": "Συχνές ερωτήσεις"
+  },
+  "srv.faq.e": {
+   "el": "Συχνές ερωτήσεις",
+   "en": "Frequently asked questions",
+   "group": "Υπηρεσίες"
+  },
+  "srv.faq.h": {
+   "el": "Έχετε κάποια ερώτηση;",
+   "en": "Have a question?",
+   "group": "Υπηρεσίες"
+  },
+  "srv.faq.p": {
+   "el": "Συγκεντρώσαμε τις ερωτήσεις που μας κάνουν πιο συχνά οι ασθενείς — από το πρώτο ραντεβού μέχρι τα επείγοντα και το κόστος.",
+   "en": "We have collected the questions our patients ask most often — from the first appointment through to emergencies and cost.",
+   "group": "Υπηρεσίες"
+  },
+  "srv.faq.btn": {
+   "el": "Δείτε τις συχνές ερωτήσεις",
+   "en": "Read the FAQ",
+   "group": "Υπηρεσίες"
   }
  },
  "treatments": [
@@ -815,19 +870,67 @@
    }
   },
   {
+   "id": "ortho",
+   "icon": "ortho",
+   "title": {
+    "el": "Ορθοδοντική",
+    "en": "Orthodontics"
+   },
+   "short": {
+    "el": "Ευθυγράμμιση δοντιών και βελτίωση της σύγκλεισης, με σιδεράκια ή διάφανους νάρθηκες Invisalign.",
+    "en": "Straightening the teeth and improving the bite, with braces or clear Invisalign aligners."
+   },
+   "detail": {
+    "el": "Παρέχουμε ολοκληρωμένες ορθοδοντικές θεραπείες με στόχο τη σωστή ευθυγράμμιση των δοντιών, τη βελτίωση της σύγκλεισης και την αισθητική του χαμόγελου.\n\nΗ θεραπεία εξατομικεύεται στις ανάγκες κάθε ασθενούς και πραγματοποιείται με σύγχρονες μεθόδους, συμπεριλαμβανομένων των διάφανων ναρθήκων Invisalign.\n\nΗ ορθοδοντική μας συνεργάτιδα είναι απόφοιτος του Πανεπιστημίου του New Jersey και πιστοποιημένη συνεργάτιδα της Invisalign.",
+    "en": "We provide comprehensive orthodontic treatment aimed at correct alignment of the teeth, an improved bite and the aesthetics of the smile.\n\nTreatment is tailored to the needs of each patient and carried out using modern methods, including clear Invisalign aligners.\n\nOur orthodontic associate is a graduate of the University of New Jersey and a certified Invisalign provider."
+   }
+  },
+  {
+   "id": "endo",
+   "icon": "endo",
+   "title": {
+    "el": "Ενδοδοντία",
+    "en": "Endodontics — Root Canal Treatment"
+   },
+   "short": {
+    "el": "Απονεύρωση με στόχο τη διατήρηση του φυσικού δοντιού, με κλασική μέθοδο ή χειρουργικό μικροσκόπιο.",
+    "en": "Root canal treatment aimed at keeping the natural tooth, by the classic method or under a surgical microscope."
+   },
+   "detail": {
+    "el": "Η ενδοδοντική θεραπεία (απονεύρωση) πραγματοποιείται με στόχο τη διατήρηση του φυσικού δοντιού και την αντιμετώπιση φλεγμονών ή λοιμώξεων του πολφού.\n\nΑνάλογα με την περίπτωση, η θεραπεία μπορεί να ολοκληρωθεί με την κλασική μέθοδο σε δύο ραντεβού ή, με τη χρήση χειρουργικού μικροσκοπίου, σε ένα ραντεβού, προσφέροντας υψηλή ακρίβεια και καλύτερη ορατότητα κατά τη διάρκεια της θεραπείας.",
+    "en": "Endodontic treatment — a root canal — is carried out in order to preserve the natural tooth and to treat inflammation or infection of the pulp.\n\nDepending on the case, treatment can be completed by the classic method over two appointments or, using a surgical microscope, in a single appointment, giving greater precision and better visibility throughout."
+   }
+  },
+  {
+   "id": "perio",
+   "icon": "perio",
+   "title": {
+    "el": "Περιοδοντική Θεραπεία",
+    "en": "Periodontal Treatment"
+   },
+   "short": {
+    "el": "Πρόληψη και μη χειρουργική αντιμετώπιση των παθήσεων των ούλων και των στηρικτικών ιστών.",
+    "en": "Prevention and non-surgical treatment of gum disease and of the tissues supporting the teeth."
+   },
+   "detail": {
+    "el": "Η περιοδοντική θεραπεία αφορά την πρόληψη και αντιμετώπιση των παθήσεων των ούλων και των στηρικτικών ιστών των δοντιών.\n\nΜέσω σύγχρονων, μη χειρουργικών τεχνικών, αντιμετωπίζονται προβλήματα όπως η ουλίτιδα και η περιοδοντίτιδα, με στόχο τον έλεγχο της φλεγμονής, τη διατήρηση των φυσικών δοντιών και τη μακροχρόνια υγεία του στόματος.",
+    "en": "Periodontal treatment covers the prevention and management of disease of the gums and of the tissues that support the teeth.\n\nUsing modern, non-surgical techniques, conditions such as gingivitis and periodontitis are treated, with the aim of controlling inflammation, keeping the natural teeth and maintaining long-term oral health."
+   }
+  },
+  {
    "id": "imp",
    "icon": "imp",
    "title": {
-    "el": "Εμφυτευματολογία",
-    "en": "Implantology"
+    "el": "Εμφυτεύματα & Γναθοχειρουργικές Θεραπείες",
+    "en": "Implants & Oral and Maxillofacial Surgery"
    },
    "short": {
-    "el": "Σταθερή αποκατάσταση δοντιών που λείπουν, σχεδιασμένη να διαρκεί.",
-    "en": "Stable replacement of missing teeth, designed to last."
+    "el": "Εμφυτεύματα και γναθοχειρουργικές θεραπείες από εξειδικευμένο Γναθοπροσωπικό Χειρουργό.",
+    "en": "Implant and maxillofacial treatment carried out by a specialist Oral and Maxillofacial Surgeon."
    },
    "detail": {
-    "el": "Το οδοντικό εμφύτευμα είναι μια βίδα τιτανίου που τοποθετείται στο οστό της γνάθου και αντικαθιστά τη ρίζα του δοντιού που λείπει. Πάνω της στηρίζεται στεφάνη, γέφυρα ή ολόκληρη οδοντοστοιχία.\n\nΤο πρώτο βήμα είναι η εκτίμηση: χρειάζεται επαρκές οστό και υγιή ούλα. Η πανοραμική ή τρισδιάστατη απεικόνιση δείχνει το διαθέσιμο ύψος και πάχος οστού και τη θέση σημαντικών ανατομικών δομών.\n\nΗ τοποθέτηση γίνεται με τοπική αναισθησία. Ακολουθεί περίοδος επούλωσης, κατά την οποία το οστό ενσωματώνει το εμφύτευμα — συνήθως μερικοί μήνες — πριν τοποθετηθεί η τελική στεφάνη.\n\nΤα εμφυτεύματα δεν τερηδονίζονται, χρειάζονται όμως την ίδια φροντίδα με τα φυσικά δόντια: βούρτσισμα, μεσοδόντιο καθαρισμό και τακτικό έλεγχο. Το κάπνισμα, ο αρρύθμιστος διαβήτης και η μη αντιμετωπισμένη περιοδοντίτιδα μειώνουν τα ποσοστά επιτυχίας και συζητούνται εκ των προτέρων.",
-    "en": "A dental implant is a titanium screw placed into the jawbone to replace the root of a missing tooth. A crown, bridge or full denture is then supported on top of it.\n\nThe first step is assessment: sufficient bone and healthy gums are needed. Panoramic or three-dimensional imaging shows the available bone height and width and the position of important anatomical structures.\n\nPlacement is carried out under local anaesthetic. A healing period follows, during which the bone integrates with the implant — usually a few months — before the final crown is fitted.\n\nImplants cannot decay, but they need the same care as natural teeth: brushing, interdental cleaning and regular review. Smoking, poorly controlled diabetes and untreated gum disease all reduce success rates and are discussed beforehand."
+    "el": "Πραγματοποιούνται εμφυτευματικές και γναθοχειρουργικές θεραπείες από εξειδικευμένο Γναθοπροσωπικό Χειρουργό. Τα οδοντικά εμφυτεύματα αποτελούν μια σύγχρονη λύση για την αποκατάσταση χαμένων δοντιών, προσφέροντας λειτουργικότητα και φυσική αισθητική. Κάθε περιστατικό αξιολογείται εξατομικευμένα και σχεδιάζεται με βάση τις ανάγκες και την ανατομία του ασθενούς.\n\nΟ Γναθοπροσωπικός Χειρουργός είναι εξειδικευμένος επιστήμονας που έχει ολοκληρώσει σπουδές τόσο Οδοντιατρικής όσο και Ιατρικής. Η διπλή αυτή εκπαίδευση επιτρέπει την αντιμετώπιση και των πιο απαιτητικών περιστατικών, με πλήρη εικόνα της γενικότερης υγείας του ασθενούς.\n\nΤο οδοντικό εμφύτευμα είναι μια βίδα τιτανίου που τοποθετείται στο οστό της γνάθου και αντικαθιστά τη ρίζα του δοντιού που λείπει. Πάνω της στηρίζεται στεφάνη, γέφυρα ή ολόκληρη οδοντοστοιχία.\n\nΤο πρώτο βήμα είναι η εκτίμηση: χρειάζεται επαρκές οστό και υγιή ούλα. Η πανοραμική ή τρισδιάστατη απεικόνιση δείχνει το διαθέσιμο ύψος και πάχος οστού και τη θέση σημαντικών ανατομικών δομών.\n\nΗ τοποθέτηση γίνεται με τοπική αναισθησία. Ακολουθεί περίοδος επούλωσης, κατά την οποία το οστό ενσωματώνει το εμφύτευμα — συνήθως μερικοί μήνες — πριν τοποθετηθεί η τελική στεφάνη.\n\nΤα εμφυτεύματα δεν τερηδονίζονται, χρειάζονται όμως την ίδια φροντίδα με τα φυσικά δόντια: βούρτσισμα, μεσοδόντιο καθαρισμό και τακτικό έλεγχο. Το κάπνισμα, ο αρρύθμιστος διαβήτης και η μη αντιμετωπισμένη περιοδοντίτιδα μειώνουν τα ποσοστά επιτυχίας και συζητούνται εκ των προτέρων.",
+    "en": "Implant and maxillofacial procedures are carried out by a specialist Oral and Maxillofacial Surgeon. Dental implants are a modern solution for replacing missing teeth, restoring both function and natural appearance. Every case is assessed individually and planned around the needs and the anatomy of the patient.\n\nAn Oral and Maxillofacial Surgeon is a specialist who has completed training in both dentistry and medicine. That dual qualification allows even the most demanding cases to be managed, with a full view of the patient's general health.\n\nA dental implant is a titanium screw placed into the jawbone to replace the root of a missing tooth. A crown, bridge or full denture is then supported on top of it.\n\nThe first step is assessment: sufficient bone and healthy gums are needed. Panoramic or three-dimensional imaging shows the available bone height and width and the position of important anatomical structures.\n\nPlacement is carried out under local anaesthetic. A healing period follows, during which the bone integrates with the implant — usually a few months — before the final crown is fitted.\n\nImplants cannot decay, but they need the same care as natural teeth: brushing, interdental cleaning and regular review. Smoking, poorly controlled diabetes and untreated gum disease all reduce success rates and are discussed beforehand."
    }
   },
   {
@@ -850,106 +953,423 @@
    "id": "xray",
    "icon": "xray",
    "title": {
-    "el": "Πανοραμικές Ακτινογραφίες",
-    "en": "Panoramic Radiography"
+    "el": "Ψηφιακή Πανοραμική & Ενδοστοματικές Ακτινογραφίες",
+    "en": "Digital Panoramic & Intraoral Radiography"
    },
    "short": {
-    "el": "Ψηφιακή πανοραμική απεικόνιση για ακριβή διάγνωση, επί τόπου στο ιατρείο.",
-    "en": "Digital panoramic imaging for accurate diagnosis, on site at the practice."
+    "el": "Ψηφιακές πανοραμικές και ενδοστοματικές ακτινογραφίες για ακριβή διάγνωση, επί τόπου στο ιατρείο.",
+    "en": "Digital panoramic and intraoral radiographs for accurate diagnosis, on site at the practice."
    },
    "detail": {
-    "el": "Η πανοραμική ακτινογραφία δίνει μια ενιαία εικόνα και των δύο γνάθων: όλα τα δόντια, τις ρίζες, το οστό, τα ιγμόρεια και τις κροταφογναθικές διαρθρώσεις.\n\nΧρησιμοποιείται όταν η κλινική εξέταση δεν αρκεί — για την εκτίμηση φρονιμιτών, τον σχεδιασμό εμφυτευμάτων, την παρακολούθηση της ανάπτυξης και της ανατολής των δοντιών στα παιδιά, καθώς και για τον εντοπισμό κύστεων ή φλεγμονών που δεν φαίνονται με γυμνό μάτι.\n\nΗ εξέταση διαρκεί δευτερόλεπτα και είναι ανώδυνη: στέκεστε ακίνητοι ενώ το μηχάνημα περιστρέφεται γύρω από το κεφάλι. Δεν μπαίνει τίποτα μέσα στο στόμα.\n\nΜε τον ψηφιακό εξοπλισμό η δόση ακτινοβολίας είναι πολύ χαμηλή — συγκρίσιμη με τη φυσική ακτινοβολία περιβάλλοντος λίγων ημερών. Οι ακτινογραφίες λαμβάνονται μόνο όταν υπάρχει κλινική ένδειξη. Ενημερώστε μας αν είστε ή ενδέχεται να είστε έγκυος.",
-    "en": "A panoramic radiograph gives a single image of both jaws: all the teeth, the roots, the bone, the sinuses and the jaw joints.\n\nIt is used when clinical examination alone is not enough — for assessing wisdom teeth, planning implants, following growth and tooth eruption in children, and detecting cysts or infections that are not visible to the naked eye.\n\nThe scan takes seconds and is painless: you stand still while the machine rotates around your head. Nothing is placed inside the mouth.\n\nWith digital equipment the radiation dose is very low — comparable to a few days of natural background radiation. Radiographs are only taken when there is a clinical reason. Please tell us if you are, or may be, pregnant."
+    "el": "Στο ιατρείο πραγματοποιούνται ψηφιακές πανοραμικές και ενδοστοματικές ακτινογραφίες, απαραίτητες για την ολοκληρωμένη διάγνωση και τον σχεδιασμό της κατάλληλης θεραπείας. Η σύγχρονη ψηφιακή απεικόνιση επιτρέπει την άμεση και λεπτομερή αξιολόγηση των δοντιών και των γύρω ανατομικών δομών.\n\nΗ πανοραμική ακτινογραφία δίνει μια ενιαία εικόνα και των δύο γνάθων: όλα τα δόντια, τις ρίζες, το οστό, τα ιγμόρεια και τις κροταφογναθικές διαρθρώσεις.\n\nΧρησιμοποιείται όταν η κλινική εξέταση δεν αρκεί — για την εκτίμηση φρονιμιτών, τον σχεδιασμό εμφυτευμάτων, την παρακολούθηση της ανάπτυξης και της ανατολής των δοντιών στα παιδιά, καθώς και για τον εντοπισμό κύστεων ή φλεγμονών που δεν φαίνονται με γυμνό μάτι.\n\nΗ πανοραμική λήψη διαρκεί δευτερόλεπτα και είναι ανώδυνη: στέκεστε ακίνητοι ενώ το μηχάνημα περιστρέφεται γύρω από το κεφάλι, χωρίς να μπαίνει τίποτα μέσα στο στόμα. Στις ενδοστοματικές λήψεις τοποθετείται ένας μικρός αισθητήρας δίπλα στο δόντι για λίγα δευτερόλεπτα.\n\nΜε τον ψηφιακό εξοπλισμό η δόση ακτινοβολίας είναι πολύ χαμηλή — συγκρίσιμη με τη φυσική ακτινοβολία περιβάλλοντος λίγων ημερών. Οι ακτινογραφίες λαμβάνονται μόνο όταν υπάρχει κλινική ένδειξη. Ενημερώστε μας αν είστε ή ενδέχεται να είστε έγκυος.",
+    "en": "Digital panoramic and intraoral radiographs are taken at the practice. They are essential for a complete diagnosis and for planning the right treatment, and modern digital imaging allows the teeth and the surrounding anatomical structures to be assessed immediately and in detail.\n\nA panoramic radiograph gives a single image of both jaws: all the teeth, the roots, the bone, the sinuses and the jaw joints.\n\nIt is used when clinical examination alone is not enough — for assessing wisdom teeth, planning implants, following growth and tooth eruption in children, and detecting cysts or infections that are not visible to the naked eye.\n\nThe panoramic scan takes seconds and is painless: you stand still while the machine rotates around your head, and nothing is placed inside the mouth. For intraoral films a small sensor is held beside the tooth for a few seconds.\n\nWith digital equipment the radiation dose is very low — comparable to a few days of natural background radiation. Radiographs are only taken when there is a clinical reason. Please tell us if you are, or may be, pregnant."
    }
   }
  ],
  "faq": [
   {
    "id": "f1",
+   "cat": {
+    "el": "Ραντεβού & πρώτη επίσκεψη",
+    "en": "Appointments & your first visit"
+   },
    "q": {
-    "el": "Χρειάζομαι ραντεβού;",
-    "en": "Do I need an appointment?"
+    "el": "Πώς κλείνω ραντεβού;",
+    "en": "How can I book an appointment?"
    },
    "a": {
-    "el": "Ναι — οι επισκέψεις γίνονται κατόπιν ραντεβού, ώστε να αφιερώνεται ο απαραίτητος χρόνος σε κάθε ασθενή. Τηλεφωνήστε μας και θα βρούμε μαζί την πρώτη διαθέσιμη ώρα. Για έντονο πόνο, ενημερώστε μας ότι πρόκειται για επείγον.",
-    "en": "Yes — visits are by appointment, so that each patient gets the time they need. Call us and we will find the earliest suitable slot together. If you are in severe pain, tell us that it is urgent."
+    "el": "Τηλεφωνικά στο 22910 37444 ή συμπληρώνοντας τη φόρμα ραντεβού στη σελίδα Επικοινωνίας. Θα επικοινωνήσουμε μαζί σας για να επιβεβαιώσουμε ημέρα και ώρα.\n\nΟι επισκέψεις γίνονται κατόπιν ραντεβού, ώστε να αφιερώνεται ο απαραίτητος χρόνος σε κάθε ασθενή. Αν έχετε έντονο πόνο, πείτε μας ότι πρόκειται για επείγον και θα προσπαθήσουμε να σας δούμε το συντομότερο δυνατό.",
+    "en": "Call us on 22910 37444, or fill in the appointment form on the Contact page. We will get back to you to confirm the day and time.\n\nVisits are by appointment, so that each patient gets the time they need. If you are in pain, tell us that it is urgent and we will do our best to see you as soon as possible."
    }
   },
   {
    "id": "f2",
+   "cat": {
+    "el": "Ραντεβού & πρώτη επίσκεψη",
+    "en": "Appointments & your first visit"
+   },
+   "q": {
+    "el": "Τι πρέπει να φέρω στο πρώτο μου ραντεβού;",
+    "en": "What should I bring to my first appointment?"
+   },
+   "a": {
+    "el": "Ένα έγγραφο ταυτοποίησης, τη λίστα με τα φάρμακα που λαμβάνετε και τυχόν πρόσφατες οδοντιατρικές ακτινογραφίες ή ιατρικές γνωματεύσεις που έχετε.\n\nΕνημερώστε μας επίσης για αλλεργίες, χρόνια νοσήματα, εγκυμοσύνη ή προηγούμενες αντιδράσεις σε οδοντιατρική θεραπεία.",
+    "en": "A form of identification, a list of any medication you currently take, and any recent dental X-rays or relevant medical information you may have.\n\nPlease also tell us about allergies, medical conditions, pregnancy, or previous reactions to dental treatment."
+   }
+  },
+  {
+   "id": "f3",
+   "cat": {
+    "el": "Ραντεβού & πρώτη επίσκεψη",
+    "en": "Appointments & your first visit"
+   },
    "q": {
     "el": "Τι γίνεται στην πρώτη επίσκεψη;",
     "en": "What happens at the first visit?"
    },
    "a": {
-    "el": "Καταγράφουμε το ιατρικό και οδοντιατρικό ιστορικό, κάνουμε πλήρη κλινική εξέταση δοντιών και ούλων και, εφόσον χρειάζεται, ακτινογραφικό έλεγχο. Στη συνέχεια συζητάμε τι βρήκαμε, ποιες είναι οι επιλογές και τι κόστος έχει η καθεμία — πριν ξεκινήσει οποιαδήποτε θεραπεία.",
-    "en": "We take your medical and dental history, carry out a full examination of the teeth and gums and, if needed, take radiographs. We then talk through what we found, what the options are and what each one costs — before any treatment begins."
-   }
-  },
-  {
-   "id": "f3",
-   "q": {
-    "el": "Πόσο συχνά πρέπει να κάνω έλεγχο;",
-    "en": "How often should I have a check-up?"
-   },
-   "a": {
-    "el": "Για τους περισσότερους ενήλικες ένας έλεγχος κάθε έξι μήνες είναι επαρκής, μαζί με επαγγελματικό καθαρισμό. Αν υπάρχει ιστορικό περιοδοντίτιδας, υψηλός κίνδυνος τερηδόνας ή κάποιο χρόνιο πρόβλημα υγείας, μπορεί να συστηθεί συχνότερη παρακολούθηση. Το διάστημα καθορίζεται εξατομικευμένα.",
-    "en": "For most adults a check-up every six months, together with a professional clean, is enough. If there is a history of gum disease, a high risk of decay or a relevant medical condition, more frequent review may be advised. The interval is set individually."
+    "el": "Συζητάμε τι σας απασχολεί, καταγράφουμε το ιατρικό και οδοντιατρικό ιστορικό και κάνουμε πλήρη κλινική εξέταση δοντιών, ούλων και στόματος. Εφόσον χρειάζεται, ακολουθεί ακτινογραφικός έλεγχος.\n\nΣτη συνέχεια σας εξηγούμε τι βρήκαμε, ποιες είναι οι επιλογές και τι κόστος έχει η καθεμία — πριν ξεκινήσει οποιαδήποτε θεραπεία.",
+    "en": "We talk through your concerns, take your medical and dental history and carry out a full examination of the teeth, gums and mouth. If necessary, radiographs follow.\n\nWe then explain what we found, what the options are and what each one costs — before any treatment begins."
    }
   },
   {
    "id": "f4",
+   "cat": {
+    "el": "Ραντεβού & πρώτη επίσκεψη",
+    "en": "Appointments & your first visit"
+   },
    "q": {
-    "el": "Θα πονέσω;",
-    "en": "Will it hurt?"
+    "el": "Πόσο συχνά πρέπει να επισκέπτομαι τον οδοντίατρο;",
+    "en": "How often should I visit the dentist?"
    },
    "a": {
-    "el": "Οι επεμβατικές θεραπείες γίνονται με τοπική αναισθησία, ώστε να μην αισθάνεστε πόνο. Κάποια ευαισθησία τις επόμενες ημέρες είναι φυσιολογική και υποχωρεί. Αν αγχώνεστε με τον οδοντίατρο, πείτε το μας από την αρχή: εξηγούμε κάθε βήμα πριν γίνει και σταματάμε όποτε το ζητήσετε.",
-    "en": "Invasive treatments are carried out under local anaesthetic, so you should not feel pain. Some tenderness over the following days is normal and settles. If you are anxious about dental treatment, tell us at the outset: we explain each step before it happens and stop whenever you ask."
+    "el": "Το σωστό διάστημα εξαρτάται από την κατάσταση της στοματικής σας υγείας. Για πολλούς ασθενείς ένας έλεγχος κάθε έξι μήνες είναι κατάλληλος· όσοι έχουν χαμηλό κίνδυνο μπορεί να χρειάζονται αραιότερη παρακολούθηση, ενώ ιστορικό περιοδοντίτιδας, υψηλός κίνδυνος τερηδόνας ή κάποιο χρόνιο πρόβλημα υγείας μπορεί να απαιτούν συχνότερη.\n\nΘα σας προτείνουμε πρόγραμμα με βάση τις δικές σας ανάγκες.",
+    "en": "The right interval depends on your oral health. For many patients a check-up every six months is appropriate; those at low risk may be advised to attend less often, while a history of gum disease, a high risk of decay or a relevant medical condition may call for more frequent review.\n\nWe will recommend a schedule based on your individual needs."
    }
   },
   {
    "id": "f5",
+   "cat": {
+    "el": "Ραντεβού & πρώτη επίσκεψη",
+    "en": "Appointments & your first visit"
+   },
+   "q": {
+    "el": "Τι γίνεται αν χρειαστεί να ακυρώσω το ραντεβού μου;",
+    "en": "What happens if I need to cancel my appointment?"
+   },
+   "a": {
+    "el": "Ενημερώστε μας το συντομότερο δυνατό, ιδανικά τουλάχιστον 24 ώρες πριν. Έτσι μπορούμε να διαθέσουμε την ώρα σε άλλον ασθενή που την περιμένει.",
+    "en": "Please let us know as soon as you can, ideally at least 24 hours in advance. That allows us to offer the time to another patient who is waiting for it."
+   }
+  },
+  {
+   "id": "f6",
+   "cat": {
+    "el": "Ραντεβού & πρώτη επίσκεψη",
+    "en": "Appointments & your first visit"
+   },
+   "q": {
+    "el": "Πώς μπορώ να επικοινωνήσω εκτός ωραρίου;",
+    "en": "How can I contact the practice outside opening hours?"
+   },
+   "a": {
+    "el": "Καλέστε στο 22910 37444 και αφήστε μήνυμα, ή στείλτε μας μήνυμα μέσω της σελίδας Επικοινωνίας — θα απαντήσουμε την επόμενη εργάσιμη ημέρα.\n\nΑν αντιμετωπίζετε δυσκολία στην αναπνοή ή στην κατάποση, σοβαρό τραυματισμό του προσώπου ή αιμορραγία που δεν σταματά, καλέστε αμέσως το 112 ή απευθυνθείτε στο πλησιέστερο νοσοκομείο.",
+    "en": "Call 22910 37444 and leave a message, or write to us through the Contact page — we will reply on the next working day.\n\nIf you have difficulty breathing or swallowing, serious facial trauma, or bleeding that will not stop, call 112 immediately or go to the nearest hospital."
+   }
+  },
+  {
+   "id": "f7",
+   "cat": {
+    "el": "Επείγοντα περιστατικά",
+    "en": "Emergencies"
+   },
+   "q": {
+    "el": "Δέχεστε επείγοντα οδοντιατρικά περιστατικά;",
+    "en": "Do you accept dental emergencies?"
+   },
+   "a": {
+    "el": "Ναι. Όποτε είναι εφικτό κρατάμε χρόνο για επείγοντα περιστατικά. Αν έχετε έντονο πόνο, οίδημα, τραυματισμό δοντιού, αιμορραγία που δεν ελέγχεται ή σπασμένο δόντι, καλέστε μας αμέσως στο 22910 37444.",
+    "en": "Yes. Whenever possible we keep time free for urgent problems. If you have severe pain, swelling, dental trauma, uncontrolled bleeding or a broken tooth, call us straight away on 22910 37444."
+   }
+  },
+  {
+   "id": "f8",
+   "cat": {
+    "el": "Επείγοντα περιστατικά",
+    "en": "Emergencies"
+   },
+   "q": {
+    "el": "Τι κάνω αν αποκολληθεί μόνιμο δόντι;",
+    "en": "What should I do if an adult tooth is knocked out?"
+   },
+   "a": {
+    "el": "Επικοινωνήστε αμέσως με οδοντίατρο. Κρατήστε το δόντι από τη μύλη — το λευκό μέρος που φαίνεται — και μην αγγίξετε τη ρίζα. Αν είναι λερωμένο, ξεπλύνετέ το απαλά χωρίς να το τρίψετε.\n\nΑν δεν μπορείτε να το τοποθετήσετε με ασφάλεια στη θέση του, διατηρήστε το μέσα σε γάλα και φέρτε το μαζί σας. Μην προσπαθήσετε να επανατοποθετήσετε νεογιλό (παιδικό) δόντι.\n\nΗ θεραπεία έχει τις περισσότερες πιθανότητες επιτυχίας όσο πιο γρήγορα γίνει.",
+    "en": "Contact a dentist immediately. Hold the tooth by the crown — the visible white part — and avoid touching the root. If it is dirty, rinse it gently without scrubbing it.\n\nIf you cannot place it back into position safely, keep it in milk and bring it with you. Do not attempt to replace a knocked-out baby tooth.\n\nTreatment is most successful when it is provided as quickly as possible."
+   }
+  },
+  {
+   "id": "f9",
+   "cat": {
+    "el": "Επείγοντα περιστατικά",
+    "en": "Emergencies"
+   },
+   "q": {
+    "el": "Πότε ένα οδοντιατρικό πρόβλημα είναι ιατρικό επείγον;",
+    "en": "When is a dental problem a medical emergency?"
+   },
+   "a": {
+    "el": "Ζητήστε άμεση ιατρική βοήθεια αν το οίδημα επηρεάζει την αναπνοή ή την κατάποση, αν έχετε υποστεί σοβαρό τραυματισμό στο πρόσωπο ή αν η αιμορραγία δεν ελέγχεται.\n\nΣτην Ελλάδα καλέστε το 112 ή απευθυνθείτε στα επείγοντα του πλησιέστερου νοσοκομείου.",
+    "en": "Seek urgent medical help if swelling is affecting your breathing or swallowing, if you have suffered serious facial trauma, or if bleeding cannot be controlled.\n\nIn Greece, call 112 or go to the emergency department of the nearest hospital."
+   }
+  },
+  {
+   "id": "f10",
+   "cat": {
+    "el": "Κατά τη θεραπεία",
+    "en": "During treatment"
+   },
+   "q": {
+    "el": "Αγχώνομαι με τον οδοντίατρο. Μπορείτε να με βοηθήσετε;",
+    "en": "I am nervous about visiting the dentist. Can you help?"
+   },
+   "a": {
+    "el": "Ασφαλώς. Το άγχος στον οδοντίατρο είναι πολύ συνηθισμένο και μπορείτε πάντα να μας πείτε πώς νιώθετε.\n\nΕξηγούμε κάθε στάδιο του ραντεβού πριν γίνει, προχωράμε με ρυθμό που σας βολεύει και κάνουμε διαλείμματα όποτε χρειάζεται. Τον έλεγχο τον έχετε εσείς, σε όλη τη διάρκεια της θεραπείας.",
+    "en": "Absolutely. Dental anxiety is very common, and you are always welcome to tell us how you feel.\n\nWe explain each stage of the appointment before it happens, move at a pace that suits you and take breaks whenever they are needed. You remain in control throughout your treatment."
+   }
+  },
+  {
+   "id": "f11",
+   "cat": {
+    "el": "Κατά τη θεραπεία",
+    "en": "During treatment"
+   },
+   "q": {
+    "el": "Θα πονέσω;",
+    "en": "Will the treatment hurt?"
+   },
+   "a": {
+    "el": "Προτεραιότητά μας είναι να νιώθετε όσο πιο άνετα γίνεται. Όπου ενδείκνυται χρησιμοποιείται τοπική αναισθησία και σας εξηγούμε από πριν τι θα αισθανθείτε.\n\nΑν σε οποιοδήποτε σημείο νιώσετε ενόχληση, πείτε το μας αμέσως ώστε να σταματήσουμε. Κάποια ευαισθησία τις επόμενες ημέρες είναι φυσιολογική και υποχωρεί.",
+    "en": "Our priority is to keep you as comfortable as possible. Local anaesthetic is used where appropriate, and we will explain what you may feel before we begin.\n\nIf you feel discomfort at any point, tell us immediately so that we can stop. Some sensitivity in the days that follow is normal and settles."
+   }
+  },
+  {
+   "id": "f12",
+   "cat": {
+    "el": "Κατά τη θεραπεία",
+    "en": "During treatment"
+   },
+   "q": {
+    "el": "Πόσο διαρκεί μια οδοντιατρική θεραπεία;",
+    "en": "How long does dental treatment take?"
+   },
+   "a": {
+    "el": "Εξαρτάται από τη θεραπεία και από τη δική σας περίπτωση. Κάποιες εργασίες ολοκληρώνονται σε ένα ραντεβού, ενώ θεραπείες όπως η απονεύρωση, οι στεφάνες, τα εμφυτεύματα ή η ορθοδοντική μπορεί να χρειαστούν αρκετές επισκέψεις.\n\nΘα έχετε το αναμενόμενο χρονοδιάγραμμα πριν ξεκινήσει η θεραπεία.",
+    "en": "It depends on the treatment and on your individual circumstances. Some procedures are completed in a single appointment, while treatments such as root canal therapy, crowns, implants or orthodontics may require several visits.\n\nWe will give you the expected schedule before treatment begins."
+   }
+  },
+  {
+   "id": "f13",
+   "cat": {
+    "el": "Κατά τη θεραπεία",
+    "en": "During treatment"
+   },
+   "q": {
+    "el": "Μπορώ να επισκεφθώ τον οδοντίατρο στην εγκυμοσύνη;",
+    "en": "Can I visit the dentist while pregnant?"
+   },
+   "a": {
+    "el": "Ναι. Η τακτική και η απαραίτητη οδοντιατρική φροντίδα μπορεί κατά κανόνα να συνεχιστεί στη διάρκεια της εγκυμοσύνης.\n\nΕνημερώστε μας πριν από την εξέταση ότι είστε — ή ενδέχεται να είστε — έγκυος. Θα προσαρμόσουμε ανάλογα τις ακτινογραφίες, τη φαρμακευτική αγωγή και τις συστάσεις μας, και θα συνεννοηθούμε με τον γιατρό σας όπου χρειάζεται.",
+    "en": "Yes. Routine and necessary dental care can generally continue during pregnancy.\n\nPlease tell us before your examination that you are — or may be — pregnant. We will adapt any X-rays, medication and treatment recommendations accordingly, and coordinate with your doctor where necessary."
+   }
+  },
+  {
+   "id": "f14",
+   "cat": {
+    "el": "Θεραπείες & φροντίδα",
+    "en": "Treatments & care"
+   },
+   "q": {
+    "el": "Δέχεστε παιδιά;",
+    "en": "Do you treat children?"
+   },
+   "a": {
+    "el": "Ναι, και φροντίζουμε η επίσκεψη να είναι χαλαρή και θετική εμπειρία.\n\nΟι πρώιμες επισκέψεις βοηθούν το παιδί να εξοικειωθεί με το ιατρείο και μας επιτρέπουν να παρακολουθούμε την ανάπτυξη των δοντιών, τη στοματική υγιεινή και τυχόν προβλήματα πριν αυτά γίνουν σοβαρότερα.",
+    "en": "Yes, and we aim to make their visits relaxed and positive.\n\nEarly dental visits help children become comfortable with the dentist and allow us to monitor tooth development, oral hygiene and possible problems before they become more serious."
+   }
+  },
+  {
+   "id": "f15",
+   "cat": {
+    "el": "Θεραπείες & φροντίδα",
+    "en": "Treatments & care"
+   },
    "q": {
     "el": "Πότε πρέπει να έρθει το παιδί μου για πρώτη φορά;",
     "en": "When should my child first come in?"
    },
    "a": {
     "el": "Γύρω στα πρώτα γενέθλια ή μόλις βγει το πρώτο δόντι. Η πρώτη επίσκεψη είναι σύντομη και κυρίως γνωριμία — στόχος είναι το παιδί να συνδέσει το ιατρείο με κάτι οικείο και όχι με κάτι που φοβάται.",
-    "en": "At around the first birthday, or as soon as the first tooth comes through. The first visit is short and mainly about getting familiar — the aim is for the child to associate the practice with something ordinary rather than something to fear."
+    "en": "At around the first birthday, or as soon as the first tooth appears. The first visit is short and mainly a chance to get familiar with us — the aim is for the child to associate the practice with something ordinary rather than something to fear."
    }
   },
   {
-   "id": "f6",
+   "id": "f16",
+   "cat": {
+    "el": "Θεραπείες & φροντίδα",
+    "en": "Treatments & care"
+   },
    "q": {
-    "el": "Είναι ασφαλείς οι οδοντιατρικές ακτινογραφίες;",
-    "en": "Are dental X-rays safe?"
+    "el": "Κάνετε λεύκανση δοντιών;",
+    "en": "Do you offer teeth whitening?"
    },
    "a": {
-    "el": "Με ψηφιακό εξοπλισμό η δόση είναι πολύ χαμηλή — συγκρίσιμη με τη φυσική ακτινοβολία περιβάλλοντος λίγων ημερών. Λαμβάνονται μόνο όταν υπάρχει κλινική ένδειξη και όχι ως ρουτίνα. Ενημερώστε μας αν είστε ή ενδέχεται να είστε έγκυος.",
-    "en": "With digital equipment the dose is very low — comparable to a few days of natural background radiation. They are only taken when there is a clinical reason, not as routine. Please tell us if you are, or may be, pregnant."
+    "el": "Ναι, έπειτα από οδοντιατρική εξέταση. Πριν από τη λεύκανση ελέγχουμε ότι τα δόντια και τα ούλα είναι υγιή και συζητάμε το αποτέλεσμα που μπορείτε ρεαλιστικά να περιμένετε.\n\nΗ λεύκανση δρα διαφορετικά στο φυσικό σμάλτο απ' ό,τι σε σφραγίσεις, στεφάνες και όψεις, οπότε αυτές λαμβάνονται υπόψη κατά τον σχεδιασμό της θεραπείας.",
+    "en": "Yes, following a dental assessment. Before whitening we check that your teeth and gums are healthy and discuss the result you can realistically expect.\n\nWhitening affects natural enamel differently from fillings, crowns and veneers, so these are taken into account when planning treatment."
    }
   },
   {
-   "id": "f7",
+   "id": "f17",
+   "cat": {
+    "el": "Θεραπείες & φροντίδα",
+    "en": "Treatments & care"
+   },
    "q": {
     "el": "Η λεύκανση καταστρέφει τα δόντια;",
     "en": "Does whitening damage the teeth?"
    },
    "a": {
-    "el": "Η λεύκανση υπό οδοντιατρική παρακολούθηση δεν βλάπτει το σμάλτο. Η πιο συνηθισμένη παρενέργεια είναι παροδική ευαισθησία, που υποχωρεί. Τα προϊόντα ελεύθερης αγοράς χωρίς προηγούμενη εξέταση ενέχουν κίνδυνο, ιδίως αν υπάρχει τερηδόνα, ουλίτιδα ή εκτεθειμένες ρίζες. Προηγείται πάντα έλεγχος.",
-    "en": "Whitening supervised by a dentist does not harm the enamel. The most common side effect is temporary sensitivity, which settles. Over-the-counter products used without an examination carry risk, particularly where there is decay, gum inflammation or exposed roots. An examination always comes first."
+    "el": "Η λεύκανση υπό οδοντιατρική παρακολούθηση δεν βλάπτει το σμάλτο. Η πιο συνηθισμένη παρενέργεια είναι παροδική ευαισθησία, που υποχωρεί.\n\nΤα προϊόντα ελεύθερης αγοράς χωρίς προηγούμενη εξέταση ενέχουν κίνδυνο, ιδίως αν υπάρχει τερηδόνα, ουλίτιδα ή εκτεθειμένες ρίζες. Προηγείται πάντα έλεγχος.",
+    "en": "Whitening carried out under dental supervision does not harm the enamel. The most common side effect is temporary sensitivity, which settles.\n\nOver-the-counter products used without a prior examination carry risk, particularly where there is decay, gum inflammation or exposed roots. An examination always comes first."
    }
   },
   {
-   "id": "f8",
+   "id": "f18",
+   "cat": {
+    "el": "Θεραπείες & φροντίδα",
+    "en": "Treatments & care"
+   },
    "q": {
-    "el": "Έσπασε ή έπεσε δόντι — τι κάνω;",
-    "en": "A tooth has broken or been knocked out — what do I do?"
+    "el": "Τοποθετείτε οδοντικά εμφυτεύματα;",
+    "en": "Do you provide dental implants?"
    },
    "a": {
-    "el": "Τηλεφωνήστε μας το συντομότερο δυνατό. Αν έχει αποκολληθεί ολόκληρο μόνιμο δόντι, κρατήστε το από τη μύλη (το λευκό μέρος) και όχι από τη ρίζα, μην το τρίψετε και μην το καθαρίσετε· διατηρήστε το μέσα σε γάλα ή στο σάλιο και αναζητήστε φροντίδα ιδανικά μέσα σε μία ώρα. Νεογιλό δόντι που έχει αποκολληθεί δεν επανατοποθετείται.",
-    "en": "Call us as soon as you can. If a whole permanent tooth has come out, hold it by the crown (the white part) rather than the root, do not scrub or clean it, keep it in milk or saliva and seek care ideally within an hour. A knocked-out baby tooth should not be put back."
+    "el": "Ναι, έπειτα από πλήρη κλινική αξιολόγηση. Εξετάζουμε την κατάσταση του στόματος και μπορεί να ζητήσουμε ακτινογραφίες ή τρισδιάστατη απεικόνιση για να εκτιμήσουμε το διαθέσιμο οστό.\n\nΣτη συνέχεια θα σας εξηγηθούν η διαδικασία, το αναμενόμενο χρονοδιάγραμμα, οι εναλλακτικές και το συνολικό κόστος. Οι εμφυτευματικές και γναθοχειρουργικές θεραπείες γίνονται από πιστοποιημένο Γναθοπροσωπικό Χειρουργό — επιστήμονα που έχει ολοκληρώσει σπουδές τόσο Οδοντιατρικής όσο και Ιατρικής.",
+    "en": "Yes, subject to a full clinical assessment. We examine your oral health and may request radiographs or a three-dimensional scan to evaluate the available bone.\n\nThe procedure, the expected timeline, the alternatives and the complete cost are then explained to you. Implant and maxillofacial procedures are carried out by a certified Oral and Maxillofacial Surgeon — a specialist who has completed training in both dentistry and medicine."
+   }
+  },
+  {
+   "id": "f19",
+   "cat": {
+    "el": "Θεραπείες & φροντίδα",
+    "en": "Treatments & care"
+   },
+   "q": {
+    "el": "Είναι ασφαλείς οι οδοντιατρικές ακτινογραφίες;",
+    "en": "Are dental X-rays safe?"
+   },
+   "a": {
+    "el": "Με ψηφιακό εξοπλισμό η δόση είναι πολύ χαμηλή — συγκρίσιμη με τη φυσική ακτινοβολία περιβάλλοντος λίγων ημερών. Λαμβάνονται μόνο όταν υπάρχει κλινική ένδειξη και όχι ως ρουτίνα.\n\nΕνημερώστε μας αν είστε ή ενδέχεται να είστε έγκυος.",
+    "en": "With digital equipment the dose is very low — comparable to a few days of natural background radiation. Radiographs are taken only when there is a clinical reason, not as a matter of routine.\n\nPlease tell us if you are, or may be, pregnant."
+   }
+  },
+  {
+   "id": "f20",
+   "cat": {
+    "el": "Θεραπείες & φροντίδα",
+    "en": "Treatments & care"
+   },
+   "q": {
+    "el": "Πώς φροντίζω τα δόντια μου ανάμεσα στα ραντεβού;",
+    "en": "How should I care for my teeth between appointments?"
+   },
+   "a": {
+    "el": "Βουρτσίστε δύο φορές την ημέρα για περίπου δύο λεπτά με οδοντόκρεμα με φθόριο, καθαρίστε ανάμεσα στα δόντια όπως σας έχει υποδειχθεί και περιορίστε τη συχνότητα με την οποία καταναλώνετε ζάχαρη — η συχνότητα μετράει περισσότερο από την ποσότητα.\n\nΟ τακτικός επαγγελματικός έλεγχος παραμένει σημαντικός ακόμη και όταν δεν πονάτε.",
+    "en": "Brush twice a day for about two minutes with a fluoride toothpaste, clean between the teeth as advised, and limit how often you consume sugary food and drink — how often matters more than how much.\n\nRegular professional examinations remain important even when you have no pain."
+   }
+  },
+  {
+   "id": "f21",
+   "cat": {
+    "el": "Κόστος & ασφάλιση",
+    "en": "Costs & insurance"
+   },
+   "q": {
+    "el": "Θα λάβω σχέδιο θεραπείας και εκτίμηση κόστους;",
+    "en": "Will I receive a treatment plan and cost estimate?"
+   },
+   "a": {
+    "el": "Ναι. Αφού αξιολογήσουμε τις ανάγκες σας, σας εξηγούμε την προτεινόμενη θεραπεία, τις εναλλακτικές, τον αναμενόμενο αριθμό επισκέψεων και το εκτιμώμενο κόστος.\n\nΕκτός από τα επείγοντα περιστατικά, η θεραπεία ξεκινά μόνο αφού έχετε ρωτήσει ό,τι θέλετε και έχετε εγκρίνει το σχέδιο.",
+    "en": "Yes. After assessing your needs we explain the recommended treatment, the alternatives, the expected number of visits and the estimated cost.\n\nExcept in an emergency, treatment begins only once you have had the chance to ask questions and have approved the plan."
+   }
+  },
+  {
+   "id": "f22",
+   "cat": {
+    "el": "Κόστος & ασφάλιση",
+    "en": "Costs & insurance"
+   },
+   "q": {
+    "el": "Συνεργάζεστε με τον ΕΟΠΥΥ;",
+    "en": "Do you work with EOPYY?"
+   },
+   "a": {
+    "el": "Επικοινωνήστε μαζί μας πριν από το ραντεβού σας και θα σας ενημερώσουμε για το τι ισχύει στην περίπτωσή σας, ποια δικαιολογητικά χρειάζονται και ποιες τυχόν χρεώσεις προκύπτουν.\n\nΗ κάλυψη εξαρτάται από τη θεραπεία και από τα δικαιώματα του κάθε ασφαλισμένου· αναλυτικές πληροφορίες για τις παροχές υπάρχουν και στον επίσημο ιστότοπο του ΕΟΠΥΥ.",
+    "en": "Please contact us before your appointment and we will explain what applies in your case, which documents are needed and what charges, if any, arise.\n\nCover depends on the treatment and on the individual patient's entitlement; detailed information on benefits is also published on the official EOPYY website."
+   }
+  },
+  {
+   "id": "f23",
+   "cat": {
+    "el": "Κόστος & ασφάλιση",
+    "en": "Costs & insurance"
+   },
+   "q": {
+    "el": "Δέχεστε ιδιωτική ασφάλιση;",
+    "en": "Do you accept private insurance?"
+   },
+   "a": {
+    "el": "Χορηγούμε τις αποδείξεις και τα έγγραφα θεραπείας που ζητούνται συνήθως για την υποβολή ασφαλιστικών απαιτήσεων.\n\nΕπειδή η κάλυψη διαφέρει ανά ασφαλιστική εταιρεία και συμβόλαιο, επικοινωνήστε με τον ασφαλιστή σας πριν από τη θεραπεία για να επιβεβαιώσετε τι καλύπτεται. Η πληρωμή γίνεται στο ιατρείο, εκτός αν έχει συμφωνηθεί διαφορετικά εκ των προτέρων.",
+    "en": "We provide the receipts and treatment documentation generally required for private insurance claims.\n\nBecause cover differs between insurers and policies, please contact your provider before treatment to confirm what is included. Payment is made to the practice unless another arrangement has been agreed in advance."
+   }
+  },
+  {
+   "id": "f24",
+   "cat": {
+    "el": "Κόστος & ασφάλιση",
+    "en": "Costs & insurance"
+   },
+   "q": {
+    "el": "Ποιους τρόπους πληρωμής δέχεστε;",
+    "en": "What payment methods do you accept?"
+   },
+   "a": {
+    "el": "Η πληρωμή γίνεται στο ιατρείο με την ολοκλήρωση της θεραπείας. Ρωτήστε μας για τους διαθέσιμους τρόπους πληρωμής και, για μεγαλύτερα σχέδια θεραπείας, για τη δυνατότητα τμηματικής εξόφλησης.",
+    "en": "Payment is made at the practice on completion of treatment. Please ask us about the payment methods available and, for larger treatment plans, about paying in stages."
+   }
+  },
+  {
+   "id": "f25",
+   "cat": {
+    "el": "Η επίσκεψή σας στο ιατρείο",
+    "en": "Visiting the practice"
+   },
+   "q": {
+    "el": "Υπάρχει χώρος στάθμευσης;",
+    "en": "Is parking available?"
+   },
+   "a": {
+    "el": "Θα βρείτε τον χάρτη και οδηγίες πρόσβασης στη σελίδα Επικοινωνίας. Αν χρειάζεστε συγκεκριμένες πληροφορίες για τη στάθμευση, καλέστε μας πριν από την επίσκεψή σας.",
+    "en": "You will find the map and directions on the Contact page. If you need specific information about parking, please call us before your visit."
+   }
+  },
+  {
+   "id": "f26",
+   "cat": {
+    "el": "Η επίσκεψή σας στο ιατρείο",
+    "en": "Visiting the practice"
+   },
+   "q": {
+    "el": "Είναι προσβάσιμο το ιατρείο;",
+    "en": "Is the practice accessible?"
+   },
+   "a": {
+    "el": "Καλέστε μας πριν από την επίσκεψή σας και θα σας ενημερώσουμε για τις διαθέσιμες διευκολύνσεις πρόσβασης, ώστε να φροντίσουμε να έρθετε άνετα.",
+    "en": "Please call us before visiting and we will explain the access arrangements available, so that we can make sure your visit is comfortable."
+   }
+  },
+  {
+   "id": "f27",
+   "cat": {
+    "el": "Η επίσκεψή σας στο ιατρείο",
+    "en": "Visiting the practice"
+   },
+   "q": {
+    "el": "Τι γλώσσες μιλάτε;",
+    "en": "What languages do you speak?"
+   },
+   "a": {
+    "el": "Εξυπηρετούμε ασθενείς στα Ελληνικά και στα Αγγλικά. Πείτε μας ποια γλώσσα προτιμάτε όταν κλείνετε το ραντεβού σας.",
+    "en": "We look after patients in Greek and English. Please let us know your preferred language when you book."
    }
   }
  ]

@@ -10,7 +10,7 @@ The site is set up for the domain:  https://papantonioudental.gr
 If the real domain is different, do a find-and-replace of that
 string across these files:
    index.html  to-iatreio.html  ypiresies.html  o-iatros.html
-   epikoinonia.html  404.html  efcharisto.html
+   syhnes-erotiseis.html  epikoinonia.html  404.html  efcharisto.html
    sitemap.xml  robots.txt
 It only affects Google indexing and the preview image shown when
 the link is shared on WhatsApp/Facebook. Everything else works
@@ -21,7 +21,7 @@ DEPLOY
 Upload to the ROOT of the repo, keeping images/ as a subfolder:
 
   index.html  to-iatreio.html  ypiresies.html
-  o-iatros.html  epikoinonia.html
+  o-iatros.html  syhnes-erotiseis.html  epikoinonia.html
   styles.css  app.js
   404.html  efcharisto.html
   sitemap.xml  robots.txt  _headers
@@ -65,12 +65,13 @@ NOTES
 3. THE DENTIST'S PHOTO. o-iatros.html still shows the "Π.Π"
    monogram. Replace with a real portrait when available.
 
-4. TREATMENTS. Limited to the four shown on the entrance glass:
-   Αισθητική Οδοντιατρική, Εμφυτευματολογία, Παιδοδοντιατρική,
-   Πανοραμικές Ακτινογραφίες. Earlier drafts listed orthodontics,
-   endodontics, periodontology, prosthetics and oral surgery —
-   removed, as nothing confirmed the clinic offers them. Add back
-   any that are genuine.
+4. TREATMENTS. Now seven, confirmed by the practice:
+   Αισθητική Οδοντιατρική, Ορθοδοντική, Ενδοδοντία,
+   Περιοδοντική Θεραπεία, Εμφυτεύματα & Γναθοχειρουργικές
+   Θεραπείες, Παιδοδοντιατρική, Ψηφιακή Πανοραμική &
+   Ενδοστοματικές Ακτινογραφίες.
+   The Greek supplied by the practice is used verbatim, only split
+   into paragraphs. Add or remove treatments in the Studio.
 
 5. TWO PHOTOS SHOW PATIENTS
    images/05_treatment_in_progress.jpg
@@ -247,7 +248,57 @@ read the result before publishing — especially treatment names.
 
 
 ================================================================
-TREATMENT TEXT AND FAQ  —  PLEASE HAVE THE DENTIST READ THIS
+FAQ PAGE  —  syhnes-erotiseis.html
+================================================================
+The FAQ is now its own page with its own tab in the menu
+("Ερωτήσεις" / "FAQ"), between Η ομάδα and Επικοινωνία. It holds
+27 questions in six groups:
+
+   Ραντεβού & πρώτη επίσκεψη
+   Επείγοντα περιστατικά
+   Κατά τη θεραπεία
+   Θεραπείες & φροντίδα
+   Κόστος & ασφάλιση
+   Η επίσκεψή σας στο ιατρείο
+
+The treatments page keeps a short band that links here, so the
+same 27 answers are not published twice (Google penalises that).
+
+Grouping is driven by the "Κατηγορία" field on each question in
+the Studio. Questions sharing a category appear together, in the
+order they are listed. Clear every category and the page falls
+back to one plain list.
+
+FAQPage structured data is generated from the live questions, so
+the rich result Google shows can never drift out of step with
+what the page actually says. Nothing to maintain by hand.
+
+STILL TO CONFIRM WITH THE PRACTICE
+Nothing on the page is invented and no bracketed placeholders
+were left in, but four answers are deliberately non-committal
+because the facts were not available. Each is a one-line edit in
+the Studio once you know:
+
+  "Συνεργάζεστε με τον ΕΟΠΥΥ;"        — you said you would ask
+  "Δέχεστε ιδιωτική ασφάλιση;"        — you said you would ask
+  "Ποιους τρόπους πληρωμής δέχεστε;"  — cash / cards / transfer?
+  "Υπάρχει χώρος στάθμευσης;"         — street? car park? none?
+  "Είναι προσβάσιμο το ιατρείο;"      — ground floor? lift? steps?
+
+Two things already handled from your notes:
+  - Every phone number in the FAQ is the practice landline,
+    22910 37444.
+  - No cancellation fee is mentioned anywhere. The answer asks
+    for 24 hours' notice as a courtesy and stops there.
+
+Also worth doing: the orthodontist (New Jersey graduate, certified
+Invisalign) and the maxillofacial surgeon are now named as roles
+in the treatment text, but the Team page still shows five
+placeholder members. Adding them there would tie the two together.
+
+
+================================================================
+TREATMENT TEXT  —  PLEASE HAVE THE DENTIST READ THIS
 ================================================================
 The four treatments now expand to a full description, and there
 is an eight-question FAQ on the treatments page. Both are fully
@@ -255,7 +306,10 @@ editable in the Studio (tabs "Θεραπείες" and "Συχνές ερωτήσ
 in Greek and English, with the translation arrows.
 
 WHERE THIS TEXT CAME FROM
-I wrote it from general, standard dentistry knowledge — the sort
+The opening paragraph of each of the five treatments the practice
+supplied is the practice's own wording, used verbatim. Everything
+below it — and all four of the original treatments — I wrote from
+general, standard dentistry knowledge — the sort
 of thing any practice would say about whitening, implants,
 children's visits and panoramic X-rays. It is deliberately
 general and contains no claims specific to this practice: no
@@ -264,17 +318,43 @@ qualifications.
 
 It is accurate as general information, but it has NOT been
 checked by a dentist. Before this goes public, Dr Papantoniou
-should read all four descriptions and all eight answers and
+should read all seven descriptions and all 27 answers and
 correct anything that does not match how he actually works.
 
 Things he will probably want to change:
   - whether walk-ins are accepted or strictly appointment only
-  - his own recall interval (I wrote six months, the usual default)
-  - whether he takes ΕΟΠΥΥ or private insurance (not mentioned
-    at all, because I have no way to know)
-  - what patients should do out of hours
+  - his own recall interval (the FAQ now says the interval depends
+    on the patient, with six months as the common case)
+  - ΕΟΠΥΥ and private insurance — see the list above
   - anything he does differently from the general approach
 
 Nothing here promises a clinical outcome, which is the main
 thing to avoid on a medical site — but it is his professional
 name on it, so it should be his words in the end.
+
+
+================================================================
+CHANGE LOG  —  26 August 2026
+================================================================
+- Three new treatments: Ορθοδοντική, Ενδοδοντία, Περιοδοντική
+  Θεραπεία, using the practice's own Greek.
+- Εμφυτευματολογία became "Εμφυτεύματα & Γναθοχειρουργικές
+  Θεραπείες". The practice's paragraph leads, followed by a note
+  that a maxillofacial surgeon holds both dental and medical
+  qualifications, then the existing general explanation.
+- Πανοραμικές Ακτινογραφίες became "Ψηφιακή Πανοραμική &
+  Ενδοστοματικές Ακτινογραφίες". The line saying nothing is
+  placed in the mouth was re-scoped to the panoramic scan only,
+  since intraoral films obviously do go in the mouth.
+- New FAQ page and menu tab. 27 questions, six groups, both
+  languages. See the section above for what still needs the
+  practice's answer.
+- The four cards under the homepage hero and the Υπηρεσίες list
+  in every footer now render from the treatments in content.json.
+  Add a treatment in the Studio and it appears in all three
+  places. Nothing to edit in the HTML.
+- Studio: the icon dropdown gained ortho, endo and perio; the FAQ
+  editor gained a Κατηγορία field with the same translation
+  arrows as every other pair.
+- Fixed, while in there: .rv.on cancelled the hover lift on the
+  homepage cards, because the two rules had equal specificity.

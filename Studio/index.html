@@ -225,7 +225,9 @@ const UI = {
   addTreat:"+ Νέα θεραπεία", delTreat:"Διαγραφή θεραπείας",
   titleEl:"Τίτλος (EL)", titleEn:"Title (EN)", shortEl:"Σύντομη (EL)", shortEn:"Short (EN)",
   detailEl:"Αναλυτικά (EL)", detailEn:"Detail (EN)", icon:"Εικονίδιο",
-  faqSub:"Εμφανίζονται στη σελίδα Θεραπειών.",
+  faqSub:"Εμφανίζονται στη σελίδα Συχνών Ερωτήσεων, ομαδοποιημένες κατά κατηγορία.",
+  catEl:"Κατηγορία (EL)", catEn:"Category (EN)",
+  catHint:"Ερωτήσεις με την ίδια κατηγορία εμφανίζονται μαζί, με τη σειρά που τις βλέπετε εδώ.",
   addFaq:"+ Νέα ερώτηση", delFaq:"Διαγραφή ερώτησης",
   qEl:"Ερώτηση (EL)", qEn:"Question (EN)", aEl:"Απάντηση (EL)", aEn:"Answer (EN)",
   imgSub:"Αντικαταστήστε οποιαδήποτε φωτογραφία του site.",
@@ -276,7 +278,9 @@ const UI = {
   addTreat:"+ New treatment", delTreat:"Delete treatment",
   titleEl:"Title (EL)", titleEn:"Title (EN)", shortEl:"Short (EL)", shortEn:"Short (EN)",
   detailEl:"Detail (EL)", detailEn:"Detail (EN)", icon:"Icon",
-  faqSub:"Shown on the Treatments page.",
+  faqSub:"Shown on the FAQ page, grouped by category.",
+  catEl:"Category (EL)", catEn:"Category (EN)",
+  catHint:"Questions sharing a category appear together, in the order you see them here.",
   addFaq:"+ New question", delFaq:"Delete question",
   qEl:"Question (EL)", qEn:"Question (EN)", aEl:"Answer (EL)", aEn:"Answer (EN)",
   imgSub:"Replace any photo on the site.",
@@ -539,7 +543,7 @@ function viewTreat(){
     <div class="btnrow">
       <label class="flag">${esc(T("icon"))}:
         <select data-ti="${i}" style="width:auto;display:inline-block;margin-left:6px">
-        ${["aes","imp","kid","xray"].map(k=>`<option value="${k}" ${t.icon===k?"selected":""}>${k}</option>`).join("")}
+        ${["aes","ortho","endo","perio","imp","kid","xray"].map(k=>`<option value="${k}" ${t.icon===k?"selected":""}>${k}</option>`).join("")}
         </select></label>
       <button class="btn danger" data-td="${i}">${esc(T("delTreat"))}</button>
     </div></div>`).join("");
@@ -572,15 +576,23 @@ function viewFaq(){
       <div class="fld"><label>${esc(T("aEn"))}</label>
         <textarea style="min-height:120px" data-f="${i}" data-p="a" data-l="en" data-pair-field="faq:${i}:a">${esc(f.a.en)}</textarea></div>
     </div>
+    <div class="trrow" style="margin-top:12px">
+      <div class="fld"><label>${esc(T("catEl"))}</label>
+        <input data-f="${i}" data-p="cat" data-l="el" data-pair-field="faq:${i}:cat" value="${esc((f.cat||{}).el||"")}"></div>
+      ${trControls("faq:"+i+":cat")}
+      <div class="fld"><label>${esc(T("catEn"))}</label>
+        <input data-f="${i}" data-p="cat" data-l="en" data-pair-field="faq:${i}:cat" value="${esc((f.cat||{}).en||"")}"></div>
+    </div>
+    <p class="hint">${esc(T("catHint"))}</p>
     <div class="btnrow"><button class="btn danger" data-fd="${i}">${esc(T("delFaq"))}</button></div>
   </div>`).join("");
 }
 function bindFaq(){
   const v=$("#view");
-  v.querySelectorAll("[data-f]").forEach(el=>el.oninput=()=>{DATA.faq[+el.dataset.f][el.dataset.p][el.dataset.l]=el.value;persist();});
+  v.querySelectorAll("[data-f]").forEach(el=>el.oninput=()=>{const f=DATA.faq[+el.dataset.f];if(!f[el.dataset.p])f[el.dataset.p]={el:"",en:""};f[el.dataset.p][el.dataset.l]=el.value;persist();});
   v.querySelectorAll("[data-fd]").forEach(el=>el.onclick=()=>{
     if(!confirm(T("confDelFaq")))return; DATA.faq.splice(+el.dataset.fd,1);persist();render();});
-  $("#addFaq").onclick=()=>{DATA.faq.push({id:"f"+Date.now(),q:{el:"",en:""},a:{el:"",en:""}});persist();render();};
+  $("#addFaq").onclick=()=>{const last=DATA.faq[DATA.faq.length-1]||{};DATA.faq.push({id:"f"+Date.now(),cat:{el:(last.cat||{}).el||"",en:(last.cat||{}).en||""},q:{el:"",en:""},a:{el:"",en:""}});persist();render();};
   bindTr();
 }
 
@@ -658,7 +670,8 @@ function trPair(key){
   if(key.startsWith("treat:")){const[,i,p]=key.split(":");
     return {get:l=>DATA.treatments[+i][p][l],set:(l,v)=>{DATA.treatments[+i][p][l]=v;}};}
   if(key.startsWith("faq:")){const[,i,p]=key.split(":");
-    return {get:l=>DATA.faq[+i][p][l],set:(l,v)=>{DATA.faq[+i][p][l]=v;}};}
+    return {get:l=>((DATA.faq[+i][p])||{})[l]||"",
+            set:(l,v)=>{if(!DATA.faq[+i][p])DATA.faq[+i][p]={el:"",en:""};DATA.faq[+i][p][l]=v;}};}
   if(key==="contact:address")
     return {get:l=>DATA.contact[l==="el"?"addressEl":"addressEn"],
             set:(l,v)=>{DATA.contact[l==="el"?"addressEl":"addressEn"]=v;}};

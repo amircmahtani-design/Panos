@@ -152,8 +152,9 @@ section{position:relative}
 .services-inner{display:grid;grid-template-columns:minmax(0,33%) minmax(0,67%);gap:48px;align-items:center}
 .services-inner h2{font-size:clamp(30px,3.1vw,44px);line-height:1.15}
 .services-inner .more{margin-top:26px;display:inline-flex}
-.cards4{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.cards4{display:grid;grid-template-columns:repeat(auto-fill,minmax(198px,1fr));gap:22px}
 .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+a.card{display:block;color:inherit}
 .card{background:#fff;border-radius:16px;padding:36px 18px 32px;text-align:center;box-shadow:var(--shadow-soft);transition:transform .3s,box-shadow .3s}
 .card:hover{transform:translateY(-6px);box-shadow:var(--shadow-card)}
 .card .ic{color:var(--teal);margin:0 auto 22px;display:flex;justify-content:center}
@@ -253,8 +254,11 @@ footer li a:hover{color:#7FD4D0}
 /* reveal */
 .rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
 .rv.on{opacity:1;transform:none}
+/* .rv.on and .card:hover have equal specificity, so the lift needs restating */
+.card.rv.on:hover{transform:translateY(-6px)}
 
 /* ---------- responsive ---------- */
+@media (max-width:1320px){.menu{gap:24px}}
 @media (max-width:1150px){
   .wrap,.navbar,.hero-inner,.trustwrap,.banner-in{padding-left:32px;padding-right:32px}
   .menu,.hgroup .btn,.hgroup .lang{display:none}
@@ -453,3 +457,13 @@ a.tcell:hover .tcell-go{color:var(--teal);transform:translateY(-50%) translateX(
 .faq-a p{font-size:14.5px;line-height:1.85;color:var(--ink-soft);margin-bottom:14px}
 .faq-a p:last-child{margin-bottom:0}
 @media (max-width:620px){.faq-q{font-size:18px;padding:20px 2px}}
+.faq-cat{font-family:'Inter',sans-serif;font-size:10.5px;font-weight:700;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--teal-deep);margin:46px 0 4px}
+.faq-cat:first-child{margin-top:0}
+.faq-group{border-top:1px solid var(--line)}
+.faq-list.grouped{border-top:0}
+@media (max-width:620px){.faq-cat{margin-top:36px}}
+
+/* ---- FAQ teaser band on the treatments page ---- */
+.faq-teaser{max-width:640px}
+.faq-teaser .btn{margin-top:8px}
