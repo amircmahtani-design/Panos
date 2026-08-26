@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /studio/
 
-Sitemap: https://papantonioudental.gr/sitemap.xml
+Sitemap: https://panosdent.netlify.app/sitemap.xml

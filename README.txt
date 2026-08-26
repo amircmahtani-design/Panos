@@ -4,17 +4,22 @@
 White + turquoise clinical style, with the clinic's real
 photographs and real logo mark.
 
-!! ONE THING TO DO FIRST !!
----------------------------
-The site is set up for the domain:  https://papantonioudental.gr
-If the real domain is different, do a find-and-replace of that
-string across these files:
+!! ONE THING TO DO AT LAUNCH !!
+-------------------------------
+The site is currently set up for the live Netlify address:
+
+    https://panosdent.netlify.app
+
+When papantonioudental.gr (or whatever the real domain turns out
+to be) goes live, find-and-replace that string across these
+files:
    index.html  to-iatreio.html  ypiresies.html  o-iatros.html
    syhnes-erotiseis.html  epikoinonia.html  404.html  efcharisto.html
    sitemap.xml  robots.txt
-It only affects Google indexing and the preview image shown when
-the link is shared on WhatsApp/Facebook. Everything else works
-regardless.
+It affects Google indexing and the preview shown when the link is
+shared on WhatsApp/Messenger/Viber. Everything else works
+regardless — but see the LINK PREVIEWS section below, because
+getting this wrong is exactly what makes the preview go blank.
 
 DEPLOY
 ------
@@ -513,3 +518,55 @@ CHANGE LOG  —  26 August 2026 (fourth pass)
   The focal point is a property of the photo, so replacing a
   photo in the Studio means checking it again — the preview in
   the Studio shows the crop you will get.
+
+
+================================================================
+LINK PREVIEWS  (WhatsApp / Messenger / Viber / Facebook)
+================================================================
+WHY THE PREVIEW WAS AN EMPTY BOX
+The og:image tag has to be an absolute URL, and it pointed at
+https://papantonioudental.gr/... — a domain that is not serving
+anything yet. Messenger fetched the page fine, which is why the
+title showed, then went to fetch the picture from a domain that
+does not answer and drew an empty grey box instead.
+
+WHAT CHANGED
+- Every absolute URL now points at https://panosdent.netlify.app,
+  the address the site actually answers on.
+- New file: og-image.jpg, 1200x630, the entrance with the gold
+  mark and ΟΔΟΝΤΙΑΤΡΙΚΟ ΚΕΝΤΡΟ. The old card pointed at a
+  gallery photo, which is portrait — chat apps crop those to a
+  small square or letterbox them. 1200x630 is the shape every
+  one of them renders at.
+- og:image:width, :height and :type are declared, so the scraper
+  can lay the card out without downloading the file first. This
+  is the difference between the picture appearing immediately
+  and appearing on the second or third share.
+- og-image.jpg caches for a day rather than a year, so replacing
+  it actually shows up in previews.
+
+IMPORTANT: THE APPS CACHE THE OLD RESULT
+Messenger and WhatsApp remember what they scraped, so the blank
+box may persist even after this is deployed. To force a refresh:
+
+  Facebook / Messenger:
+    https://developers.facebook.com/tools/debug/
+    paste the URL, press "Scrape Again"
+
+  WhatsApp uses Facebook's cache, so the same tool fixes it.
+
+  Viber and Telegram usually clear on their own within a day.
+
+Testing by sending yourself the link in a NEW chat also helps,
+since some apps cache per conversation.
+
+WHEN THE REAL DOMAIN GOES LIVE, re-run the find-and-replace at
+the top of this file and scrape again with the tool above,
+otherwise previews will break in exactly the same way.
+
+FOLDER NAME
+The image folder is now lowercase "images", matching what every
+page asks for. It had been uploaded as "Images" with a capital
+I. Netlify's servers are case-sensitive, so that mismatch breaks
+every photo on the site the moment it takes effect. Keep it
+lowercase.
