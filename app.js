@@ -179,6 +179,7 @@ window.SITE = { content: null, lang: "el" };
         var open = b.getAttribute("aria-expanded") === "true";
         b.setAttribute("aria-expanded", String(!open));
         b.parentNode.querySelector(".tr-detail").hidden = open;
+        b.parentNode.classList.toggle("open", !open);
         var l = b.querySelector(".lbl");
         l.textContent = open ? l.dataset.more : l.dataset.less;
       });
@@ -248,6 +249,7 @@ window.SITE = { content: null, lang: "el" };
         var open = b.getAttribute("aria-expanded") === "true";
         b.setAttribute("aria-expanded", String(!open));
         b.parentNode.querySelector(".faq-a").hidden = open;
+        b.parentNode.classList.toggle("open", !open);
       });
     });
 

@@ -399,3 +399,63 @@ CHANGE LOG  —  26 August 2026 (second pass)
   treatment list. Days sharing the same hours are grouped, and a
   one-off like a short Friday becomes its own entry. Nothing to
   maintain by hand any more.
+
+
+================================================================
+CHANGE LOG  —  26 August 2026 (third pass: typography)
+================================================================
+The headings were always the right size. Everything supporting
+them was set a step or two too small, which is what made the site
+feel thin. One pass over the whole scale, not a patch here and
+there, so the proportions still hold together:
+
+  body text        15    -> 16.5
+  menu             12    -> 13.5
+  page lede        16    -> 17.5
+  section lede     15.5  -> 17
+  card title       11    -> 12.5
+  card text        12.5  -> 14
+  treatment title  23    -> 27
+  treatment lede   14    -> 16
+  treatment body   15    -> 17
+  contact details  15    -> 16.5
+  footer links     13.5  -> 14.5
+  team biography   14    -> 15.5
+
+The small uppercase labels — eyebrows, roles, breadcrumbs — stay
+between 11.5 and 12.5 on purpose. They are meant to sit quietly
+under the headings, and enlarging them would flatten the
+hierarchy.
+
+CENTRED PAGE HEADERS. Every sub-page banner and every section
+head is centred on desktop, and drops back to left-aligned below
+620px, where a centred paragraph over three or four short lines
+is harder to read than a left-aligned one.
+
+THE NAVIGATION collapses to the burger at 1240px now, not 1150.
+Six items at 13.5px need the extra room; below 1340px the menu
+tightens its spacing first. Without this the menu would have run
+into the booking button on a 1200px laptop.
+
+WHAT WE COVER — REBUILT. The list is a centred 1020px column, so
+every row starts on the same line and the page has an even
+gutter on both sides rather than a ragged empty right-hand half.
+The icon sits in a fixed 34px column, which keeps the titles
+aligned whether or not a treatment has an icon.
+
+Opening a row now tints the whole row — head and body together —
+with rounded corners and a soft shadow, so it reads as one
+panel. Before, the body was bare paragraphs sitting in white
+with nothing beside them, which is what looked unfinished. The
+hairline rules moved from the container onto the rows so they
+can step out of the way of an open panel instead of cutting
+across its edge.
+
+The first paragraph of each treatment is set slightly larger and
+darker. That paragraph is the practice's own wording in every
+case, so it earns the emphasis. Body text is capped at 78
+characters a line — past that the eye loses its place on the
+return sweep.
+
+The FAQ rows got the same panel treatment, so the two pages
+read as siblings.
