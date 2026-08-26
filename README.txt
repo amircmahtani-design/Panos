@@ -459,3 +459,57 @@ return sweep.
 
 The FAQ rows got the same panel treatment, so the two pages
 read as siblings.
+
+
+================================================================
+CHANGE LOG  —  26 August 2026 (fourth pass)
+================================================================
+- BREADCRUMBS REMOVED. "Αρχική — Υπηρεσίες" is gone from all
+  five sub-pages. On a six-page site the menu already tells you
+  where you are.
+
+- HOMEPAGE SERVICES. Was a narrow 33/67 split, which turned into
+  a ragged 3-3-1 grid once there were seven treatments. It is now
+  a full-width band with the heading centred above and the cards
+  wrapping four to a row, the short last row centred rather than
+  hugging the left with a hole beside it. The "Όλες οι υπηρεσίες"
+  button sits centred underneath.
+
+- DEEP LINKS INTO A TREATMENT. Every footer service link and
+  every homepage card now points at that treatment specifically —
+  ypiresies.html#tr-ortho — and the page opens that row and
+  scrolls to it, clear of the sticky header. Landing on a closed
+  accordion and having to hunt for the row defeated the point.
+  The anchors come from the treatment ids in content.json, so a
+  treatment added in the Studio gets a working link for free.
+  The EL/EN switch was taught to put ?lang=en BEFORE the #, since
+  ypiresies.html#tr-ortho?lang=en is a dead link.
+
+- SPACING. Section padding 120 -> 104, and the treatments section
+  ends at 56, which closes the dead band that sat between the
+  last treatment and the FAQ strip.
+
+- IMAGE AND TEXT now start on the same line in the side-by-side
+  sections; they were vertically centred, so the photo always sat
+  higher than the heading beside it.
+
+- PHOTO CROPS. Each image has a focal point, set in the Studio
+  under Φωτογραφίες → "Τι να φαίνεται" (Top / Upper / Centre /
+  Lower / Bottom). The photos are portrait phone snaps and the
+  gallery crops them hard, so the middle of the frame was rarely
+  the part worth keeping. Set so far:
+
+    Entrance      Upper  - the gold logo sits high in the frame
+                           and was being cut off entirely
+    Treatment     Lower  - shows the dentist and patient rather
+                           than the air-conditioning unit
+    Lab counter   Lower  - the counter runs across the middle
+
+  The two bottom gallery slots were also swapped. The wide short
+  cell had the treatment photo in it, which is portrait and full
+  of people, so it cropped to two foreheads. The lab counter is
+  horizontal and fits that shape properly.
+
+  The focal point is a property of the photo, so replacing a
+  photo in the Studio means checking it again — the preview in
+  the Studio shows the crop you will get.

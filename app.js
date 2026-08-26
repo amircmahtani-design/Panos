@@ -95,6 +95,9 @@ window.SITE = { content: null, lang: "el" };
       if (!rec || !rec.src) return;
       if (el.tagName === "IMG") {
         el.setAttribute("src", rec.src);
+        /* These photos are phone snaps in portrait, cropped hard by the grid.
+           The focal point says which part must survive the crop. */
+        if (rec.pos) el.style.objectPosition = rec.pos;
         if (rec.src.indexOf("data:") === 0) {
           el.removeAttribute("width"); el.removeAttribute("height");
         }
@@ -164,7 +167,7 @@ window.SITE = { content: null, lang: "el" };
       var title = (t.title && (t.title[lang] || t.title.el)) || "";
       var short = (t.short && (t.short[lang] || t.short.el)) || "";
       var det   = (t.detail && (t.detail[lang] || t.detail.el)) || "";
-      return '<div class="tr-item">' +
+      return '<div class="tr-item" id="tr-' + esc(t.id) + '">' +
         '<button class="tr-head" aria-expanded="false" aria-controls="trd' + i + '">' +
           '<span class="tr-ic">' + (ICONS[t.icon] || "") + "</span>" +
           '<span class="tr-txt"><span class="tr-title">' + esc(title) + "</span>" +
@@ -174,6 +177,25 @@ window.SITE = { content: null, lang: "el" };
         "</button>" +
         '<div class="tr-detail" id="trd' + i + '" hidden>' + paras(det) + "</div></div>";
     }).join("");
+    /* A link like ypiresies.html#tr-ortho should land on that treatment with
+       its text already open — arriving at a closed accordion and having to
+       hunt for the row defeats the point of the link. */
+    function openFromHash(smooth) {
+      var id = (window.location.hash || "").replace(/^#/, "");
+      if (!id) return;
+      var item = document.getElementById(id);
+      if (!item || !item.classList.contains("tr-item")) return;
+      var btn = item.querySelector(".tr-head");
+      if (btn && btn.getAttribute("aria-expanded") !== "true") btn.click();
+      /* clear of the sticky header */
+      var hdr = document.getElementById("hdr");
+      var offset = (hdr ? hdr.offsetHeight : 0) + 18;
+      var y = item.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top: y, behavior: smooth ? "smooth" : "auto" });
+    }
+    requestAnimationFrame(function () { openFromHash(false); });
+    window.addEventListener("hashchange", function () { openFromHash(true); });
+
     box.querySelectorAll(".tr-head").forEach(function (b) {
       b.addEventListener("click", function () {
         var open = b.getAttribute("aria-expanded") === "true";
@@ -197,7 +219,7 @@ window.SITE = { content: null, lang: "el" };
     box.innerHTML = c.treatments.map(function (t) {
       var title = (t.title && (t.title[lang] || t.title.el)) || "";
       var short = (t.short && (t.short[lang] || t.short.el)) || "";
-      return '<a class="card rv on" href="' + href + '">' +
+      return '<a class="card rv on" href="' + href + "#tr-" + esc(t.id) + '">' +
         '<span class="ic">' + (ICONS[t.icon] || ICONS.aes) + "</span>" +
         "<h3>" + esc(title) + "</h3><p>" + esc(short) + "</p></a>";
     }).join("");
@@ -209,7 +231,7 @@ window.SITE = { content: null, lang: "el" };
     document.querySelectorAll("[data-c=ftservices]").forEach(function (ul) {
       ul.innerHTML = c.treatments.map(function (t) {
         var title = (t.title && (t.title[lang] || t.title.el)) || "";
-        return '<li><a href="' + href + '">' + esc(title) + "</a></li>";
+        return '<li><a href="' + href + "#tr-" + esc(t.id) + '">' + esc(title) + "</a></li>";
       }).join("");
     });
   }
@@ -354,7 +376,12 @@ window.SITE = { content: null, lang: "el" };
       if (!h || /^(https?:|tel:|mailto:|#|data:)/i.test(h)) return;
       if (a.hasAttribute("data-lang-link")) return;
       if (/\.(jpg|jpeg|png|webp|svg|pdf|json)$/i.test(h)) return;
-      a.setAttribute("href", h.indexOf("?") > -1 ? h + "&lang=en" : h + "?lang=en");
+      /* ypiresies.html#tr-ortho must become ypiresies.html?lang=en#tr-ortho,
+         not ypiresies.html#tr-ortho?lang=en, which is a dead link. */
+      var cut = h.indexOf("#");
+      var path = cut > -1 ? h.slice(0, cut) : h;
+      var frag = cut > -1 ? h.slice(cut) : "";
+      a.setAttribute("href", (path.indexOf("?") > -1 ? path + "&lang=en" : path + "?lang=en") + frag);
     });
   }
 

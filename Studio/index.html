@@ -238,6 +238,9 @@ const UI = {
   addFaq:"+ Νέα ερώτηση", delFaq:"Διαγραφή ερώτησης",
   qEl:"Ερώτηση (EL)", qEn:"Question (EN)", aEl:"Απάντηση (EL)", aEn:"Answer (EN)",
   imgSub:"Αντικαταστήστε οποιαδήποτε φωτογραφία του site.",
+  focal:"Τι να φαίνεται",
+  focalHint:"Οι φωτογραφίες κόβονται για να χωρέσουν στη θέση τους. Επιλέξτε ποιο μέρος πρέπει να μείνει ορατό.",
+  posTop:"Πάνω μέρος", posUpper:"Ψηλά", posMid:"Κέντρο", posLower:"Χαμηλά", posBot:"Κάτω μέρος",
   replace:"Αντικατάσταση", restore:"Επαναφορά", imgHint:"Μικραίνει αυτόματα σε 1600px.",
   strSub:n=>n+" κείμενα. Γράψτε σε όποια γλώσσα θέλετε και πατήστε το βέλος για μετάφραση.",
   fillBlank:"Συμπλήρωση κενών:", searchPh:"Αναζήτηση κειμένου…",
@@ -298,6 +301,9 @@ const UI = {
   addFaq:"+ New question", delFaq:"Delete question",
   qEl:"Question (EL)", qEn:"Question (EN)", aEl:"Answer (EL)", aEn:"Answer (EN)",
   imgSub:"Replace any photo on the site.",
+  focal:"Keep in view",
+  focalHint:"Photos are cropped to fit their slot. Choose which part has to stay visible.",
+  posTop:"Top", posUpper:"Upper", posMid:"Centre", posLower:"Lower", posBot:"Bottom",
   replace:"Replace", restore:"Restore", imgHint:"Resized automatically to 1600px.",
   strSub:n=>n+" texts. Write in whichever language you prefer and press the arrow to translate.",
   fillBlank:"Fill blanks:", searchPh:"Search text…",
@@ -645,17 +651,25 @@ function bindFaq(){
 function viewImages(){
   return `<h2>${esc(T("images"))}</h2><p class="sub">${esc(T("imgSub"))}</p>` +
   Object.entries(DATA.images).map(([k,rec])=>`<div class="card"><div class="imgcard">
-    <div class="prev"><img src="${esc(rec.src.startsWith("data:")?rec.src:"../"+rec.src)}"></div>
+    <div class="prev"><img style="object-fit:cover;object-position:${esc(rec.pos||"50% 50%")}" src="${esc(rec.src.startsWith("data:")?rec.src:"../"+rec.src)}"></div>
     <div><h3>${esc(rec.label||k)}</h3><p class="k">images.${esc(k)}</p>
       <div class="btnrow" style="margin-top:0">
         <label class="btn filebtn">${esc(T("replace"))}<input type="file" accept="image/*" data-if="${esc(k)}"></label>
         <button class="btn danger" data-ir="${esc(k)}">${esc(T("restore"))}</button>
       </div>
+      <label class="flag" style="display:block;margin-top:10px">${esc(T("focal"))}:
+        <select data-ip="${esc(k)}" style="width:auto;display:inline-block;margin-left:6px">
+        ${[["50% 0%","posTop"],["50% 22%","posUpper"],["50% 50%","posMid"],
+           ["50% 74%","posLower"],["50% 100%","posBot"]]
+           .map(o=>`<option value="${o[0]}" ${(rec.pos||"50% 50%")===o[0]?"selected":""}>${esc(T(o[1]))}</option>`).join("")}
+        </select></label>
+      <p class="hint">${esc(T("focalHint"))}</p>
       <p class="hint">${esc(T("imgHint"))}</p></div></div></div>`).join("");
 }
 function bindImages(){
   const v=$("#view");
   v.querySelectorAll("[data-if]").forEach(el=>el.onchange=e=>readImage(e.target.files[0],1600,d=>{DATA.images[el.dataset.if].src=d;persist();render();}));
+  v.querySelectorAll("[data-ip]").forEach(el=>el.onchange=()=>{DATA.images[el.dataset.ip].pos=el.value;persist();render();});
   v.querySelectorAll("[data-ir]").forEach(el=>el.onclick=()=>{DATA.images[el.dataset.ir].src=BASE.images[el.dataset.ir].src;persist();render();});
 }
 

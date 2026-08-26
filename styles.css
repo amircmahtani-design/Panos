@@ -142,7 +142,8 @@ header.scrolled{box-shadow:0 4px 24px rgba(22,48,59,.07)}
 
 /* ---------- sections ---------- */
 section{position:relative}
-.sec-pad{padding:120px 0}
+.sec-pad{padding:104px 0}
+.pb-tight{padding-bottom:56px}
 .bg-pale{background:var(--bg)}
 .head{max-width:700px;margin:0 auto 58px;text-align:center}
 .head .eyebrow{justify-content:center}
@@ -150,11 +151,9 @@ section{position:relative}
 .head p{margin-top:20px;font-size:17px;line-height:1.8}
 
 /* services */
-.services-inner{display:grid;grid-template-columns:minmax(0,33%) minmax(0,67%);gap:48px;align-items:center}
-.services-inner h2{font-size:clamp(30px,3.1vw,44px);line-height:1.15}
-.services-inner .eyebrow{justify-content:flex-start}
-.services-inner .more{margin-top:26px;display:inline-flex}
-.cards4{display:grid;grid-template-columns:repeat(auto-fill,minmax(198px,1fr));gap:22px}
+.cards4{display:flex;flex-wrap:wrap;justify-content:center;gap:22px}
+.cards4 > *{flex:1 1 250px;max-width:300px}
+.srv-more{text-align:center;margin-top:46px}
 .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 a.card{display:block;color:inherit}
 .card{background:#fff;border-radius:16px;padding:38px 22px 34px;text-align:center;box-shadow:var(--shadow-soft);transition:transform .3s,box-shadow .3s}
@@ -167,7 +166,7 @@ a.card{display:block;color:inherit}
 .cards3 .card p{font-size:14.5px}
 
 /* split */
-.split{display:grid;grid-template-columns:1fr 1fr;gap:76px;align-items:center}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:76px;align-items:start}
 .split h2{font-size:clamp(30px,3.2vw,44px);line-height:1.14}
 .split p.lead{font-size:17px;line-height:1.85;margin-top:18px}
 .ticks{margin-top:32px;display:flex;flex-direction:column;gap:16px}
@@ -270,8 +269,6 @@ footer li a:hover{color:#7FD4D0}
 }
 @media (max-width:1150px){
   .wrap,.navbar,.hero-inner,.trustwrap,.banner-in{padding-left:32px;padding-right:32px}
-  .cards4{grid-template-columns:repeat(2,1fr)}
-  .services-inner{grid-template-columns:1fr;gap:40px}
   .cards3{grid-template-columns:1fr 1fr}
 }
 @media (max-width:960px){
@@ -399,7 +396,6 @@ footer li a:hover{color:#7FD4D0}
   .banner-in{text-align:left}
   .banner-in p{margin-left:0;margin-right:0}
   .banner .eyebrow{justify-content:flex-start}
-  .services-inner{gap:40px}
   .hero{padding-bottom:60px}
   .ticks{margin-top:28px;gap:16px}
 }

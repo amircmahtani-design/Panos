@@ -167,47 +167,58 @@
  "images": {
   "hero": {
    "src": "images/03_reception_waiting.jpg",
-   "label": "Αρχική — κεντρική φωτογραφία"
+   "label": "Αρχική — κεντρική φωτογραφία",
+   "pos": "50% 50%"
   },
   "home_about": {
    "src": "images/06_treatment_room.jpg",
-   "label": "Αρχική — φωτογραφία ιατρείου"
+   "label": "Αρχική — φωτογραφία ιατρείου",
+   "pos": "50% 50%"
   },
   "clinic_main": {
    "src": "images/06_treatment_room.jpg",
-   "label": "Το ιατρείο — κύρια φωτογραφία"
+   "label": "Το ιατρείο — κύρια φωτογραφία",
+   "pos": "50% 50%"
   },
   "gal1": {
    "src": "images/01_exterior_clinic.jpg",
-   "label": "Γκαλερί 1"
+   "label": "Γκαλερί 1",
+   "pos": "50% 50%"
   },
   "gal2": {
    "src": "images/03_reception_waiting.jpg",
-   "label": "Γκαλερί 2"
+   "label": "Γκαλερί 2",
+   "pos": "50% 50%"
   },
   "gal3": {
    "src": "images/02_entrance_branding.jpg",
-   "label": "Γκαλερί 3"
+   "label": "Γκαλερί 3",
+   "pos": "50% 20%"
   },
   "gal4": {
    "src": "images/04_clinic_corridor.jpg",
-   "label": "Γκαλερί 4"
+   "label": "Γκαλερί 4",
+   "pos": "50% 50%"
   },
   "gal5": {
    "src": "images/06_treatment_room.jpg",
-   "label": "Γκαλερί 5"
+   "label": "Γκαλερί 5",
+   "pos": "50% 50%"
   },
   "gal6": {
-   "src": "images/08_lab_equipment.jpg",
-   "label": "Γκαλερί 6"
+   "src": "images/05_treatment_in_progress.jpg",
+   "label": "Γκαλερί 6",
+   "pos": "50% 74%"
   },
   "gal7": {
    "src": "images/07_dentist_microscope.jpg",
-   "label": "Γκαλερί 7"
+   "label": "Γκαλερί 7",
+   "pos": "50% 58%"
   },
   "gal8": {
-   "src": "images/05_treatment_in_progress.jpg",
-   "label": "Γκαλερί 8"
+   "src": "images/08_lab_equipment.jpg",
+   "label": "Γκαλερί 8",
+   "pos": "50% 58%"
   }
  },
  "strings": {
