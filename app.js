@@ -276,6 +276,57 @@ window.SITE = { content: null, lang: "el" };
     }
   }
 
+  /* The Dentist block in index.html carries the opening hours Google shows in
+     search results. They were written into the HTML, so changing the hours in
+     the Studio would have left the search result saying something different
+     from the site. Rebuild that part from content.hours instead. */
+  var SCHEMA_DAYS = { mon:"Monday", tue:"Tuesday", wed:"Wednesday", thu:"Thursday",
+                      fri:"Friday", sat:"Saturday", sun:"Sunday" };
+
+  function applyHoursSchema(c) {
+    if (!c.hours || !c.hours.length) return;
+    var node = null;
+    document.querySelectorAll('script[type="application/ld+json"]').forEach(function (n) {
+      if (n.textContent.indexOf('"Dentist"') > -1) node = n;
+    });
+    if (!node) return;
+
+    var data;
+    try { data = JSON.parse(node.textContent); } catch (e) { return; }
+
+    /* Collect open days by their hours string, so days that share a time
+       become one entry, exactly as the hand-written version did. */
+    var byValue = {}, order = [];
+    c.hours.forEach(function (h) {
+      var day = SCHEMA_DAYS[h.id];
+      if (!day || h.closed) return;
+      var m = String(h.value || "").match(/(\d{1,2}:\d{2})\D+(\d{1,2}:\d{2})/);
+      if (!m) return;
+      var key = m[1] + "-" + m[2];
+      if (!byValue[key]) { byValue[key] = { opens: m[1], closes: m[2], days: [] }; order.push(key); }
+      byValue[key].days.push(day);
+    });
+    if (!order.length) return;
+
+    data.openingHoursSpecification = order.map(function (k) {
+      return { "@type": "OpeningHoursSpecification",
+               dayOfWeek: byValue[k].days, opens: byValue[k].opens, closes: byValue[k].closes };
+    });
+
+    var ct = c.contact || {};
+    if (ct.phoneTel) data.telephone = ct.phoneTel;
+    if (ct.rating && ct.reviewCount && data.aggregateRating) {
+      data.aggregateRating.ratingValue = String(ct.rating);
+      data.aggregateRating.reviewCount = String(ct.reviewCount);
+    }
+    if (c.treatments && c.treatments.length) {
+      data.availableService = c.treatments.map(function (t) {
+        return { "@type": "MedicalProcedure", name: (t.title && t.title.el) || "" };
+      });
+    }
+    node.textContent = JSON.stringify(data);
+  }
+
   function applyContent(c) {
     window.SITE.content = c;
     if (!c) return;
@@ -289,6 +340,7 @@ window.SITE = { content: null, lang: "el" };
     try { applyServiceCards(c); } catch (e) {}
     try { applyFooterServices(c); } catch (e) {}
     try { applyFaq(c); } catch (e) {}
+    try { applyHoursSchema(c); } catch (e) {}
   }
 
   /* ---------------- language plumbing ---------------- */

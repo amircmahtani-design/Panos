@@ -358,3 +358,44 @@ CHANGE LOG  —  26 August 2026
   arrows as every other pair.
 - Fixed, while in there: .rv.on cancelled the hover lift on the
   homepage cards, because the two rules had equal specificity.
+
+
+================================================================
+CHANGE LOG  —  26 August 2026 (second pass)
+================================================================
+- CACHING. styles.css and app.js were set to cache for a week, so
+  a deploy could look unchanged for days — the new treatment
+  icons and the FAQ category headings were both being hidden by
+  it. Two fixes: the tags now carry ?v=20260826, and _headers
+  asks the browser to revalidate every visit. Netlify answers an
+  unchanged file with a small 304, so this costs nothing.
+
+  WHEN YOU NEXT EDIT styles.css OR app.js: bump the ?v= number in
+  all eight HTML files. A date works fine. Skip it and returning
+  visitors may sit on the old file. content.json is unaffected —
+  it was always fetched fresh.
+
+- FAQ PAGE READABILITY. One centred column, 900px wide, with the
+  questions at 24px and the answers at 17px instead of the 20/14.5
+  used elsewhere. It centres on desktop and goes back to
+  left-aligned on phones, where centred headings read badly.
+
+- OPENING HOURS, EDITED IN ONE GO. The Ωράριο tab now opens with
+  a single field and two buttons:
+
+     "Σε όσες είναι ανοιχτές"  — every day not marked closed
+     "Σε όλες τις ημέρες"      — all seven, reopening closed ones
+
+  The field is pre-filled with whatever hours most days currently
+  share. So: type 08:30 – 15:00, press the first button, then
+  change Friday on its own row for a half day. Sunday stays
+  closed unless you use the second button.
+
+- OPENING HOURS IN GOOGLE. The Dentist structured data in
+  index.html had the hours written into it by hand, so changing
+  them in the Studio would have left the Google result showing
+  the old times. app.js now rebuilds that block from
+  content.json — hours, phone, rating, review count and the
+  treatment list. Days sharing the same hours are grouped, and a
+  one-off like a short Friday becomes its own entry. Nothing to
+  maintain by hand any more.

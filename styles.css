@@ -464,6 +464,28 @@ a.tcell:hover .tcell-go{color:var(--teal);transform:translateY(-50%) translateX(
 .faq-list.grouped{border-top:0}
 @media (max-width:620px){.faq-cat{margin-top:36px}}
 
+/* ---- the FAQ page: one centred column, set larger for comfortable reading ---- */
+.faq-wrap .head{max-width:720px;margin:0 auto 54px;text-align:center}
+.faq-wrap .head .eyebrow{justify-content:center}
+.faq-list.grouped{max-width:900px;margin:0 auto}
+.faq-list.grouped .faq-cat{font-size:11.5px;letter-spacing:.16em}
+.faq-list.grouped .faq-q{font-size:24px;padding:27px 8px;gap:26px}
+.faq-list.grouped .faq-q svg{width:18px;height:18px;margin-top:7px}
+.faq-list.grouped .faq-a{max-width:none;padding:0 8px 30px 8px}
+.faq-list.grouped .faq-a p{font-size:17px;line-height:1.8;margin-bottom:16px}
+@media (max-width:900px){
+  .faq-list.grouped .faq-q{font-size:21px;padding:24px 4px;gap:18px}
+  .faq-list.grouped .faq-a{padding:0 4px 26px 4px}
+  .faq-list.grouped .faq-a p{font-size:16px}
+}
+@media (max-width:620px){
+  .faq-wrap .head{text-align:left}
+  .faq-wrap .head .eyebrow{justify-content:flex-start}
+  .faq-list.grouped .faq-q{font-size:19px;padding:22px 2px}
+  .faq-list.grouped .faq-a{padding:0 2px 24px 2px}
+  .faq-list.grouped .faq-a p{font-size:15.5px}
+}
+
 /* ---- FAQ teaser band on the treatments page ---- */
 .faq-teaser{max-width:640px}
 .faq-teaser .btn{margin-top:8px}

@@ -214,6 +214,13 @@ const UI = {
   trEmail:"Email για μεγαλύτερο όριο μεταφράσεων (προαιρετικό)",
   trAddr:"μεταφράζει τη διεύθυνση",
   hoursSub:"Εμφανίζεται στη σελίδα Επικοινωνίας.",
+  bulkTitle:"Αλλαγή σε όλες τις ημέρες μαζί",
+  bulkHint:"Γράψτε το ωράριο μία φορά και εφαρμόστε το. Μετά αλλάξτε ξεχωριστά όποια ημέρα διαφέρει — π.χ. μισή μέρα την Παρασκευή.",
+  bulkOpen:"Σε όσες είναι ανοιχτές",
+  bulkAll:"Σε όλες τις ημέρες",
+  bulkPh:"π.χ. 08:30 – 15:00",
+  bulkEmpty:"Γράψτε πρώτα το ωράριο.",
+  bulkDone:n=>"Εφαρμόστηκε σε "+n+(n===1?" ημέρα.":" ημέρες."),
   dayEl:"Ημέρα (EL)", dayEn:"Day (EN)", closed:"κλειστά",
   teamSub:"Φωτογραφία τύπου βιογραφικού και σύντομο κείμενο για κάθε μέλος.",
   addMember:"+ Νέο μέλος", delMember:"Διαγραφή μέλους", photo:"Φωτογραφία",
@@ -267,6 +274,13 @@ const UI = {
   trEmail:"Email for a higher translation limit (optional)",
   trAddr:"translates the address",
   hoursSub:"Shown on the Contact page.",
+  bulkTitle:"Change every day at once",
+  bulkHint:"Type the hours once and apply them. Then adjust any day that differs — a half day on Friday, for example.",
+  bulkOpen:"To the days that are open",
+  bulkAll:"To every day",
+  bulkPh:"e.g. 08:30 – 15:00",
+  bulkEmpty:"Type the hours first.",
+  bulkDone:n=>"Applied to "+n+(n===1?" day.":" days."),
   dayEl:"Day (EL)", dayEn:"Day (EN)", closed:"closed",
   teamSub:"A CV-style photo and a short text for each member.",
   addMember:"+ New member", delMember:"Delete member", photo:"Photo",
@@ -454,7 +468,22 @@ function bindContact(){
 }
 
 function viewHours(){
-  return `<h2>${esc(T("hours"))}</h2><p class="sub">${esc(T("hoursSub"))}</p><div class="card">` +
+  // Most days share one value, so offer that as the starting point.
+  const counts={}; DATA.hours.forEach(h=>{ if(!h.closed&&h.value) counts[h.value]=(counts[h.value]||0)+1; });
+  const common=Object.keys(counts).sort((a,b)=>counts[b]-counts[a])[0]||"";
+  return `<h2>${esc(T("hours"))}</h2><p class="sub">${esc(T("hoursSub"))}</p>
+  <div class="card">
+    <h3>${esc(T("bulkTitle"))}</h3>
+    <p class="hint" style="margin-top:6px">${esc(T("bulkHint"))}</p>
+    <div class="btnrow" style="align-items:center;flex-wrap:wrap">
+      <input id="bulkVal" value="${esc(common)}" placeholder="${esc(T("bulkPh"))}"
+             style="width:auto;min-width:200px;flex:0 1 220px;margin:0">
+      <button class="btn" id="bulkOpen">${esc(T("bulkOpen"))}</button>
+      <button class="btn" id="bulkAll">${esc(T("bulkAll"))}</button>
+      <span id="bulkMsg" class="hint" style="margin:0"></span>
+    </div>
+  </div>
+  <div class="card">` +
   DATA.hours.map((h,i)=>`<div class="hrow2"><div class="hgrid">
     <input data-h="${i}" data-f="el" value="${esc(h.day.el)}" placeholder="${esc(T("dayEl"))}">
     <input data-h="${i}" data-f="en" value="${esc(h.day.en)}" placeholder="${esc(T("dayEn"))}">
@@ -463,6 +492,23 @@ function viewHours(){
   </div></div>`).join("") + `</div>`;
 }
 function bindHours(){
+  const msg=$("#bulkMsg");
+  const applyAll=openOnly=>{
+    const val=$("#bulkVal").value.trim();
+    if(!val){ msg.textContent=T("bulkEmpty"); return; }
+    let n=0;
+    DATA.hours.forEach(h=>{
+      if(openOnly && h.closed) return;   // leave Sunday alone
+      if(!openOnly) h.closed=false;      // "every day" also reopens closed ones
+      h.value=val; n++;
+    });
+    persist(); render();
+    const m=$("#bulkMsg"); if(m) m.textContent=T("bulkDone")(n);
+  };
+  $("#bulkOpen").onclick=()=>applyAll(true);
+  $("#bulkAll").onclick=()=>applyAll(false);
+  $("#bulkVal").onkeydown=e=>{ if(e.key==="Enter"){ e.preventDefault(); applyAll(true); } };
+
   $("#view").querySelectorAll("[data-h]").forEach(el=>{
     const i=+el.dataset.h,f=el.dataset.f;
     const fn=()=>{ if(f==="closed"){DATA.hours[i].closed=el.checked;persist();render();return;}
