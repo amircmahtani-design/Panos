@@ -66,6 +66,8 @@ window.SITE = { content: null, lang: "el" };
       var v = lang === "en" ? (ct.addressEn || ct.addressEl) : ct.addressEl;
       if (v) e.textContent = v;
     });
+    set("[data-c=emergency]", function (e) { if (ct.emergencyDisplay) e.textContent = ct.emergencyDisplay; });
+    set("[data-c=emergencyTel]", function (e) { if (ct.emergencyTel) e.href = "tel:" + ct.emergencyTel; });
     set("[data-c=instagram]", function (e) { if (ct.instagram) e.href = ct.instagram; });
     set("[data-c=reviews]", function (e) { if (ct.reviewsUrl) e.href = ct.reviewsUrl; });
     set("[data-c=directions]", function (e) { if (ct.mapsDirections) e.href = ct.mapsDirections; });
@@ -120,6 +122,31 @@ window.SITE = { content: null, lang: "el" };
     });
   }
 
+  /* Team photographs follow one presentation rule (see tools/README-portraits.md):
+     1000x1250 (4:5), one clinic background, the same crop and head position.
+     A processed file under images/team/ also has a -500 variant and a .webp
+     twin, so the card serves the right weight to each screen. A photo uploaded
+     through the Studio arrives as a data: URL and is shown as a plain <img>. */
+  function memberPhoto(src, name) {
+    var alt = esc(name);
+    if (!src) {
+      return '<span class="member-ph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" width="36" height="36">' +
+        '<circle cx="12" cy="8.4" r="4.2" stroke="currentColor" stroke-width="1.3"/>' +
+        '<path d="M4.8 20.4c1.1-4 3.9-6.2 7.2-6.2s6.1 2.2 7.2 6.2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span>';
+    }
+    if (src.indexOf("data:") === 0) {
+      return '<img src="' + src + '" alt="' + alt + '" loading="lazy" decoding="async">';
+    }
+    var base = src.replace(/\.(jpe?g|png|webp)$/i, "");
+    return '<picture>' +
+      '<source type="image/webp" srcset="' + base + '-500.webp 500w, ' + base + '.webp 1000w" sizes="' + PHOTO_SIZES + '">' +
+      '<source type="image/jpeg" srcset="' + base + '-500.jpg 500w, ' + base + '.jpg 1000w" sizes="' + PHOTO_SIZES + '">' +
+      '<img src="' + base + '.jpg" alt="' + alt + '" width="1000" height="1250" loading="lazy" decoding="async">' +
+      '</picture>';
+  }
+
+  var PHOTO_SIZES = "(max-width:620px) 92vw, (max-width:960px) 46vw, 31vw";
+
   function applyTeam(c) {
     var grid = document.querySelector("[data-c=team]");
     if (!grid || !c.team || !c.team.length) return;
@@ -127,13 +154,8 @@ window.SITE = { content: null, lang: "el" };
       var name = (m.name && (m.name[lang] || m.name.el)) || "";
       var role = (m.role && (m.role[lang] || m.role.el)) || "";
       var bio = (m.bio && (m.bio[lang] || m.bio.el)) || "";
-      var photo = m.photo
-        ? '<img src="' + m.photo + '" alt="' + esc(name) + '" loading="lazy">'
-        : '<span class="member-ph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" width="36" height="36">' +
-          '<circle cx="12" cy="8.4" r="4.2" stroke="currentColor" stroke-width="1.3"/>' +
-          '<path d="M4.8 20.4c1.1-4 3.9-6.2 7.2-6.2s6.1 2.2 7.2 6.2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span>';
       return '<article class="member">' +
-             '<div class="member-photo">' + photo + "</div>" +
+             '<div class="member-photo">' + memberPhoto(m.photo, name) + "</div>" +
              '<h3 class="member-name">' + esc(name) + "</h3>" +
              '<p class="member-role">' + esc(role) + "</p>" +
              '<p class="member-bio">' + esc(bio) + "</p></article>";
@@ -346,6 +368,22 @@ window.SITE = { content: null, lang: "el" };
     if (c.treatments && c.treatments.length) {
       data.availableService = c.treatments.map(function (t) {
         return { "@type": "MedicalProcedure", name: (t.title && t.title.el) || "" };
+      });
+    }
+    /* The emergency mobile is a second contact point, not the practice number. */
+    if (ct.emergencyTel) {
+      data.contactPoint = [{ "@type": "ContactPoint", telephone: ct.emergencyTel,
+                             contactType: "emergency", availableLanguage: ["el", "en"] }];
+    }
+    /* Naming the team is what lets Google connect the people to the practice. */
+    if (c.team && c.team.length) {
+      var origin = location.origin + location.pathname.replace(/[^/]*$/, "");
+      data.employee = c.team.map(function (m) {
+        var p = { "@type": "Person",
+                  name: (m.name && (m.name.el || m.name.en)) || "",
+                  jobTitle: (m.role && (m.role.el || m.role.en)) || "" };
+        if (m.photo && m.photo.indexOf("data:") !== 0) p.image = origin + m.photo;
+        return p;
       });
     }
     node.textContent = JSON.stringify(data);

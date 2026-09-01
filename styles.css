@@ -179,7 +179,7 @@ a.card{display:block;color:inherit}
 .gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:190px;gap:16px}
 .gal a{position:relative;overflow:hidden;border-radius:16px;background:#E4EFF1;box-shadow:var(--shadow-soft);display:block}
 .gal a:nth-child(1){grid-column:span 2;grid-row:span 2}
-.gal a:nth-child(8){grid-column:span 2}
+.gal a:nth-child(10){grid-column:span 2}
 .gal img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;color:transparent;font-size:0}
 .gal a:hover img{transform:scale(1.05)}
 
@@ -400,13 +400,20 @@ footer li a:hover{color:#7FD4D0}
   .ticks{margin-top:28px;gap:16px}
 }
 
+.cnote{font-size:13.5px;color:var(--ink-soft);margin-top:4px;line-height:1.5}
+
 /* ============ team ============ */
 .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
 .member{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;
   box-shadow:var(--shadow-soft);transition:transform .3s,box-shadow .3s}
 .member:hover{transform:translateY(-5px);box-shadow:var(--shadow-card)}
-.member-photo{aspect-ratio:4/5;background:var(--bg);display:flex;align-items:center;justify-content:center;overflow:hidden}
-.member-photo img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.member-photo{aspect-ratio:4/5;background:linear-gradient(180deg,#F3F8FA,#D6E2E7);display:flex;
+  align-items:center;justify-content:center;overflow:hidden}
+.member-photo picture{display:contents}
+/* The portraits are produced to one specification (tools/standardise_portrait.py):
+   1000x1250, one background, the same head size and eye line. The frame matches
+   that ratio exactly, so the browser never has to crop or stretch a face. */
+.member-photo img{width:100%;height:100%;object-fit:cover;object-position:center center;display:block}
 .member-ph{color:var(--teal);opacity:.35;display:flex}
 .member-name{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--ink);
   margin:24px 26px 0;line-height:1.25}

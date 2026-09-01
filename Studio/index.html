@@ -227,7 +227,8 @@ const UI = {
   delPhoto:"Αφαίρεση φωτό", noPhoto:"χωρίς φωτό", noFile:"χωρίς αρχείο",
   nameEl:"Όνομα (EL)", nameEn:"Name (EN)", roleEl:"Ιδιότητα (EL)", roleEn:"Role (EN)",
   bioEl:"Βιογραφικό (EL)", bioEn:"Biography (EN)",
-  photoHint:"Η φωτογραφία μικραίνει αυτόματα σε 700px.",
+  photoHint:"Οι φωτογραφίες της ομάδας ακολουθούν μία κοινή προδιαγραφή: 1000x1250, ίδιο φόντο, ίδιο κάδρο. Περάστε τη νέα φωτογραφία από το tools/standardise_portrait.py, ανεβάστε την στο images/team/ και γράψτε εδώ τη διαδρομή της. Αν ανεβάσετε αρχείο απευθείας, εμφανίζεται όπως είναι, χωρίς την επεξεργασία.",
+  photoPath:"Διαδρομή αρχείου",
   treatSub:"Τίτλος, σύντομη περιγραφή και αναλυτικό κείμενο. Κενή γραμμή = νέα παράγραφος.",
   addTreat:"+ Νέα θεραπεία", delTreat:"Διαγραφή θεραπείας",
   titleEl:"Τίτλος (EL)", titleEn:"Title (EN)", shortEl:"Σύντομη (EL)", shortEn:"Short (EN)",
@@ -290,7 +291,8 @@ const UI = {
   delPhoto:"Remove photo", noPhoto:"no photo", noFile:"no file",
   nameEl:"Name (EL)", nameEn:"Name (EN)", roleEl:"Role (EL)", roleEn:"Role (EN)",
   bioEl:"Biography (EL)", bioEn:"Biography (EN)",
-  photoHint:"The photo is resized automatically to 700px.",
+  photoHint:"Team photographs follow one specification: 1000x1250, the same background and the same crop. Run a new photo through tools/standardise_portrait.py, put it in images/team/ and type its path here. A file uploaded directly is shown exactly as it is, without that treatment.",
+  photoPath:"File path",
   treatSub:"Title, short description and full text. A blank line starts a new paragraph.",
   addTreat:"+ New treatment", delTreat:"Delete treatment",
   titleEl:"Title (EL)", titleEn:"Title (EN)", shortEl:"Short (EL)", shortEn:"Short (EN)",
@@ -531,7 +533,10 @@ function viewTeam(){
       <div class="btnrow" style="margin-top:0">
         <label class="btn filebtn">${esc(T("photo"))}<input type="file" accept="image/*" data-mf="${i}"></label>
         ${m.photo?`<button class="btn danger" data-mc="${i}">${esc(T("delPhoto"))}</button>`:""}
-      </div></div>
+      </div>
+      <div class="fld" style="margin-top:8px"><label>${esc(T("photoPath"))}</label>
+        <input data-mp="${i}" value="${esc(m.photo&&m.photo.indexOf("data:")!==0?m.photo:"")}" placeholder="images/team/onoma.jpg"></div>
+      </div>
     <div class="trrow" style="margin-top:14px">
       <div class="fld"><label>${esc(T("nameEl"))}</label>
         <input data-m="${i}" data-p="name" data-l="el" data-pair-field="team:${i}:name" value="${esc(m.name.el)}"></div>
@@ -561,6 +566,7 @@ function bindTeam(){
   v.querySelectorAll("[data-m]").forEach(el=>el.oninput=()=>{DATA.team[+el.dataset.m][el.dataset.p][el.dataset.l]=el.value;persist();});
   v.querySelectorAll("[data-mf]").forEach(el=>el.onchange=e=>readImage(e.target.files[0],700,d=>{DATA.team[+el.dataset.mf].photo=d;persist();render();}));
   v.querySelectorAll("[data-mc]").forEach(el=>el.onclick=()=>{DATA.team[+el.dataset.mc].photo="";persist();render();});
+  v.querySelectorAll("[data-mp]").forEach(el=>el.onchange=()=>{DATA.team[+el.dataset.mp].photo=el.value.trim();persist();render();});
   v.querySelectorAll("[data-md]").forEach(el=>el.onclick=()=>{
     if(!confirm(T("confDelMember")))return; DATA.team.splice(+el.dataset.md,1);persist();render();});
   $("#addMember").onclick=()=>{DATA.team.push({id:"t"+Date.now(),name:{el:"",en:""},role:{el:"",en:""},bio:{el:"",en:""},photo:""});persist();render();};

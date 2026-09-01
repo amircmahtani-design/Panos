@@ -570,3 +570,110 @@ page asks for. It had been uploaded as "Images" with a capital
 I. Netlify's servers are case-sensitive, so that mismatch breaks
 every photo on the site the moment it takes effect. Keep it
 lowercase.
+
+
+================================================================
+CHANGE LOG  —  1 September 2026 (team photographs, real team,
+                                 new clinic photos, emergency line)
+================================================================
+
+THE TEAM IS REAL NOW
+o-iatros.html no longer shows placeholders. Six members, with
+Greek and English names, roles and biographies, all editable in
+the Studio as before:
+
+  Δρ. Παναγιώτης Παπαντωνίου  Χειρουργός Οδοντίατρος — Ιδρυτής
+  Παναγιώτα Φώκου            Οδοντίατρος
+  Θάνος Καραμάνος            Γναθοχειρουργός
+  Νίκος Πολυκανδριώτης       Οδοντοτεχνίτης
+  Δημήτρης Παπαντωνίου       Βοηθός Οδοντιάτρου
+  Μαρία Αλεξοπούλου          Βοηθός Οδοντιάτρου
+
+The biographies describe the ROLE, not the person's history. No
+degrees, schools, years of experience or certifications are
+claimed anywhere, because none were supplied. If any of them
+wants their own qualifications named, that is one edit each in
+the Studio — and it should be their own words.
+
+ONE PHOTOGRAPHY SPECIFICATION FOR ALL PORTRAITS
+The six photographs came from different phones, different rooms
+and different days. They now share one specification:
+
+  1000 x 1250 (4:5), plus a 500 x 625 copy, in WebP and JPEG
+  one background for everybody — pale cool gradient, soft glow
+    behind the head, gentle contact shadow
+  eye line at 32.5% down the frame
+  face width at 30% of the frame width
+  white balance clamped to +/-8%, exposure to +/-20%
+
+No face, body, hair, clothing or expression was altered. Only
+background, crop, framing and lighting balance. The untouched
+originals are kept in images/team/originals/ and are not used by
+the site.
+
+The card frame is exactly 4:5 and so is every file, so no face is
+ever cropped or stretched by the browser, on any screen.
+
+  tools/standardise_portrait.py   the command
+  tools/spec.py                   the specification — the ONLY
+                                  place to change the look
+  tools/README-portraits.md       how to add the next person
+
+NEXT TEAM MEMBER, IN TWO STEPS
+
+  python3 tools/standardise_portrait.py onoma photo.jpg
+
+then in the Studio → Η ομάδα, type  images/team/onoma.jpg  in the
+new "Διαδρομή αρχείου" field. The page builds the WebP, the
+srcset and the sizes on its own.
+
+A photo uploaded straight into the Studio still works, but it is
+shown exactly as taken — it does not get the treatment. The hint
+under the photo box says so.
+
+SIX NEW CLINIC PHOTOGRAPHS
+Real camera files, not Instagram screenshots:
+
+  09_waiting_lounge     10_reception_desk    11_treatment_room
+  12_panoramic_xray     13_lab_bench         14_ceiling_detail
+
+The gallery on Το ιατρείο went from 8 photographs to 12 and the
+grid was re-balanced (one 2x2 feature, one wide cell) so the four
+columns divide into exactly four rows with no hole at the end.
+The homepage hero, the homepage photo and the clinic page photo
+now use the new bright files. Every old photograph is still in
+images/ and can be put back from the Studio.
+
+EMERGENCY NUMBER — 697 200 8653
+Added as a second number, clearly labelled "Επείγοντα", and never
+confused with the practice landline:
+
+  contact page   its own row under the telephone, with the note
+                 "Εκτός ωραρίου, για επείγοντα περιστατικά"
+  every footer   under the landline
+  FAQ            named in the emergency answers, in both languages
+  Google         published as an emergency contactPoint in the
+                 Dentist structured data
+
+It lives in content.json under contact.emergencyDisplay /
+contact.emergencyTel, so changing it once changes it everywhere.
+
+ALSO
+- The team is now published as "employee" in the Dentist
+  structured data — names, roles and photographs — which is what
+  lets Google connect the people to the practice.
+- The images folder was renamed from "Images" to "images". Every
+  page asks for the lowercase name and Netlify is case-sensitive,
+  so as it stood every photo on the site would have 404'd.
+- ?v= bumped to 20260901 on styles.css and app.js in all eight
+  pages.
+
+STILL WORTH DOING
+- Dr Papantoniou's photograph has a bright horizontal reflection
+  across his chest, from the glass door he is standing in front
+  of. It is in the original photograph, not something the
+  processing added, and it was left alone rather than painted
+  out. A re-shoot against a plain wall would fix it properly.
+- Nikos Polykandriotis's photograph is only 550 x 391, so it is
+  enlarged about 2.4x and is softer than the other five. Any
+  phone photo taken against a plain wall would replace it.
