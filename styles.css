@@ -143,6 +143,14 @@ header.scrolled{box-shadow:0 4px 24px rgba(22,48,59,.07)}
 /* ---------- sections ---------- */
 section{position:relative}
 .sec-pad{padding:104px 0}
+/* A section that opens straight under a page banner does not need the banner's
+   own bottom space repeated on top of it. */
+.banner + .sec-pad{padding-top:60px}
+/* Two sections on the same ground read as one run of the page, so they share a
+   single gap instead of stacking one section's bottom onto the next one's top.
+   Where the ground changes (.bg-pale) the full padding stays, because there the
+   space is what separates the two colours. */
+.sec-pad:not(.bg-pale) + .sec-pad:not(.bg-pale){padding-top:0}
 .pb-tight{padding-bottom:56px}
 .bg-pale{background:var(--bg)}
 .head{max-width:700px;margin:0 auto 58px;text-align:center}
@@ -292,6 +300,7 @@ footer li a:hover{color:#7FD4D0}
   .tcell:nth-child(2n){border-right:none}
   .tcell:nth-child(n+3){border-bottom:none}
   .sec-pad{padding:84px 0}
+  .banner + .sec-pad{padding-top:52px}
   .gal{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}
   .gal a:nth-child(1){grid-column:span 2;grid-row:span 1}
   .gal a:nth-child(8){grid-column:span 2}
@@ -311,6 +320,7 @@ footer li a:hover{color:#7FD4D0}
   .cbox{padding:30px 22px}
   .frow{grid-template-columns:1fr}
   .sec-pad{padding:68px 0}
+  .banner + .sec-pad{padding-top:44px}
   .trustwrap{margin-top:-40px}
   .banner{padding:44px 0 52px}
   .cta{padding:64px 0}

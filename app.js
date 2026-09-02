@@ -71,6 +71,8 @@ window.SITE = { content: null, lang: "el" };
     set("[data-c=instagram]", function (e) { if (ct.instagram) e.href = ct.instagram; });
     set("[data-c=reviews]", function (e) { if (ct.reviewsUrl) e.href = ct.reviewsUrl; });
     set("[data-c=directions]", function (e) { if (ct.mapsDirections) e.href = ct.mapsDirections; });
+    /* The Google Business Profile link — the listing with the reviews on it. */
+    set("[data-c=place]", function (e) { if (ct.placeUrl) e.href = ct.placeUrl; });
     set("[data-c=rating]", function (e) { if (ct.rating) e.textContent = ct.rating; });
     set("[data-c=reviewCount]", function (e) { if (ct.reviewCount) e.textContent = ct.reviewCount; });
     var mf = document.querySelector(".map iframe");

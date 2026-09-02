@@ -13,11 +13,12 @@
     "instagram": "https://www.instagram.com/papantonioudentalclinic",
     "mapsEmbed": "https://www.google.com/maps?q=37.7375018,23.9472415&hl=el&z=17&output=embed",
     "mapsDirections": "https://www.google.com/maps/dir/?api=1&destination=37.7375018%2C23.9472415",
-    "reviewsUrl": "https://www.google.com/maps/search/?api=1&query=37.7375018,23.9472415",
+    "reviewsUrl": "https://share.google/QjuTqP0IV1b8c2hEz",
     "rating": "4.6",
-    "reviewCount": "46",
+    "reviewCount": "54",
     "emergencyDisplay": "697 200 8653",
-    "emergencyTel": "+306972008653"
+    "emergencyTel": "+306972008653",
+    "placeUrl": "https://share.google/QjuTqP0IV1b8c2hEz"
   },
   "hours": [
     {
@@ -661,8 +662,8 @@
       "group": "Αρχική"
     },
     "trust.1.p2": {
-      "el": "σε 46 αξιολογήσεις Google",
-      "en": "across 46 Google reviews",
+      "el": "σε 54 αξιολογήσεις Google",
+      "en": "across 54 Google reviews",
       "group": "Αρχική"
     },
     "trust.2.h": {

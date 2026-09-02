@@ -1,0 +1,41 @@
+SPACING, LINKS AND THE REVIEW COUNT
+===================================
+Code only — no photographs in here. The portrait files from the previous
+archive (images/team/ and images/09..14_*) are still needed if you have not
+uploaded them yet.
+
+SPACING
+Two rules in styles.css, not one-off nudges, so every page keeps the same
+rhythm:
+
+  .banner + .sec-pad          a section opening straight under a page banner
+                              no longer repeats the banner's own bottom space
+                              (104px -> 60px, and less again on phones)
+
+  two plain sections in a row share ONE gap instead of stacking one section's
+  bottom padding onto the next one's top. That is the 208px between the team
+  cards and "Τι λένε οι ασθενείς μας" — now 104px.
+
+  Where the background changes (the pale bands on the homepage and the clinic
+  page) the full padding stays, because there the space is what separates the
+  two colours. Nothing on those pages moved.
+
+LINKS  ->  https://share.google/QjuTqP0IV1b8c2hEz
+  homepage "Εμπειρία & εμπιστοσύνη" card   the Google listing with the reviews
+  homepage location pin
+  contact page address line and map icon
+
+  The "Οδηγίες πρόσβασης / Get directions" pill on the map is deliberately
+  left as a directions link, because that one is meant to open navigation
+  rather than the listing.
+
+  Both live in content.json under contact.reviewsUrl and contact.placeUrl —
+  one place to change them if the listing link ever changes.
+
+REVIEWS  46 -> 54
+  the homepage card, and the rating Google reads from the page
+  (content.json contact.reviewCount, and the structured data in index.html)
+
+ALSO
+  ?v=20260901c on styles.css and app.js in all eight pages, so the new
+  spacing is picked up rather than served from cache.
