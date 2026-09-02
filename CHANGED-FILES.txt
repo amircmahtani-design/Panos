@@ -1,0 +1,39 @@
+ΤΙ ΑΛΛΑΖΕΙ / WHAT TO REPLACE
+===========================
+Everything in this archive goes into the repo at the same path, replacing
+what is there. Nothing else needs touching.
+
+*** ONE THING THAT IS NOT A FILE COPY ***
+Rename the photo folder  Images  ->  images  (lowercase).
+Every page asks for "images/..." and Netlify's servers are case-sensitive,
+so with the capital I every photograph on the site 404s. Also delete the
+stray 1-byte file that was sitting inside it (Images/Images).
+
+PAGES  (footer emergency number + cache-busting ?v=20260901)
+  index.html  to-iatreio.html  ypiresies.html  o-iatros.html
+  syhnes-erotiseis.html  epikoinonia.html  404.html  efcharisto.html
+    o-iatros.html      the six real team members
+    to-iatreio.html    gallery 8 -> 12 photographs
+    epikoinonia.html   the "Επείγοντα" row
+
+CODE
+  styles.css     team photo frame, gallery grid, .cnote
+  app.js         team cards as <picture> with WebP + srcset,
+                 emergency number, team + emergency in Google structured data
+  content.json   the team, the new photos, contact.emergencyDisplay/Tel
+  Studio/index.html   new "Διαδρομή αρχείου" field on each team member
+
+PHOTOGRAPHS
+  images/team/*.jpg .webp     six portraits, 1000x1250 and 500x625
+  images/09..14_*.jpg         six new clinic photographs, full and _sm
+
+TOOLS  (new folder — not served, just kept with the site)
+  tools/standardise_portrait.py   makes a new portrait match the others
+  tools/spec.py                   the specification, the only place to change it
+  tools/cutout.py  tools/gf.py    the cutting-out
+  tools/README-portraits.md       how to add the next person
+
+README.txt      handover notes, with a change log at the end
+
+NOT INCLUDED: images/team/originals/ — the untouched files you sent me.
+Ask if you want them back for the repo; the site does not use them.

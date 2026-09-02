@@ -135,3 +135,36 @@ def person_alpha(rgb, face):
     a=np.clip((a-0.42)/0.30,0,1)
     a=guided_filter_color(guide,a.astype(np.float32),max(3,r//2),1e-5)
     return np.clip(a,0,1).astype(np.float32)
+
+
+def white_background_alpha(rgb, tol=30, sat_tol=26):
+    """For a portrait already cut out onto a white background.
+
+    Only white that is CONNECTED TO THE BORDER is treated as background, so a
+    white mask, a white collar or a bright highlight inside the figure is kept.
+    """
+    a = rgb.astype(np.int16)
+    darkness = 255 - a.max(2)                    # 0 = pure white
+    sat = a.max(2) - a.min(2)
+    near_white = ((darkness < tol) & (sat < sat_tol)).astype(np.uint8)
+
+    h, w = near_white.shape
+    lab, n = ndimage.label(near_white)
+    border = np.concatenate([lab[0], lab[-1], lab[:,0], lab[:,-1]])
+    bg_ids = set(int(v) for v in np.unique(border) if v)
+    bg = np.isin(lab, list(bg_ids)) if bg_ids else np.zeros_like(near_white, bool)
+
+    binm = (~bg).astype(np.uint8)
+    binm = ndimage.binary_fill_holes(binm).astype(np.uint8)
+    k = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (5,5))
+    binm = cv2.morphologyEx(binm, cv2.MORPH_OPEN, k)
+    lab2, n2 = ndimage.label(binm)
+    if n2 > 1:                                    # drop stray specks
+        sizes = ndimage.sum(binm, lab2, range(1, n2+1))
+        binm = (lab2 == int(np.argmax(sizes))+1).astype(np.uint8)
+
+    guide = rgb.astype(np.float32)/255.
+    r = max(3, int(max(h,w)/400))
+    al = guided_filter_color(guide, binm.astype(np.float32), r, 1e-5)
+    al = np.clip((al-0.55)/0.30, 0, 1)            # pull the edge in, killing white fringe
+    return al.astype(np.float32)

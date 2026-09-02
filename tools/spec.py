@@ -6,8 +6,9 @@ OUT_W, OUT_H = 1000, 1250          # 4:5, matches .member-photo aspect-ratio
 RETINA = [(1000,1250), (500,625)]  # @2x and @1x
 
 # --- geometry (fractions of OUT_H) -----------------------------------------
-EYE_Y        = 0.325   # eye line
-FACE_W_FRAC  = 0.300   # detected face-box width / OUT_W
+EYE_Y        = 0.345   # eye line
+FACE_W_FRAC  = 0.440   # detected face-box width / OUT_W — tight enough that the
+                       # shoulders leave the frame, so no figure floats
 CENTER_X     = 0.500
 EYE_IN_BOX   = 0.42    # eye line position inside a haar face box (frac of h)
 

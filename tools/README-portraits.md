@@ -13,8 +13,8 @@ crop, the framing and a small lighting balance are changed.
 | Output | 1000 × 1250 px (4:5), plus a 500 × 625 copy |
 | Formats | `.webp` and `.jpg`, both sizes, progressive |
 | Background | one gradient — pale cool white to soft grey, a gentle glow behind the head, a soft contact shadow. Identical for everybody. |
-| Eye line | 32.5 % down the frame |
-| Head size | face width = 30 % of the frame width |
+| Eye line | 34.5 % down the frame |
+| Head size | face width = 44 % of the frame width — tight enough that the shoulders leave the frame, so nobody floats above the bottom edge |
 | Centring | face centred horizontally |
 | Lighting | grey-world white balance clamped to ±8 %, exposure moved at most ±20 % towards a common facial brightness |
 
@@ -53,10 +53,22 @@ python3 tools/standardise_portrait.py nikos photo.jpg --face 222,96,124,124
 
 ### If the photograph already has its background removed
 
-Save it as a PNG with real transparency and hand it to the same command.
-The script detects the alpha channel and keeps it instead of cutting the
-person out itself — everything else (background, crop, sizes) is unchanged,
-so a supplied cutout and a raw photo end up looking identical.
+Hand it to the same command. Two forms are recognised automatically:
+
+* **A PNG with real transparency** — the supplied alpha is used as it is.
+* **A cutout saved onto white** (a JPEG, usually) — the white is keyed out
+  working inwards from the frame edge, so white *inside* the figure — a
+  mask, a collar, a bright highlight — is kept.
+
+Everything after that is identical either way, so a supplied cutout and a
+raw photograph end up looking like the same sitting.
+
+### If the body is cut off by the edge of the source frame
+
+The script continues it. Each column of the torso carries on with its own
+colour, easing very slightly into shadow, so the figure reaches the foot of
+the frame instead of floating with a hard horizontal edge. Nothing is
+invented above the waist.
 
 ## What the script does, in order
 

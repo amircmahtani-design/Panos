@@ -3,9 +3,11 @@
 Team-portrait standardiser — Odontiatriko Kentro Papantoniou.
 
 One canonical specification (spec.py) applied identically to every portrait.
-Input may be either
-  * a plain photograph          -> the person is cut out locally, or
-  * an RGBA PNG already cut out -> the existing alpha is used as-is.
+Input may be any of
+  * an RGBA PNG already cut out    -> the supplied alpha is used as it is
+  * a cutout saved on white        -> the white is keyed out from the border in,
+                                      so a white mask or collar is kept
+  * a plain photograph             -> the person is cut out locally.
 The person is never regenerated, beautified or altered: only background,
 crop, framing and a restrained lighting balance.
 
@@ -18,7 +20,7 @@ picks up the right size and format on its own.
 import sys, os, json, cv2, numpy as np
 from PIL import Image, ImageOps
 import spec
-from cutout import person_alpha, trim_letterbox
+from cutout import person_alpha, trim_letterbox, white_background_alpha
 
 CASC = cv2.CascadeClassifier(cv2.data.haarcascades+"haarcascade_frontalface_alt2.xml")
 
@@ -48,6 +50,13 @@ def contact_shadow(canvas, alpha):
     return np.clip(canvas.astype(np.float32)*(1-sh[...,None]*0.9),0,255)
 
 # ------------------------------------------------------------------- helpers
+def _on_white(rgb):
+    """A cutout supplied on a white background: the frame edge is white or empty."""
+    b = np.concatenate([rgb[0], rgb[-1], rgb[:,0], rgb[:,-1]]).astype(np.int16)
+    bright = ((255 - b.max(1)) < 30) & ((b.max(1) - b.min(1)) < 26)
+    med = np.median(b, 0)
+    return bright.mean() > 0.45 or (med.min() > 238 and (med.max()-med.min()) < 12)
+
 def detect_face(rgb):
     g = cv2.cvtColor(rgb,cv2.COLOR_RGB2GRAY)
     s = 900/max(rgb.shape[:2]); gs = cv2.resize(g,None,fx=s,fy=s)
@@ -95,16 +104,31 @@ def normalise_light(rgb, alpha, face):
     img = (img-128)*spec.CONTRAST+128
     return np.clip(img,0,255)
 
-def extend_to_bottom(rgb, alpha, rows=40):
-    """If the body is cut by the frame edge, continue it rather than float it."""
-    if (alpha[-1]>0.5).sum() < alpha.shape[1]*0.04: return rgb, alpha
-    n = max(6, rgb.shape[0]//120)
-    base = np.median(rgb[-n:],axis=0)[None,...]            # median of the last rows,
-    abase = (alpha[-n:].min(0) > 0.5).astype(np.float32)   # only where the body is solid
-    pad = np.repeat(base,rows,axis=0)
-    a   = np.repeat(abase[None,:],rows,axis=0)
-    a   = cv2.GaussianBlur(a,(0,0),2.0)
-    return np.vstack([rgb,pad]), np.vstack([alpha,a])
+def extend_to_bottom(rgb, alpha, rows):
+    """If the body is cut by the frame edge, continue it rather than leave it
+    floating. Each column carries on with its own colour, easing very slightly
+    into shadow, so the fabric continues without a seam."""
+    rows = int(max(0, rows))
+    if rows == 0: return rgb, alpha
+    if (alpha[-1] > 0.5).sum() < alpha.shape[1]*0.04: return rgb, alpha
+
+    h = rgb.shape[0]
+    band = max(6, h//60)
+    col = np.median(rgb[h-band:], axis=0)                 # one colour per column
+    col = cv2.GaussianBlur(col.astype(np.float32)[None,...], (0,0), 2.0)[0]
+    ramp = (1 - np.linspace(0,1,rows)**1.3*0.07)[:,None,None]   # eases into shadow
+    pad_rgb = col[None,...]*ramp
+
+    solid = (alpha[h-band:].min(0) > 0.5).astype(np.float32)
+    pad_a = np.repeat(solid[None,:], rows, axis=0)
+    pad_a = cv2.GaussianBlur(pad_a, (0,0), 1.6)
+
+    out_rgb = np.vstack([rgb, pad_rgb])
+    out_a   = np.vstack([alpha, pad_a])
+    # feather the join itself so the seam cannot be seen
+    j0, j1 = max(0,h-band), min(out_rgb.shape[0], h+band)
+    out_rgb[j0:j1] = cv2.GaussianBlur(out_rgb[j0:j1].astype(np.float32), (0,0), 1.2)
+    return out_rgb, out_a
 
 # ---------------------------------------------------------------------- main
 def standardise(slug, path, face_override=None, outdir="out"):
@@ -112,8 +136,16 @@ def standardise(slug, path, face_override=None, outdir="out"):
     arr = np.array(im.convert("RGBA"))
     has_cutout = (arr[:,:,3] < 250).mean() > 0.02      # a real transparent background
     if has_cutout:
-        rgb = arr[:,:,:3]; alpha = arr[:,:,3].astype(np.float32)/255.
-        source = "supplied cutout"
+        alpha = arr[:,:,3].astype(np.float32)/255.
+        rgb = (arr[:,:,:3]*alpha[...,None] + 255*(1-alpha[...,None])).astype(np.uint8)
+        source = "supplied cutout (alpha)"
+    elif _on_white(arr[:,:,:3]):
+        rgb = arr[:,:,:3]
+        rgb,(ox,oy) = trim_letterbox(rgb)
+        if face_override: face_override = (face_override[0]-ox, face_override[1]-oy,
+                                           face_override[2], face_override[3])
+        alpha = white_background_alpha(rgb)
+        source = "supplied cutout (white)"
     else:
         rgb = np.array(im.convert("RGB"))
         rgb,(ox,oy) = trim_letterbox(rgb)
@@ -126,12 +158,15 @@ def standardise(slug, path, face_override=None, outdir="out"):
 
     face = face_override or detect_face(rgb) or face_from_alpha(alpha)
     rgb  = normalise_light(rgb, alpha, face)
-    rgb, alpha = extend_to_bottom(rgb, alpha)
 
     fx,fy,fw,fh = face
     scale = (spec.FACE_W_FRAC*spec.OUT_W)/fw
     eye_y = fy + spec.EYE_IN_BOX*fh
     cx    = fx + fw/2
+
+    # How much of the source is still missing at the foot of the frame?
+    bottom_out = spec.EYE_Y*spec.OUT_H + (rgb.shape[0]-eye_y)*scale
+    rgb, alpha = extend_to_bottom(rgb, alpha, (spec.OUT_H-bottom_out)/scale + 8)
     M = np.array([[scale,0, spec.CENTER_X*spec.OUT_W - cx*scale],
                   [0,scale, spec.EYE_Y*spec.OUT_H     - eye_y*scale]],np.float32)
     flags = cv2.INTER_AREA if scale < 1 else cv2.INTER_LANCZOS4
