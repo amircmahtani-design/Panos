@@ -8,6 +8,12 @@
 /images/*
   Cache-Control: public, max-age=31536000, immutable
 
+# Team portraits keep their filenames when a person is re-photographed, so a
+# year-long immutable cache would go on serving the old face for a year. These
+# revalidate instead: Netlify answers an unchanged file with a tiny 304.
+/images/team/*
+  Cache-Control: public, max-age=0, must-revalidate
+
 # Facebook, WhatsApp and Viber cache the share card hard. A shorter life here
 # means a replacement picture shows up in previews within a day, not never.
 /og-image.jpg

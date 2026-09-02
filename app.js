@@ -138,14 +138,19 @@ window.SITE = { content: null, lang: "el" };
       return '<img src="' + src + '" alt="' + alt + '" loading="lazy" decoding="async">';
     }
     var base = src.replace(/\.(jpe?g|png|webp)$/i, "");
+    var v = PHOTO_V;
     return '<picture>' +
-      '<source type="image/webp" srcset="' + base + '-500.webp 500w, ' + base + '.webp 1000w" sizes="' + PHOTO_SIZES + '">' +
-      '<source type="image/jpeg" srcset="' + base + '-500.jpg 500w, ' + base + '.jpg 1000w" sizes="' + PHOTO_SIZES + '">' +
-      '<img src="' + base + '.jpg" alt="' + alt + '" width="1000" height="1250" loading="lazy" decoding="async">' +
+      '<source type="image/webp" srcset="' + base + '-500.webp' + v + ' 500w, ' + base + '.webp' + v + ' 1000w" sizes="' + PHOTO_SIZES + '">' +
+      '<source type="image/jpeg" srcset="' + base + '-500.jpg' + v + ' 500w, ' + base + '.jpg' + v + ' 1000w" sizes="' + PHOTO_SIZES + '">' +
+      '<img src="' + base + '.jpg' + v + '" alt="' + alt + '" width="1000" height="1250" loading="lazy" decoding="async">' +
       '</picture>';
   }
 
   var PHOTO_SIZES = "(max-width:620px) 92vw, (max-width:960px) 46vw, 31vw";
+  /* Portraits keep their filenames when somebody is re-photographed. Bump this
+     whenever a file in images/team/ is replaced, and every browser that already
+     has the old one fetches the new one. */
+  var PHOTO_V = "?v=20260901b";
 
   function applyTeam(c) {
     var grid = document.querySelector("[data-c=team]");

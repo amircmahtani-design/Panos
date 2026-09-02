@@ -1,0 +1,41 @@
+WHY THE OLD PHOTOS ARE STILL SHOWING
+====================================
+Not your upload — a caching rule that was already in the site.
+
+_headers told browsers:
+
+    /images/*
+      Cache-Control: public, max-age=31536000, immutable
+
+"immutable" means: this file will NEVER change, do not even ask again, for a
+year. The new portraits kept the same filenames (images/team/panagiotis.jpg
+and so on), so every browser that had already seen the page went on drawing
+the old picture from its own disk. The files on Netlify were fine.
+
+WHAT TO REPLACE  (four things, same paths as before)
+
+  _headers          team portraits now revalidate instead of being frozen
+  app.js            portrait URLs carry ?v=20260901b
+  o-iatros.html     same version on the built-in markup
+  images/team/      the twenty-four portrait files, in case the earlier
+                    upload did not go through
+
+AFTER DEPLOYING
+Netlify's own CDN also holds the old files. In the Netlify dashboard use
+  Deploys -> Trigger deploy -> "Clear cache and deploy site"
+rather than a plain deploy.
+
+TO CHECK IT WORKED
+Open this address directly, with the ?x=1 on the end:
+
+  https://panosdent.netlify.app/images/team/thanos.jpg?x=1
+
+The ?x=1 defeats the cache, so you see what is really on the server. It
+should be the man in the surgical cap and mask. If it is the man with the
+ponytail, the image files did not upload — send the images/team folder again.
+
+FROM NOW ON
+When a team member is re-photographed and the file keeps its name, the new
+/images/team/ rule in _headers means it appears straight away. Nothing else
+to remember. If you ever want to force it anyway, bump the number in
+app.js — search for  PHOTO_V .
